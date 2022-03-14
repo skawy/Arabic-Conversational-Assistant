@@ -6,16 +6,21 @@ session_config:
 intents:
 - greet
 - goodbye
-- user_address
+- student_id
 - user_phone
-- user_name
+- student_name
 - affirm
 - deny
 - bot_challenge
+- ask_for_college_expenses
+- ask_for_avialable_subject
+- refusal
 entities:
-- address
+- id
 - name
 - phone
+# grade = الصف او الدرجة
+- college_grade # الصف الدراسى للكلية 
 
 slots:
   phone:
@@ -24,7 +29,10 @@ slots:
   name:
     type: text
     influence_conversation: true
-  address:
+  id:
+    type: text
+    influence_conversation: true
+  college_grade:
     type: text
     influence_conversation: true
 
@@ -42,14 +50,17 @@ responses:
     - text: ايه الرقم بتاع حضرتك
   utter_ask_name:
     - text: ايه اسم حضرتك
-  utter_ask_address:
-    - text: ايه العنوان بتاع حضرتك
-  utter_ask_continue:
-    - text: متاكد انك مش عاوز تكمل بياناتك ؟
-  utter_submit_user_details:
-    - text: تمام شكرا يا فندم انا عرفت ايه المعلومات بتاعتك
-  utter_user_details_slots:
-    - text: الطلب للأستاذ {name} و العنوان {address} و رقم الموبيل {phone}
+  utter_ask_id:
+    - text: id حضرتك 
+
+  utter_for_expenses:
+    - text: المصاريف 275 جنية\nعايز تسئل على حاجة تانى؟
+  utter_for_subject:
+    - text: "المواد المتاحة هى 
+             Database
+             Machine learning
+             NLP
+             Math 2"
 
 actions:
   - utter_goodbye
@@ -65,6 +76,6 @@ forms:
       name:
       - entity: name
         type: from_entity
-      address:
-      - entity: address
+      id:
+      - entity: id
         type: from_entity

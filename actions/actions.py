@@ -32,23 +32,23 @@ class ValidateUserDetailsForm(FormValidationAction):
             dispatcher.utter_message(text=f"'{slot_value}' .الرقم غير صحيح يا فندم ")
             return {"phone": None}
 
-    def validate_address(
+    def validate_id(
             self,
             slot_value: Any,
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: DomainDict,
     ) -> Dict[Text, Any]:
-        """Validate `address` value, send the bill to user and insert all values to database"""
+        """Validate `id` value, send the bill to user and insert all values to database"""
         order_list.append(slot_value)
         # order_list[0][0] ==> pizza, order_list[0][1] ==> amount
-        # order_list[2] ==> name, order_list[1] ==> phone, order_list[3] ==> address
+        # order_list[2] ==> name, order_list[1] ==> phone, order_list[3] ==> id
         done = insert_booking(order_list[0][0], order_list[0][1], order_list[2], order_list[3], order_list[1])
         print(print_booking())
         dispatcher.utter_message(text=done)
         for i in bill:
             dispatcher.utter_message(text=i)
-        return {"address": slot_value}
+        return {"id": slot_value}
 
     def validate_name(
             self,
