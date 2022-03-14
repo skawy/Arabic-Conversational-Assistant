@@ -1,0 +1,70 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: false
+
+intents:
+- greet
+- goodbye
+- user_address
+- user_phone
+- user_name
+- affirm
+- deny
+- bot_challenge
+entities:
+- address
+- name
+- phone
+
+slots:
+  phone:
+    type: text
+    influence_conversation: true
+  name:
+    type: text
+    influence_conversation: true
+  address:
+    type: text
+    influence_conversation: true
+
+
+responses:
+  utter_greet:
+  - text: عليكم السلام اهلا بحضرتك
+  utter_goodbye:
+  - text: شكرا أتمنى حضرتك تكون اتبسط من الخدمة يا فندم سلام
+
+  utter_iamabot:
+  - text: انا روبوت
+
+  utter_ask_phone:
+    - text: ايه الرقم بتاع حضرتك
+  utter_ask_name:
+    - text: ايه اسم حضرتك
+  utter_ask_address:
+    - text: ايه العنوان بتاع حضرتك
+  utter_ask_continue:
+    - text: متاكد انك مش عاوز تكمل بياناتك ؟
+  utter_submit_user_details:
+    - text: تمام شكرا يا فندم انا عرفت ايه المعلومات بتاعتك
+  utter_user_details_slots:
+    - text: الطلب للأستاذ {name} و العنوان {address} و رقم الموبيل {phone}
+
+actions:
+  - utter_goodbye
+  - utter_greet
+  - validate_user_details_form
+
+forms:
+  user_details_form:
+    required_slots:
+      phone:
+      - entity: phone
+        type: from_entity
+      name:
+      - entity: name
+        type: from_entity
+      address:
+      - entity: address
+        type: from_entity

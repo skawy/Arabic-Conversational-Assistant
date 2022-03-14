@@ -1,0 +1,7 @@
+# Install Libraries:
+	1- pip install SpeechRecognition
+	2- pip install playsound
+	3- pip install pipwin
+	4- pipwin install pyaudio
+	5- pip install gTTS
+	6- pip install requests
