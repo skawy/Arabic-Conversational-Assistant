@@ -2,3 +2,4 @@ models/*
 .rasa/*
 components/__pycache__
 actions/__pycache__
+.vs
