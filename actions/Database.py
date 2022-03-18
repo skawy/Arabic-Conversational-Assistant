@@ -16,7 +16,7 @@ def create_table(table_name):
     if check_table(table_name):
         table = f'CREATE Table {table_name} (Pizza, Small, Medium, Large)'
     else:
-        table = f'CREATE Table {table_name} (Pizza, Size, Name, Address, Phone)'
+        table = f'CREATE Table {table_name} (Pizza, Size, Name, id, Phone)'
     # execute the statement
     cursor.execute(table)
     connection.close()
@@ -41,14 +41,14 @@ def insert_menu(pizza, small, medium, large):
             sqliteConnection.close()
 
 
-def insert_booking(pizza, size, name, address, phone):
+def insert_booking(pizza, size, name, id, phone):
     sqliteConnection = sqlite3.connect('restaurant.db')
     cursor = sqliteConnection.cursor()
     try:
-        sqlite_insert_with_param = f'INSERT INTO Booking_Table (Pizza, Size, Name, Address, Phone) VALUES (?, ?, ?, ' \
+        sqlite_insert_with_param = f'INSERT INTO Booking_Table (Pizza, Size, Name, id, Phone) VALUES (?, ?, ?, ' \
                                    f'?, ?) '
 
-        data_tuple = (pizza, size, name, address, phone)
+        data_tuple = (pizza, size, name, id, phone)
         cursor.execute(sqlite_insert_with_param, data_tuple)
         sqliteConnection.commit()
         cursor.close()

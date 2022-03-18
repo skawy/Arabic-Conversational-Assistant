@@ -1,63 +1,37 @@
 version: "2.0"
 
 stories:
-  - story: happy path
-    steps:
+- story: first path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_for_college_expenses
+  - action: utter_for_expenses
+  - intent: deny
+  - action: utter_goodbye
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: second path 1
+  steps:
     - intent: greet
     - action: utter_greet
+    - intent: ask_for_avialable_subject
+    - action: utter_for_subject
     - intent: goodbye
     - action: utter_goodbye
-    
-# - story: happy path
-#   steps:
-#   - intent: greet
-#     entities:
-#     - name: "علي"
-#   - slot_was_set:
-#     - name: "علي"
-#   - action: utter_greet
-#   - intent: make_an_order
-#     entities:
-#     - items: "بيتزا خضروات و مرجاريتا"
-#     - amount: "2"
-#     - size: "وسط"
-#   - slot_was_set:
-#     - items: "بيتزا تونة و سموكد"
-#     - amount: "2"
-#     - size: "كبير"
-#   - action:  action_get_order
-#   - intent: affirm
-#   - slot_was_set:
-#     - confirmation: "اه"
-#   - action: user_details_form
-#   - active_loop: user_details_form
-#   - intent: deny
-#   - action: utter_goodbye
-#   - intent: goodbye
-#   - action: utter_goodbye
 
-# - story: interactive_story_4
-#   steps:
-#   - intent: greet
-#   - action: utter_greet
-#   - intent: make_an_order
-#     entities:
-#     - items: ' خضروات'
-#     - size: كبير
-#     - items: سى رانش
-#   - slot_was_set:
-#     - items:
-#       - 'خضروات'
-#       - سى رانش
-#   - slot_was_set:
-#     - size: كبير
-#   - action: action_get_order
-#   - intent: affirm
-#   - slot_was_set:
-#     - confirmation: "اه"
-#   - action: user_details_form
-#   - active_loop: user_details_form
-#   - intent: deny
-#   - action: utter_goodbye
-#   - intent: goodbye
-#   - action: utter_goodbye
+- story: third path
+  steps:
+    - intent: ask_for_avialable_subject
+    - action: utter_for_subject
+    - action: utter_goodbye
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: interactive_story_2
+  steps:
+  - intent: ask_for_college_expenses
+  - action: utter_for_expenses
+  - intent: deny
+  - action: utter_goodbye
