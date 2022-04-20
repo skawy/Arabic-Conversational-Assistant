@@ -15,24 +15,18 @@ intents:
 - ask_for_college_expenses
 - ask_for_avialable_subject
 - refusal
+- grades
 entities:
 - id
-- name
-- phone
 # grade = الصف او الدرجة
 - college_grade # الصف الدراسى للكلية 
 
 slots:
-  phone:
-    type: text
-    influence_conversation: true
-  name:
-    type: text
-    influence_conversation: true
-  id:
-    type: text
-    influence_conversation: true
   college_grade:
+    type: text
+    influence_conversation: true
+
+  id:
     type: text
     influence_conversation: true
 
@@ -46,36 +40,19 @@ responses:
   utter_iamabot:
   - text: انا روبوت
 
-  utter_ask_phone:
-    - text: ايه الرقم بتاع حضرتك
-  utter_ask_name:
-    - text: ايه اسم حضرتك
-  utter_ask_id:
-    - text: id حضرتك 
-
-  utter_for_expenses:
-    - text: المصاريف 275 جنية\nعايز تسئل على حاجة تانى؟
-  utter_for_subject:
-    - text: "المواد المتاحة هى 
-             Database
-             Machine learning
-             NLP
-             Math 2"
-
+  utter_ask_for_id:
+    - text: الid لو سمحت
+  utter_wait:
+    - text: انتظر
 actions:
   - utter_goodbye
   - utter_greet
-  - validate_user_details_form
+  - validate_student_id_form
+  - action_get_collage_grade_and_asK_id
 
 forms:
-  user_details_form:
+  student_id_form:
     required_slots:
-      phone:
-      - entity: phone
-        type: from_entity
-      name:
-      - entity: name
-        type: from_entity
       id:
       - entity: id
         type: from_entity
