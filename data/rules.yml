@@ -2,30 +2,29 @@ version: "2.0"
 
 rules:
 
-#- rule: Tell The Bill
+#- rule: get id
 #  steps:
-#  - intent: bill
-#  - action: action_calculate_bill
+#    - intent: ask_for_avialable_subject
+#    - action: action_get_collage_grade_and_asK_id
 
 #- rule: Say i am bot anytime the user challenges
   #steps:
  # - intent: bot_challenge
 #  - action: utter_iamabot
 
+- rule: Activate student_id Form
+  steps:
+  - intent: student_id
+  - action: student_id_form
+  - active_loop: student_id_form
 
-#- rule: Activate user_details Form
-#  steps:
-#  - intent: affirm
-#  - action: user_details_form
-#  - active_loop: user_details_form
-
-#- rule: Submit user_details Form
-  #condition:
-  #- active_loop: user_details_form
-  #steps:
-  #- action: user_details_form
-  #- active_loop: null
-  #- slot_was_set:
-  #  - requested_slot: null
- # - action: utter_submit_user_details
- # - action: utter_user_details_slots
+- rule: Submit student_id Form
+  condition:
+  - active_loop: student_id_form
+  steps:
+  - action: student_id_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_wait
+##  - action: utter_user_details_slots
