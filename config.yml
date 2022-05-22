@@ -18,6 +18,9 @@ pipeline:
   - name: EntitySynonymMapper
   - name: ResponseSelector
     epochs: 100
+  - name: ResponseSelector
+    epochs: 100
+    retrieval_intent: chitchat
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
 policies:
