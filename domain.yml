@@ -16,6 +16,8 @@ intents:
 - ask_for_avialable_subject
 - refusal
 - grades
+- chitchat
+
 entities:
 - id
 # grade = الصف او الدرجة
@@ -25,28 +27,28 @@ slots:
   college_grade:
     type: text
     influence_conversation: true
-
   id:
     type: text
     influence_conversation: true
-
 
 responses:
   utter_greet:
   - text: عليكم السلام اهلا بحضرتك
   utter_goodbye:
   - text: شكرا أتمنى حضرتك تكون اتبسط من الخدمة يا فندم سلام
-
   utter_iamabot:
   - text: انا روبوت
-
   utter_ask_for_id:
     - text: الid لو سمحت
   utter_wait:
     - text: انتظر
+  utter_chitchat:
+    - text: ده سؤال خارج الموضوع التزم بالموضوع حتي لا يتم غلق المحادثة.
+
 actions:
   - utter_goodbye
   - utter_greet
+  - utter_chitchat
   - validate_student_id_form
   - action_get_collage_grade_and_asK_id
 

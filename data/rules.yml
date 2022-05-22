@@ -27,4 +27,9 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: utter_wait
+  
+- rule: respond to chitchat
+  steps:
+  - intent: chitchat
+  - action: utter_chitchat
 ##  - action: utter_user_details_slots
