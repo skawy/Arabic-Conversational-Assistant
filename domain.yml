@@ -1,0 +1,60 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: false
+
+intents:
+- greet
+- goodbye
+- student_id
+- user_phone
+- student_name
+- affirm
+- deny
+- bot_challenge
+- ask_for_college_expenses
+- ask_for_avialable_subject
+- refusal
+- grades
+- chitchat
+
+entities:
+- id
+# grade = الصف او الدرجة
+- college_grade # الصف الدراسى للكلية 
+
+slots:
+  college_grade:
+    type: text
+    influence_conversation: true
+  id:
+    type: text
+    influence_conversation: true
+
+responses:
+  utter_greet:
+  - text: عليكم السلام اهلا بحضرتك
+  utter_goodbye:
+  - text: شكرا أتمنى حضرتك تكون اتبسط من الخدمة يا فندم سلام
+  utter_iamabot:
+  - text: انا روبوت
+  utter_ask_for_id:
+    - text: الid لو سمحت
+  utter_wait:
+    - text: انتظر
+  utter_chitchat:
+    - text: ده سؤال خارج الموضوع التزم بالموضوع حتي لا يتم غلق المحادثة.
+
+actions:
+  - utter_goodbye
+  - utter_greet
+  - utter_chitchat
+  - validate_student_id_form
+  - action_get_collage_grade_and_asK_id
+
+forms:
+  student_id_form:
+    required_slots:
+      id:
+      - entity: id
+        type: from_entity
