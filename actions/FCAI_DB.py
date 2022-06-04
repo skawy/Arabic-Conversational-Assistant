@@ -3,6 +3,8 @@ import sqlite3
 
 import pandas as pd
 
+folder_path = 'D:\\FCAI_CU_Chatbot\\DB'
+
 
 class FCAI_DB:
     def __init__(self):
@@ -45,27 +47,64 @@ class FCAI_DB:
     def create_table(self, table_name):
         # SQL command to create a table in the database
         temp = table_name.split('_')
-        table_name = table_name.split('.')
-        if not self.check_table(f'x{table_name[0]}x'):
-            if temp[0].isdigit():
-                print('fjbjsfbjsfkvn', table_name)
-                table = f'CREATE Table x{table_name[0]}x (subject, grades, hours)'
+
+        if len(temp) == 4:
+            # split file name form its extension
+            table_name = temp[0]
+
+        else:
+            table_name = table_name.split('.')
+            table_name = table_name[0]
+
+
+        if not self.check_table('xGPAx'):
+            gpa_table = f'CREATE Table xGPAx (id, gpa, year, department)'
+            self.cursor.execute(gpa_table)
+
+        if not self.check_table('schedule'):
+            schedule_table = f'CREATE Table schedule (g1, g2, cs3, cs4, ai3, ai4, it3, it4, is3, is4, ds3, ds4)'
+            self.cursor.execute(schedule_table)
+        if not self.check_table(f'x{table_name}x'):
+            if table_name.isdigit():
+                table = f'CREATE Table x{table_name}x (subject, grades, hours)'
             else:
-                table = f'CREATE Table x{table_name[0]}x (subject, prerequisites,	priority)'
+                table = f'CREATE Table x{table_name}x (subject, prerequisites,	priority)'
             # execute the statement
-            print(table)
+
             self.cursor.execute(table)
 
     def insert_data(self, table_name, data):
+        """
+            parameters:
+                table_name: string consists of id_gpa_year_department
+                data: csv file to convert it to sqlite
+        """
+        department = []
         try:
             temp = table_name.split('_')
-            table_name = table_name.split('.')
-            if self.check_table(f'x{table_name[0]}x'):
-                if temp[0].isdigit():
-                    data.to_sql(f'x{table_name[0]}x', self.connection, if_exists='append', index=False)
+
+            if len(temp) == 4:
+                # split file name form its extension
+                department = temp[3].split('.')
+                table_name = temp[0]
+
+            else:
+                table_name = table_name.split('.')
+                table_name = table_name[0]
+
+            if self.check_table(f'x{table_name}x'):
+                if table_name.isdigit():
+
+                    insert_values = f'INSERT INTO xGPAx (id, gpa, year, department) VALUES (?, ?, ?, ?)'
+                    data_tuple = (temp[0], temp[1], temp[2], department[0])
+                    self.cursor.execute(insert_values, data_tuple)
+                    data.to_sql(f'x{table_name}x', self.connection, if_exists='append', index=False)
                     self.connection.commit()
+
                 else:
-                    data.to_sql(f'x{table_name[0]}x', self.connection, if_exists='append', index=False)
+                    df = pd.read_csv('D:\\FCAI_CU_Chatbot\\DB\\schedule.csv')
+                    df.to_sql(f'schedule', self.connection, if_exists='replace', index=False)
+                    data.to_sql(f'x{table_name}x', self.connection, if_exists='append', index=False)
                     self.connection.commit()
 
         except sqlite3.Error as error:
@@ -78,32 +117,98 @@ class FCAI_DB:
             data_list.append(list(row))
         return data_list
 
-    def get_tables(self, table_name):
-        result = []
-        bylaw = []
-        temp = table_name.split('_')
-        table_name = table_name.split('.')
-        data = self.cursor.execute(f'SELECT * FROM x{table_name[0]}x').fetchall()
-        if temp[0].isdigit():
-            result = self.get_data(data)
-        else:
-            bylaw = self.get_data(data)
+    @staticmethod
+    def convert_to_dictionary(data, table_name):
+        """
+            Parameters:
+                data: query returned from database
+                table_name: its name of the table which query was returned from it
 
+            Returns:
+                data: dictionary of the query
+        """
+        if table_name == '':
+            data = pd.DataFrame(data, columns=['subject', 'grades', 'hours'])
+            data = data.drop(['hours'], axis=1)
+            grades = set(data['grades'])
+            results = {}
+
+            for i in grades:
+                subjects = []
+                for subject, grade in zip(data['subject'], data['grades']):
+                    if grade == i:
+                        subjects.append(subject)
+                results[i] = subjects
+
+            return results
+
+        if table_name == 'GPA':
+            data = {data[0]: data[1:] for data in data}
+            return data
+
+        data = {data[0]: [data[1:][0].split('^'), data[1:][1]] for data in data}
+        return data
+
+    def get_tables(self, table_name):
+        """
+            parameter:
+                table_name: string name of the wanted table
+
+            returns:
+                results: list of student grades and subjects
+                         OR list of bylaw
+                         OR list of students id and gpa
+        """
+
+        data = self.cursor.execute(f'SELECT * FROM x{table_name}x').fetchall()
+        results = self.get_data(data)
         self.connection.commit()
-        return result, bylaw
+
+        if table_name.isdigit():
+            return self.convert_to_dictionary(results, '')
+
+        elif table_name == "bylaw":
+            return self.convert_to_dictionary(results, 'bylaw')
+
+        return self.convert_to_dictionary(results, 'GPA')
+
+    def get_schedule(self):
+        data = self.cursor.execute(f'SELECT * FROM schedule').fetchall()
+        results = self.get_data(data)
+        df = pd.DataFrame(results, columns=['g1', 'g2', 'cs3', 'cs4', 'ai3', 'ai4', 'it3', 'it4', 'is3', 'is4', 'ds3',
+                                            'ds4'])
+        self.connection.commit()
+        return df.to_dict(orient='list')
 
     def create_DB(self):
-        for file in os.listdir('D:\\FCAI_Chatbot\\DB'):
+        for file in os.listdir(folder_path):
+            if file == 'schedule.csv':
+                continue
+
             self.create_table(file)
-            data = pd.read_csv('D:\\FCAI_Chatbot\\DB\\' + file)
+            data = pd.read_csv(f'{folder_path}\\{file}')
             self.insert_data(file, data)
-            # print(self.get_tables(file))
-        self.connection.close()
 
     def close_DB(self):
         self.connection.close()
         self.cursor.close()
 
 
+#
 # db = FCAI_DB()
 # db.create_DB()
+# g = db.get_schedule()
+# print(g)
+# results = db.get_tables('20180311')
+# bylaw = db.get_tables('bylaw')
+# gpa = db.get_tables('GPA')
+#
+# print(bylaw['Math-1'])
+# print(gpa)
+# print(results)
+min_priority = [4,2,1,5]
+min_priority = sorted(min_priority)
+print(min_priority[0])
+"""
+hntl3lo elmwad elmfrod ysglha 3la 7sb elpriority w mlnash d3wa belconflict 
+"""
