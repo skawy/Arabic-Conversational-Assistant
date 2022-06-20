@@ -1,5 +1,7 @@
 version: "2.0"
 nlu:
+  # ys2l lo 3ayz ysgl mdt math 2 hnshof ynf3 wla l2 w hnrd
+  # ys2l a a7sn ksm mmkn yd5lo
 - intent: greet
   examples: |
     - أهلا
@@ -112,7 +114,7 @@ nlu:
     - هل أتحدث إلى إنسان؟
 
 
-- intent: ask_for_avialable_subject
+- intent: ask_for_avialable_schedule
   examples: |
     - عايز اعرف المواد المتاحة لسنةرابعة
     - عايز اعرف المواد المتاحة لسنة تالتة
@@ -134,7 +136,15 @@ nlu:
     - أفضل جدول لطالب شايل مواد فى سنة رابعة
     - عايز أعرف ممكن أسجل مواد ايه لسنة ثالثة
     - عايز أعرف ممكن أسجل مواد ايه
- 
+
+- intent: ask_for_avialable_subject
+  examples: |
+    - ينفع اسجل مادة [ماث 2](subject)
+    - طب ينفع اسجل [احصا](subject)
+    - ممكن اسجل [math 1](subject)
+    - ينفع اسجل مادة [programming 1](subject)
+    - أقدر اسجل مادة[ماشين ليرننج](subject)
+
 - intent: chitchat
   examples: |
     - اسمك اية؟
@@ -178,3 +188,18 @@ nlu:
     - مقاس رجلك كام
     - بتعمل اية حالا؟
     - كم عمرك؟
+
+- intent: ask_for_major
+  examples: |
+    ايه احسن قسم ادخله؟
+    ممكن اسأل على الاقسام
+    ممكن اسأل عالاقسام
+    عايز اعرف الاقسام
+    ايه الاقسام المتاحة
+    التخصصات
+    الاقسام
+    اتخصص في ايه؟
+    عايز اعرف ايه احسن تخصص
+    ايه احسن تخصص ليا؟
+    ايه التخصصات اللي في الكلية؟
+    ممكن اسأل على التخصصات

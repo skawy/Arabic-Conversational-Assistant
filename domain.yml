@@ -7,26 +7,20 @@ intents:
 - greet
 - goodbye
 - student_id
-- user_phone
-- student_name
 - affirm
 - deny
 - bot_challenge
 - ask_for_college_expenses
-- ask_for_avialable_subject
-- refusal
-- grades
+- ask_for_avialable_schedule
 - chitchat
+- ask_for_major
+- ask_for_avialable_subject
 
 entities:
 - id
-# grade = الصف او الدرجة
-- college_grade # الصف الدراسى للكلية 
+- subject
 
 slots:
-  college_grade:
-    type: text
-    influence_conversation: true
   id:
     type: text
     influence_conversation: true
@@ -44,6 +38,8 @@ responses:
     - text: انتظر
   utter_chitchat:
     - text: ده سؤال خارج الموضوع التزم بالموضوع حتي لا يتم غلق المحادثة.
+  utter_majors:
+    - text: التخصص بيبقى على حسب المواد اللي بتحبها و حسب الGPA يعني مثلا لو حابب البرمجة ممكن تدخل CS بس لو حابب الماث و البرمجة ممكن تدخل AI لو بتحب الاحصاء و الماث و التعامل بالداتا ممكن تدخل قسم IS  ولو بتحب الداتا ستراكشرز و الاوبتيمايزيشنز ممكن تدخل قسم DS و اخر حاجة لو بتبحب السيكيوريتي و النيتووركس و الشغل الهاردوير اكثر ممكن تدخل قسم IT  و كده كده في الاخر ممكن بعد ما تدخل اي تخصص تتعلم تخصص ثاني و ده هيفيدك كده كده قدام
 
 actions:
   - utter_goodbye
