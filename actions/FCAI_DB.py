@@ -206,9 +206,7 @@ class FCAI_DB:
 # print(bylaw['Math-1'])
 # print(gpa)
 # print(results)
-min_priority = [4,2,1,5]
-min_priority = sorted(min_priority)
-print(min_priority[0])
+
 """
 hntl3lo elmwad elmfrod ysglha 3la 7sb elpriority w mlnash d3wa belconflict 
 """

@@ -114,7 +114,7 @@ nlu:
     - هل أتحدث إلى إنسان؟
 
 
-- intent: ask_for_avialable_subject
+- intent: ask_for_avialable_schedule
   examples: |
     - عايز اعرف المواد المتاحة لسنةرابعة
     - عايز اعرف المواد المتاحة لسنة تالتة
@@ -137,7 +137,7 @@ nlu:
     - عايز أعرف ممكن أسجل مواد ايه لسنة ثالثة
     - عايز أعرف ممكن أسجل مواد ايه
 
-- intent: subject
+- intent: ask_for_avialable_subject
   examples: |
     - ينفع اسجل مادة [ماث 2](subject)
     - طب ينفع اسجل [احصا](subject)

@@ -6,7 +6,7 @@ stories:
   steps:
     - intent: greet
     - action: utter_greet
-    - intent: ask_for_avialable_subject
+    - intent: ask_for_avialable_schedule
     - action: utter_ask_for_id
     - intent: student_id
     - slot_was_set:
@@ -18,7 +18,7 @@ stories:
 
 - story: second path
   steps:
-    - intent: ask_for_avialable_subject
+    - intent: ask_for_avialable_schedule
     - action: utter_ask_for_id
     - intent: student_id
     - slot_was_set:
@@ -30,7 +30,7 @@ stories:
 
 - story: third path
   steps:
-    - intent: ask_for_avialable_subject
+    - intent: ask_for_avialable_schedule
     - action: utter_ask_for_id
     - intent: student_id
     - slot_was_set:
