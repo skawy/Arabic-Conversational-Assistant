@@ -39,3 +39,17 @@ stories:
     - active_loop: student_id_form
     - intent: goodbye
     - action: utter_goodbye
+
+- story: third path
+  steps:
+    - intent: ask_for_avialable_subject
+    - slot_was_set:
+      - subject: "Math-1"
+    - action: utter_ask_for_id
+    - intent: student_id
+    - slot_was_set:
+      - id: "20180342"
+    - action: student_id_form
+    - active_loop: student_id_form
+    - intent: goodbye
+    - action: utter_goodbye

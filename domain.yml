@@ -19,9 +19,13 @@ intents:
 entities:
 - id
 - subject
+- grade
 
 slots:
   id:
+    type: text
+    influence_conversation: true
+  subject:
     type: text
     influence_conversation: true
 
@@ -46,7 +50,6 @@ actions:
   - utter_greet
   - utter_chitchat
   - validate_student_id_form
-  - action_get_collage_grade_and_asK_id
 
 forms:
   student_id_form:

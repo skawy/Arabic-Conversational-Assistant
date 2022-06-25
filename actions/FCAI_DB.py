@@ -137,7 +137,7 @@ class FCAI_DB:
                 subjects = []
                 for subject, grade in zip(data['subject'], data['grades']):
                     if grade == i:
-                        subjects.append(subject)
+                        subjects.append(subject.lower())
                 results[i] = subjects
 
             return results
@@ -146,7 +146,7 @@ class FCAI_DB:
             data = {data[0]: data[1:] for data in data}
             return data
 
-        data = {data[0]: [data[1:][0].split('^'), data[1:][1]] for data in data}
+        data = {data[0].lower(): [data[1:][0].split('^'), data[1:][1]] for data in data}
         return data
 
     def get_tables(self, table_name):
