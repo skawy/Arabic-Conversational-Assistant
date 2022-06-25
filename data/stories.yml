@@ -45,7 +45,7 @@ stories:
     - intent: ask_for_avialable_subject
     - slot_was_set:
       - subject: "Math-1"
-    - action: utter_ask_for_id
+    - action: action_check_subject_name
     - intent: student_id
     - slot_was_set:
       - id: "20180342"

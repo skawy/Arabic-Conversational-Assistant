@@ -127,11 +127,16 @@ nlu:
 
 - intent: ask_for_avialable_subject
   examples: |
-    - ينفع اسجل مادة [ماث 2](subject)
-    - طب ينفع اسجل [احصا](subject)
+    - ينفع اسجل مادة [object oriented programming](subject)
+    - طب ينفع اسجل [data structures](subject)
     - ممكن اسجل [math 1](subject)
     - ينفع اسجل مادة [programming 1](subject)
-    - أقدر اسجل مادة[ماشين ليرننج](subject)
+    - أقدر اسجل مادة[image processing](subject)
+    - أقدر اسجل مادة[statistics](subject)
+    - أقدر اسجل مادة[structured programming](subject)
+    - أقدر اسجل مادة[machine learning](subject)
+    - أقدر اسجل مادة[math](subject)
+    - ممكن اسجل [statistiscs and propabitity](subject)
 
 - intent: chitchat
   examples: |

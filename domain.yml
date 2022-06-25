@@ -48,6 +48,7 @@ responses:
 actions:
   - utter_goodbye
   - utter_greet
+  - action_check_subject_name
   - utter_chitchat
   - validate_student_id_form
 
