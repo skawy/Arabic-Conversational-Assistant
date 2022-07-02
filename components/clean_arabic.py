@@ -1,30 +1,34 @@
 import re
 
+
 # # Clean/Normalize Arabic Text
 def clean_str(text):
-    search = ["أ","إ","آ","ة","_","-","/",".","،"," و "," يا ",'"',"ـ","'","ى","\\",'\n', '\t','&quot;','?','؟','!']
-    replace = ["ا","ا","ا","ه"," "," ","","",""," و"," يا","","","","ي","",' ', ' ',' ',' ? ',' ؟ ',' ! ']
-    
-    #remove tashkeel
+    search = ["أ", "إ", "آ", "ة", "_", "-", "/", ".", "،", " و ", " يا ", '"', "ـ", "'", "ى", "\\", '\n', '\t',
+              '&quot;', '?', '؟', '!']
+    replace = ["ا", "ا", "ا", "ه", " ", " ", "", "", "", " و", " يا", "", "", "", "ي", "", ' ', ' ', ' ', ' ? ', ' ؟ ',
+               ' ! ']
+
+    # remove tashkeel
     p_tashkeel = re.compile(r'[\u0617-\u061A\u064B-\u0652]')
-    text = re.sub(p_tashkeel,"", text)
-    
-    #remove longation
+    text = re.sub(p_tashkeel, "", text)
+
+    # remove longation
     p_longation = re.compile(r'(.)\1+')
     subst = r"\1\1"
     text = re.sub(p_longation, subst, text)
-    
+
     text = text.replace('وو', 'و')
     text = text.replace('يي', 'ي')
     text = text.replace('اا', 'ا')
-    
+
     for i in range(0, len(search)):
         text = text.replace(search[i], replace[i])
-    
-    #trim    
+
+    # trim
     text = text.strip()
 
     return text
+
 
 # python 3.X
 # word = clean_str('الْكَلْبُ يَنَامُ فِي الْبُسْتَانِ. كَدُبِّ اللِّسَانِ ان يُقَوِّلُ مَا يَقُلْ وان يُقَوِّلُ وَلَا يَفْعَلُ وكدب الْقُلَّبَ ان يعتققد فَلَا يَفْعَلُ')
@@ -42,6 +46,7 @@ from rasa.shared.nlu.training_data.message import Message
 
 if typing.TYPE_CHECKING:
     from rasa.nlu.model import Metadata
+
 
 class Cleaning_Ar_Text(Component):
     """A new component"""
@@ -76,10 +81,10 @@ class Cleaning_Ar_Text(Component):
         super().__init__(component_config)
 
     def train(
-        self,
-        training_data: TrainingData,
-        config: Optional[RasaNLUModelConfig] = None,
-        **kwargs: Any,
+            self,
+            training_data: TrainingData,
+            config: Optional[RasaNLUModelConfig] = None,
+            **kwargs: Any,
     ) -> None:
         """Train this component.
 
@@ -105,7 +110,7 @@ class Cleaning_Ar_Text(Component):
         :meth:`components.Component.process`
         of components previous to this one."""
         if 'text' in message.data:
-            message.set('text',clean_str(message.data['text']))
+            message.set('text', clean_str(message.data['text']))
         pass
 
     def persist(self, file_name: Text, model_dir: Text) -> Optional[Dict[Text, Any]]:
@@ -115,12 +120,12 @@ class Cleaning_Ar_Text(Component):
 
     @classmethod
     def load(
-        cls,
-        meta: Dict[Text, Any],
-        model_dir: Text,
-        model_metadata: Optional["Metadata"] = None,
-        cached_component: Optional["Component"] = None,
-        **kwargs: Any,
+            cls,
+            meta: Dict[Text, Any],
+            model_dir: Text,
+            model_metadata: Optional["Metadata"] = None,
+            cached_component: Optional["Component"] = None,
+            **kwargs: Any,
     ) -> "Component":
         """Load this component from file."""
 
@@ -128,6 +133,7 @@ class Cleaning_Ar_Text(Component):
             return cached_component
         else:
             return cls(meta)
+
 
 class Print_Clean(Component):
     """A new component"""
@@ -162,10 +168,10 @@ class Print_Clean(Component):
         super().__init__(component_config)
 
     def train(
-        self,
-        training_data: TrainingData,
-        config: Optional[RasaNLUModelConfig] = None,
-        **kwargs: Any,
+            self,
+            training_data: TrainingData,
+            config: Optional[RasaNLUModelConfig] = None,
+            **kwargs: Any,
     ) -> None:
         """Train this component.
 
@@ -201,12 +207,12 @@ class Print_Clean(Component):
 
     @classmethod
     def load(
-        cls,
-        meta: Dict[Text, Any],
-        model_dir: Text,
-        model_metadata: Optional["Metadata"] = None,
-        cached_component: Optional["Component"] = None,
-        **kwargs: Any,
+            cls,
+            meta: Dict[Text, Any],
+            model_dir: Text,
+            model_metadata: Optional["Metadata"] = None,
+            cached_component: Optional["Component"] = None,
+            **kwargs: Any,
     ) -> "Component":
         """Load this component from file."""
 
