@@ -1,10 +1,11 @@
 from typing import Any, Text, Dict, List
-
 from rasa_sdk import Action, Tracker, FormValidationAction
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.types import DomainDict
 import re
 from actions.schedule_handling import ask_for_one_subject, get_failed_subjects, gpa_dict, db
+from rasa_sdk.events import (SlotSet,ConversationPaused)
+
 
 
 class check_subject_name(Action):
@@ -70,3 +71,26 @@ class ValidateUserDetailsForm(FormValidationAction):
         else:
             dispatcher.utter_message('معذرة هذا الid غير صحيح')
             return {"id": None}
+
+
+class check_chitchat(Action):
+    def name(self) -> Text:
+        return "action_check_chitchat"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        """ it is the function which execute action_check_chitchat """
+        
+        chitchat_count = tracker.get_slot('chitchat_count')
+        if chitchat_count is None:
+            chitchat_count = 0.0
+        chitchat_count += 1.0 
+        print("Out of context count: ", chitchat_count)
+        
+        if chitchat_count >= 3.0:
+            dispatcher.utter_message('لقد خرجت عن سياق المحادثة اكثر من مرة لن يتم الرد علي رسائلك الأن.')
+            return [ConversationPaused()]
+        
+        return [SlotSet("chitchat_count", chitchat_count)]

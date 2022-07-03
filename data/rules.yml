@@ -31,5 +31,6 @@ rules:
 - rule: respond to chitchat
   steps:
   - intent: chitchat
+  - action: action_check_chitchat
   - action: utter_chitchat
-##  - action: utter_user_details_slots
+  
