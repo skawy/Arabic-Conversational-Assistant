@@ -20,6 +20,7 @@ entities:
 - id
 - subject
 - grade
+- chitchat_count
 
 slots:
   id:
@@ -28,6 +29,12 @@ slots:
   subject:
     type: text
     influence_conversation: true
+  chitchat_count:
+    type: float
+    min_value: 0.0
+    max_value: 3.0
+    influence_conversation: true
+
 
 responses:
   utter_greet:
@@ -41,7 +48,7 @@ responses:
   utter_wait:
     - text: انتظر
   utter_chitchat:
-    - text: ده سؤال خارج الموضوع التزم بالموضوع حتي لا يتم غلق المحادثة.
+    - text: ده سؤال خارج سياق المحادثة التزم بالسياق حتي لا يتم غلق المحادثة.
   utter_majors:
     - text: التخصص بيبقى على حسب المواد اللي بتحبها و حسب الGPA يعني مثلا لو حابب البرمجة ممكن تدخل CS بس لو حابب الماث و البرمجة ممكن تدخل AI لو بتحب الاحصاء و الماث و التعامل بالداتا ممكن تدخل قسم IS  ولو بتحب الداتا ستراكشرز و الاوبتيمايزيشنز ممكن تدخل قسم DS و اخر حاجة لو بتبحب السيكيوريتي و النيتووركس و الشغل الهاردوير اكثر ممكن تدخل قسم IT  و كده كده في الاخر ممكن بعد ما تدخل اي تخصص تتعلم تخصص ثاني و ده هيفيدك كده كده قدام
 
@@ -51,6 +58,7 @@ actions:
   - action_check_subject_name
   - utter_chitchat
   - validate_student_id_form
+  - action_check_chitchat
 
 forms:
   student_id_form:
