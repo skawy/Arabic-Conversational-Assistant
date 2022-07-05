@@ -1,7 +1,5 @@
 version: "2.0"
 nlu:
-  # ys2l lo 3ayz ysgl mdt math 2 hnshof ynf3 wla l2 w hnrd
-  # ys2l a a7sn ksm mmkn yd5lo
 - intent: greet
   examples: |
     - أهلا
@@ -189,7 +187,7 @@ nlu:
     - طولك قد اية؟
     - بتعمل اية دلوقتي؟
     - مقاس رجلك كام
-    - بتعمل اية حالا؟
+     بتعمل اية حالا؟-
     - كم عمرك؟
 
 - intent: ask_for_major
