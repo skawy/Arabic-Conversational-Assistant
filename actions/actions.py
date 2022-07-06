@@ -22,7 +22,7 @@ class check_subject_name(Action):
             dispatcher.utter_message('بعد أذنك دخل أسم المادة بالأنجليزى')
             return []
         
-        tracker.slots.clear()
+        # tracker.slots.clear()
         print(tracker.get_slot('subject'))
         dispatcher.utter_message('الid لو سمحت')
         return []
@@ -59,7 +59,7 @@ class ValidateUserDetailsForm(FormValidationAction):
             if subject_name is not None:
                 # if student ask for specific subject
                 message = ask_for_one_subject(subject_name, student_grades)
-                tracker.slots.clear()
+                # tracker.slots.clear()
                 dispatcher.utter_message(message)
                 return {"id": slot_value}
 

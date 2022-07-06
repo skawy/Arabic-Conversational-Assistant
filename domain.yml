@@ -25,9 +25,11 @@ entities:
 slots:
   id:
     type: text
+    auto_fill: true
     influence_conversation: true
   subject:
     type: text
+    auto_fill: true
     influence_conversation: true
   chitchat_count:
     type: float
