@@ -3,11 +3,11 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: false
 intents:
+- goodbye
 - ask_for_avialable_subject
 - student_id
 - deny
 - greet
-- goodbye
 - affirm
 - bot_challenge
 - ask_for_college_expenses
@@ -39,7 +39,7 @@ responses:
   utter_iamabot:
   - text: انا روبوت
   utter_ask_for_id:
-    - text: الid لو سمحت
+  - text: الid لو سمحت
   utter_unsatisfied:
   - text: عندك طلب اخر؟
   utter_chitchat:

@@ -75,3 +75,23 @@ stories:
   - action: utter_unsatisfied
   - intent: deny
   - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: ask_for_avialable_subject
+  - action: action_check_subject_name
+  - intent: ask_for_avialable_subject
+    entities:
+    - subject: Math3
+  - slot_was_set:
+    - subject: Math3
+  - action: action_check_subject_name
+  - intent: student_id
+    entities:
+    - id: '20180039'
+  - slot_was_set:
+    - id: '20180039'
+  - action: student_id_form
+  - action: utter_unsatisfied
+  - intent: goodbye
+  - action: utter_goodbye
