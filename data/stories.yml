@@ -42,3 +42,36 @@ stories:
     - active_loop: student_id_form
     - intent: goodbye
     - action: utter_goodbye
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_for_avialable_subject
+    entities:
+    - subject: logic design
+  - slot_was_set:
+    - subject: logic design
+  - action: action_check_subject_name
+  - intent: student_id
+    entities:
+    - id: '20180036'
+  - slot_was_set:
+    - id: '20180036'
+  - action: student_id_form
+  - active_loop: student_id_form
+  - slot_was_set:
+    - id: '20180036'
+  - slot_was_set:
+    - id: '20180036'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_satisfied
+  - intent: deny
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - action: utter_satisfied
+  - intent: deny
+  - action: utter_goodbye
