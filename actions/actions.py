@@ -4,7 +4,7 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.types import DomainDict
 import re
 from actions.schedule_handling import ask_for_one_subject, get_failed_subjects, gpa_dict, db
-from rasa_sdk.events import (SlotSet,ConversationPaused)
+from rasa_sdk.events import (SlotSet, ConversationPaused)
 
 
 
@@ -23,7 +23,14 @@ class check_subject_name(Action):
             return []
         
         # tracker.slots.clear()
-        print(tracker.get_slot('subject'))
+        id = tracker.get_slot('id')
+        print(id)
+        if id is not None:
+            student_grades = db.get_tables(id)
+            message = ask_for_one_subject(subject, student_grades)
+            dispatcher.utter_message(message)
+            return []
+
         dispatcher.utter_message('الid لو سمحت')
         return []
 
