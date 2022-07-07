@@ -3,15 +3,15 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: false
 intents:
-- goodbye
 - ask_for_avialable_schedule
-- student_id
 - ask_for_college_expenses
+- student_id
+- ask_for_avialable_subject
+- goodbye
 - greet
 - ask_for_major
 - deny
 - affirm
-- ask_for_avialable_subject
 - bot_challenge
 - chitchat
 entities:

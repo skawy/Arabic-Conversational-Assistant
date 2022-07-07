@@ -28,6 +28,9 @@ nlu:
     - خلاص شكرا
     - تسلم يبشه
     - تسلم
+    - خلاص
+    - كنسل
+    - باي باي
 - intent: affirm
   examples: |
     - ايوا
@@ -107,6 +110,7 @@ nlu:
     - [20180001](id)
     - [20180002](id)
     - [20180031](id)
+    - [20180034](id)
 - intent: bot_challenge
   examples: |
     - هل أنت روبوت؟
@@ -124,6 +128,8 @@ nlu:
     - عايز أعرف ممكن أسجل مواد ايه
     - ممكن اعمل جدول؟
     - ساعدني في الجدول
+    - جدول الكلية
+    - جدول
 - intent: ask_for_avialable_subject
   examples: |
     - ينفع اسجل مادة [object oriented programming](subject)
@@ -145,6 +151,7 @@ nlu:
     - اه ممكن اعرف ينفع اسجل مادة ولا لأ
     - [introduction to logic](subject)
     - طيب اسجل [math2](subject) ازاي
+    - اه ممكن اعرف ينفع اسجل [machine learning](subject) ولا لأ
 - intent: chitchat
   examples: |
     - اسمك اية؟
@@ -217,3 +224,5 @@ nlu:
 - intent: ask_for_college_expenses
   examples: |
     - ممكن اعرف المصاريف؟
+    - ممكن اسال عالمصاريف
+    - اه ممكن اعرف المصاريف؟
