@@ -26,10 +26,7 @@ rules:
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
-<<<<<<< Updated upstream
-=======
-  - action: utter_satisfied
->>>>>>> Stashed changes
+  - action: utter_unsatisfied
   
 - rule: respond to chitchat
   steps:

@@ -66,12 +66,12 @@ stories:
   - slot_was_set:
     - requested_slot: null
   - active_loop: null
-  - action: utter_satisfied
+  - action: utter_unsatisfied
   - intent: deny
   - action: utter_goodbye
 
 - story: interactive_story_1
   steps:
-  - action: utter_satisfied
+  - action: utter_unsatisfied
   - intent: deny
   - action: utter_goodbye

@@ -39,13 +39,9 @@ responses:
   utter_iamabot:
   - text: انا روبوت
   utter_ask_for_id:
-<<<<<<< Updated upstream
     - text: الid لو سمحت
-=======
-  - text: الid لو سمحت
-  utter_satisfied:
+  utter_unsatisfied:
   - text: عندك طلب اخر؟
->>>>>>> Stashed changes
   utter_chitchat:
   - text: ده سؤال خارج سياق المحادثة التزم بالسياق حتي لا يتم غلق المحادثة.
   utter_majors:
@@ -56,7 +52,7 @@ actions:
 - utter_chitchat
 - utter_goodbye
 - utter_greet
-- utter_satisfied
+- utter_unsatisfied
 - validate_student_id_form
 forms:
   student_id_form:
