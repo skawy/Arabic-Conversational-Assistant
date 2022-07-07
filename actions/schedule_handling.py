@@ -103,6 +103,40 @@ def get_failed_subjects(student_grades, year, gpa):
         return 'سجل الجدول الطبيعى'
 
 
+def get_all_previous_prerequisites(subject, student_grades):
+    """
+        Parameters:
+            subject: string for subject name
+            student_grades: dictionary of student's results
+
+        Return:
+            string tell student what is the prerequisites of this subject
+    """
+
+    try:
+        # get prerequisites of this subject
+        subject = map_subject_name(subject, list(bylaw.keys()))
+        subject_prerequisites = bylaw[subject]
+        if subject_prerequisites[0][0] == 'none':
+            return ''
+
+    except KeyError:
+        return subject
+
+    for i in subject_prerequisites[0]:
+        try:
+            # check he take and pass these prerequisites
+            failed = student_grades['f']
+
+            if i not in student_grades.values() or i in failed:
+                subject = i
+                subject += ', ' + get_all_previous_prerequisites(subject, student_grades)
+                return subject
+
+        except KeyError:
+            continue
+
+
 def ask_for_one_subject(subject, student_grades):
     """
         Parameters:
@@ -112,25 +146,10 @@ def ask_for_one_subject(subject, student_grades):
         Return:
             string tell student can register this subject or not
     """
-    subject = map_subject_name(subject, list(bylaw.keys()))
-    try:
-        # get prerequisites of this subject
-        subject_prerequisites = bylaw[subject]
-        if subject_prerequisites[0][0] == 'none':
-            return 'تقدر تسجلها'
 
-    except KeyError:
-        return subject
+    subject = get_all_previous_prerequisites(subject, student_grades)
 
-    for i in subject_prerequisites:
-        try:
-            # check he take and pass these prerequisites
-            failed = student_grades['f']
-
-            if i not in student_grades.values() or i in failed:
-                return f'لاز تاخد {i} الأول'
-
-        except KeyError:
-            continue
+    if subject != '':
+        return f'لازم تاخد {subject[:-2]} الأول'
 
     return 'تقدر تسجلها'
