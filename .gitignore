@@ -3,4 +3,4 @@ models/*
 components/__pycache__
 actions/__pycache__
 .vs
-.train_test_split
+train_test_split/*
