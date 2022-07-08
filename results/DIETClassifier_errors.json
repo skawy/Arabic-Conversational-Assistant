@@ -1,0 +1,71 @@
+[
+  {
+    "text": "أقدر اسجل مادةimage processing",
+    "entities": [
+      {
+        "start": 14,
+        "end": 30,
+        "value": "image processing",
+        "entity": "subject"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "أقدر اسجل مادةstatistics",
+    "entities": [
+      {
+        "start": 14,
+        "end": 24,
+        "value": "statistics",
+        "entity": "subject"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "أقدر اسجل مادةstructured programming",
+    "entities": [
+      {
+        "start": 14,
+        "end": 36,
+        "value": "structured programming",
+        "entity": "subject"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "subject",
+        "start": 25,
+        "end": 36,
+        "confidence_entity": 0.43972116708755493,
+        "value": "programming",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "أقدر اسجل مادةmachine learning",
+    "entities": [
+      {
+        "start": 14,
+        "end": 30,
+        "value": "machine learning",
+        "entity": "subject"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "أقدر اسجل مادةmath",
+    "entities": [
+      {
+        "start": 14,
+        "end": 18,
+        "value": "math",
+        "entity": "subject"
+      }
+    ],
+    "predicted_entities": []
+  }
+]
