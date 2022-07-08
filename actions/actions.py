@@ -76,7 +76,7 @@ class ValidateUserDetailsForm(FormValidationAction):
                 dispatcher.utter_message(best_schedule)
                 return {"id": slot_value}
 
-            dispatcher.utter_message('get_schedule(year)')
+            dispatcher.utter_message(get_schedule(year))
             return {"id": slot_value}
 
         else:
