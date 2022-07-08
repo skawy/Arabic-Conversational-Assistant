@@ -3,7 +3,7 @@ from rasa_sdk import Action, Tracker, FormValidationAction
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.types import DomainDict
 import re
-from actions.schedule_handling import ask_for_one_subject, get_failed_subjects, gpa_dict, db
+from actions.schedule_handling import ask_for_one_subject, get_failed_subjects, gpa_dict, db, get_schedule
 from rasa_sdk.events import (SlotSet, ConversationPaused)
 
 
@@ -26,8 +26,8 @@ class check_subject_name(Action):
         id = tracker.get_slot('id')
         print(id)
         if id is not None:
-            student_grades = db.get_tables(id)
-            message = ask_for_one_subject(subject, student_grades)
+            student_grades, subjects = db.get_tables(id)
+            message = ask_for_one_subject(subject, student_grades, subjects)
             dispatcher.utter_message(message)
             return []
 
@@ -61,18 +61,22 @@ class ValidateUserDetailsForm(FormValidationAction):
             subject_name = tracker.get_slot('subject')
             gpa = student_information[1]
             year = student_information[-1] + student_information[-2]
-            student_grades = db.get_tables(slot_value)
+            student_grades, subjects = db.get_tables(slot_value)
 
             if subject_name is not None:
                 # if student ask for specific subject
-                message = ask_for_one_subject(subject_name, student_grades)
-                # tracker.slots.clear()
+                message = ask_for_one_subject(subject_name, student_grades, subjects)
                 dispatcher.utter_message(message)
                 return {"id": slot_value}
 
-            # if student ask about schedule
-            best_schedule = get_failed_subjects(student_grades, year, gpa)
-            dispatcher.utter_message(best_schedule)
+
+            if 'f' not in student_grades.keys():
+                failed_subject = student_grades['f']
+                best_schedule = get_failed_subjects(failed_subject, year, gpa)
+                dispatcher.utter_message(best_schedule)
+                return {"id": slot_value}
+
+            dispatcher.utter_message('get_schedule(year)')
             return {"id": slot_value}
 
         else:
