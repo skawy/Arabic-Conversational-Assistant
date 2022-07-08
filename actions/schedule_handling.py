@@ -100,7 +100,13 @@ def get_failed_subjects(student_grades, year, gpa):
         best_schedule = get_best_schedule(student_schedule, failed_subject, gpa)
         return best_schedule
     except KeyError:
-        return 'سجل الجدول الطبيعى'
+        # return 'سجل الجدول الطبيعى'
+        best_schedule = ''
+        for i in student_schedule:
+            if i is not None:
+                best_schedule += i + ', '
+                print("gduaaall:", best_schedule)
+        return best_schedule
 
 
 def get_all_previous_prerequisites(subject, student_grades):
@@ -149,7 +155,7 @@ def ask_for_one_subject(subject, student_grades):
 
     subject = get_all_previous_prerequisites(subject, student_grades)
 
-    if subject != '':
+    if subject != '' and subject != None:
         return f'لازم تاخد {subject[:-2]} الأول'
 
     return 'تقدر تسجلها'

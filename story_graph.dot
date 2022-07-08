@@ -2,8 +2,26 @@ digraph  {
 0 [class="start active", fillcolor=green, fontsize=12, label=START, style=filled];
 "-1" [class=end, fillcolor=red, fontsize=12, label=END, style=filled];
 1 [class=active, fontsize=12, label=action_session_start];
-2 [class="intent dashed active", label="  ?  ", shape=rect];
+2 [class=active, fontsize=12, label=utter_majors];
+3 [class=active, fontsize=12, label=action_unlikely_intent];
+4 [class=active, fontsize=12, label=utter_goodbye];
+5 [class=active, fontsize=12, label=utter_ask_for_id];
+6 [class=active, fontsize=12, label=student_id_form];
+7 [class="intent dashed active", label="  ?  ", shape=rect];
+8 [class="intent active", fillcolor=lightblue, label="عايز اعرف عن الاقسام", shape=rect, style=filled];
+9 [class="intent active", fillcolor=lightblue, label="تمام شكرا", shape=rect, style=filled];
+10 [class="intent active", fillcolor=lightblue, label="لو سمحت كنت حابب اعرف ينفع اسجل مواد اية", shape=rect, style=filled];
+11 [class="intent active", fillcolor=lightblue, label=20180311, shape=rect, style=filled];
 0 -> "-1"  [class="", key=NONE, label=""];
 0 -> 1  [class=active, key=NONE, label=""];
-1 -> 2  [class=active, key=NONE, label=""];
+1 -> 8  [class=active, key=0];
+2 -> 9  [class=active, key=0];
+3 -> 4  [class=active, key=NONE, label=""];
+4 -> 10  [class=active, key=0];
+5 -> 11  [class=active, key=0];
+6 -> 7  [class=active, key=NONE, label=""];
+8 -> 2  [class=active, key=0];
+9 -> 3  [class=active, key=0];
+10 -> 5  [class=active, key=0];
+11 -> 6  [class=active, key=0];
 }

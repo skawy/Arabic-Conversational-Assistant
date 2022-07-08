@@ -42,3 +42,174 @@ stories:
     - active_loop: student_id_form
     - intent: goodbye
     - action: utter_goodbye
+    
+- story: entering id then ask for subject 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: student_id
+    entities:
+    - id: '20180045'
+  - slot_was_set:
+    - id: '20180045'
+  - action: student_id_form
+  - active_loop: student_id_form
+  - slot_was_set:
+    - id: '20180045'
+  - slot_was_set:
+    - id: '20180045'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - intent: ask_for_avialable_subject
+    entities:
+    - subject: data structures
+  - slot_was_set:
+    - subject: data structures
+  - action: action_check_subject_name
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: long story ask for schedual then 2 subjects
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_for_avialable_schedule
+  - action: utter_ask_for_id
+  - intent: student_id
+    entities:
+    - id: '20180045'
+  - slot_was_set:
+    - id: '20180045'
+  - action: student_id_form
+  - active_loop: student_id_form
+  - slot_was_set:
+    - id: '20180045'
+  - slot_was_set:
+    - id: '20180045'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - intent: ask_for_avialable_subject
+    entities:
+    - subject: introduction to machine learning
+  - slot_was_set:
+    - subject: introduction to machine learning
+  - action: action_check_subject_name
+  - intent: ask_for_avialable_subject
+    entities:
+    - subject: math3
+  - slot_was_set:
+    - subject: math3
+  - action: action_check_subject_name
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: ask for subject
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_for_avialable_subject
+    entities:
+    - subject: data base 1
+  - slot_was_set:
+    - subject: data base 1
+  - action: action_check_subject_name
+  - intent: student_id
+    entities:
+    - id: '20180045'
+  - slot_was_set:
+    - id: '20180045'
+  - action: student_id_form
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: entering id after greeting then ask for subject
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: student_id
+    entities:
+    - id: '20180031'
+  - slot_was_set:
+    - id: '20180031'
+  - action: student_id_form
+  - active_loop: student_id_form
+  - slot_was_set:
+    - id: '20180031'
+  - slot_was_set:
+    - id: '20180031'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - intent: ask_for_avialable_subject
+    entities:
+    - subject: math3
+  - slot_was_set:
+    - subject: math3
+  - action: action_check_subject_name
+  - slot_was_set:
+    - subject: ''
+  - intent: ask_for_avialable_subject
+    entities:
+    - subject: data structures
+  - slot_was_set:
+    - subject: data structures
+  - action: action_check_subject_name
+  - slot_was_set:
+    - subject: ''
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: entering id first then ask for subject 2
+  steps:
+  - intent: student_id
+    entities:
+    - id: '20180039'
+  - slot_was_set:
+    - id: '20180039'
+  - action: student_id_form
+  - active_loop: student_id_form
+  - slot_was_set:
+    - id: '20180039'
+  - slot_was_set:
+    - id: '20180039'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - intent: ask_for_avialable_subject
+    entities:
+    - subject: information retrival
+  - slot_was_set:
+    - subject: information retrival
+  - action: action_check_subject_name
+  - slot_was_set:
+    - subject: null
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: asking for major 1
+  steps:
+  - intent: ask_for_major
+  - action: utter_majors
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: asking for schedule
+  steps:
+  - intent: ask_for_avialable_schedule
+  - action: utter_ask_for_id
+  - intent: student_id
+    entities:
+    - id: '20180311'
+  - slot_was_set:
+    - id: '20180311'
+  - action: student_id_form
+  - active_loop: student_id_form
+  - slot_was_set:
+    - id: '20180311'
+  - slot_was_set:
+    - id: '20180311'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null

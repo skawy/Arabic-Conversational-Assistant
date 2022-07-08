@@ -2,42 +2,35 @@ version: '2.0'
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: false
-
 intents:
-- greet
+- ask_for_avialable_schedule
 - goodbye
+- ask_for_major
 - student_id
+- ask_for_avialable_subject
+- greet
 - affirm
 - deny
 - bot_challenge
 - ask_for_college_expenses
-- ask_for_avialable_schedule
 - chitchat
-- ask_for_major
-- ask_for_avialable_subject
-
 entities:
+- chitchat_count
+- grade
 - id
 - subject
-- grade
-- chitchat_count
-
 slots:
   id:
     type: text
-    auto_fill: true
     influence_conversation: true
   subject:
     type: text
-    auto_fill: true
     influence_conversation: true
   chitchat_count:
     type: float
-    min_value: 0.0
-    max_value: 3.0
     influence_conversation: true
-
-
+    max_value: 3.0
+    min_value: 0.0
 responses:
   utter_greet:
   - text: عليكم السلام اهلا بحضرتك
@@ -46,20 +39,20 @@ responses:
   utter_iamabot:
   - text: انا روبوت
   utter_ask_for_id:
-    - text: الid لو سمحت
+  - text: الid لو سمحت
   utter_chitchat:
-    - text: ده سؤال خارج سياق المحادثة التزم بالسياق حتي لا يتم غلق المحادثة.
+  - text: ده سؤال خارج سياق المحادثة التزم بالسياق حتي لا يتم غلق المحادثة.
   utter_majors:
-    - text: التخصص بيبقى على حسب المواد اللي بتحبها و حسب الGPA يعني مثلا لو حابب البرمجة ممكن تدخل CS بس لو حابب الماث و البرمجة ممكن تدخل AI لو بتحب الاحصاء و الماث و التعامل بالداتا ممكن تدخل قسم IS  ولو بتحب الداتا ستراكشرز و الاوبتيمايزيشنز ممكن تدخل قسم DS و اخر حاجة لو بتبحب السيكيوريتي و النيتووركس و الشغل الهاردوير اكثر ممكن تدخل قسم IT  و كده كده في الاخر ممكن بعد ما تدخل اي تخصص تتعلم تخصص ثاني و ده هيفيدك كده كده قدام
-
+  - text: التخصص بيبقى على حسب المواد اللي بتحبها و حسب الGPA يعني مثلا لو حابب البرمجة ممكن تدخل CS بس لو حابب الماث و البرمجة ممكن تدخل AI لو بتحب الاحصاء و الماث و التعامل بالداتا ممكن تدخل قسم IS  ولو بتحب الداتا ستراكشرز و الاوبتيمايزيشنز ممكن تدخل قسم DS و اخر حاجة لو بتبحب السيكيوريتي و النيتووركس و الشغل الهاردوير اكثر ممكن تدخل قسم IT  و كده كده في الاخر ممكن بعد ما تدخل اي تخصص تتعلم تخصص ثاني و ده هيفيدك كده كده قدام
 actions:
-  - utter_goodbye
-  - utter_greet
-  - action_check_subject_name
-  - utter_chitchat
-  - validate_student_id_form
-  - action_check_chitchat
-
+- action_check_chitchat
+- action_check_subject_name
+- utter_ask_for_id
+- utter_chitchat
+- utter_goodbye
+- utter_greet
+- utter_majors
+- validate_student_id_form
 forms:
   student_id_form:
     required_slots:

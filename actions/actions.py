@@ -29,7 +29,7 @@ class check_subject_name(Action):
             student_grades = db.get_tables(id)
             message = ask_for_one_subject(subject, student_grades)
             dispatcher.utter_message(message)
-            return []
+            return [SlotSet("subject",None)]
 
         dispatcher.utter_message('الid لو سمحت')
         return []
