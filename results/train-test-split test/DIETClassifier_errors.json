@@ -1,0 +1,198 @@
+[
+  {
+    "text": "ID:20180342",
+    "entities": [
+      {
+        "start": 3,
+        "end": 11,
+        "value": "20180342",
+        "entity": "id"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "the ID:20160023",
+    "entities": [
+      {
+        "start": 7,
+        "end": 15,
+        "value": "20160023",
+        "entity": "id"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "id:20210017",
+    "entities": [
+      {
+        "start": 3,
+        "end": 11,
+        "value": "20210017",
+        "entity": "id"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "ok the id is20220203",
+    "entities": [
+      {
+        "start": 12,
+        "end": 20,
+        "value": "20220203",
+        "entity": "id"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "ID:20180031",
+    "entities": [
+      {
+        "start": 3,
+        "end": 11,
+        "value": "20180031",
+        "entity": "id"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "أقدر اسجل مادةimage processing",
+    "entities": [
+      {
+        "start": 14,
+        "end": 30,
+        "value": "image processing",
+        "entity": "subject"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "أقدر اسجل مادةstatistics",
+    "entities": [
+      {
+        "start": 14,
+        "end": 24,
+        "value": "statistics",
+        "entity": "subject"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "أقدر اسجل مادةstructured programming",
+    "entities": [
+      {
+        "start": 14,
+        "end": 36,
+        "value": "structured programming",
+        "entity": "subject"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "أقدر اسجل مادةmachine learning",
+    "entities": [
+      {
+        "start": 14,
+        "end": 30,
+        "value": "machine learning",
+        "entity": "subject"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "أقدر اسجل مادةmath",
+    "entities": [
+      {
+        "start": 14,
+        "end": 18,
+        "value": "math",
+        "entity": "subject"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "تمام  هل ينفع اسجل introduction to machine learning",
+    "entities": [
+      {
+        "start": 19,
+        "end": 51,
+        "value": "introduction to machine learning",
+        "entity": "subject"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "subject",
+        "start": 19,
+        "end": 34,
+        "confidence_entity": 0.9859548211097717,
+        "value": "introduction to",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "سجلي ماث 3",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "id",
+        "start": 9,
+        "end": 10,
+        "confidence_entity": 0.9930324554443359,
+        "value": "3",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "math 3",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "math 3",
+        "entity": "subject"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "subject",
+        "start": 0,
+        "end": 4,
+        "confidence_entity": 0.9933502078056335,
+        "value": "math",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "id",
+        "start": 5,
+        "end": 6,
+        "confidence_entity": 0.949177622795105,
+        "value": "3",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "اه ممكن اعرف ينفع اسجل machine learning ولا لأ",
+    "entities": [
+      {
+        "start": 23,
+        "end": 39,
+        "value": "machine learning",
+        "entity": "subject"
+      }
+    ],
+    "predicted_entities": []
+  }
+]
