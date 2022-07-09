@@ -1,0 +1,143 @@
+version: "2.0"
+stories:
+- story: Testing programming 1 (.\tests\test_stories.yml)
+  steps:
+  - intent: ask_for_avialable_subject
+    entities:
+    - subject: programming 1
+  - slot_was_set:
+    - subject: programming 1
+  - slot_was_set:
+    - subject: programming 1
+  - action: action_check_subject_name
+  - intent: student_id
+    entities:
+    - id: '20180001'
+  - slot_was_set:
+    - id: '20180001'
+  - slot_was_set:
+    - id: '20180001'
+  - action: student_id_form
+  - active_loop: student_id_form
+  - intent: goodbye  # predicted: affirm: تمام يا معلم
+  - action: utter_goodbye
+- story: Testing math 1 (.\tests\test_stories.yml)
+  steps:
+  - intent: ask_for_avialable_subject
+    entities:
+    - subject: math 1
+  - slot_was_set:
+    - subject: math 1
+  - slot_was_set:
+    - subject: math 1
+  - action: action_check_subject_name
+  - intent: student_id
+    entities:
+    - id: '20180001'
+  - slot_was_set:
+    - id: '20180001'
+  - slot_was_set:
+    - id: '20180001'
+  - action: student_id_form
+  - active_loop: student_id_form
+  - intent: goodbye  # predicted: affirm: تمام
+  - action: utter_goodbye
+- story: happy path 1 (.\tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_for_avialable_schedule
+  - action: utter_ask_for_id  # predicted: action_get_schedule
+  - intent: student_id
+    entities:
+    - id: '20180031'
+  - slot_was_set:
+    - id: '20180031'
+  - slot_was_set:
+    - id: '20180031'
+  - action: student_id_form
+  - active_loop: student_id_form
+  - intent: goodbye  # predicted: greet: تمام زى الفل
+  - action: utter_goodbye
+- story: Testing another with much talk (.\tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_for_avialable_schedule
+  - action: utter_ask_for_id  # predicted: action_get_schedule
+  - intent: student_id
+    entities:
+    - id: '20180002'
+  - slot_was_set:
+    - id: '20180002'
+  - slot_was_set:
+    - id: '20180002'
+  - action: student_id_form
+  - active_loop: student_id_form
+  - intent: goodbye  # predicted: greet: تمام زى الفل
+  - action: utter_goodbye
+- story: Testing another id with not much talk (.\tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_for_avialable_schedule
+  - action: utter_ask_for_id  # predicted: action_get_schedule
+  - intent: student_id
+    entities:
+    - id: '20180002'
+  - slot_was_set:
+    - id: '20180002'
+  - slot_was_set:
+    - id: '20180002'
+  - action: student_id_form
+  - active_loop: student_id_form
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Testing statistics with further ado (.\tests\test_stories.yml)
+  steps:
+  - intent: chitchat  # predicted: ask_for_major: ايه يا بوت يا جامد انتا
+  - action: action_check_chitchat
+  - action: utter_chitchat
+  - intent: chitchat  # predicted: ask_for_avialable_schedule: يا حلوة يا بلحة يا مقمعة
+  - action: action_check_chitchat
+  - action: utter_chitchat
+  - intent: ask_for_avialable_subject
+    entities:
+    - subject: statistics
+  - slot_was_set:
+    - subject: statistics
+  - slot_was_set:
+    - subject: statistics
+  - action: action_check_subject_name  # predicted: action_unlikely_intent
+  - intent: student_id
+    entities:
+    - id: '20180001'
+  - slot_was_set:
+    - id: '20180001'
+  - slot_was_set:
+    - id: '20180001'
+  - action: student_id_form
+  - active_loop: student_id_form
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Testing statistics (.\tests\test_stories.yml)
+  steps:
+  - intent: ask_for_avialable_subject
+    entities:
+    - subject: statistics
+  - slot_was_set:
+    - subject: statistics
+  - slot_was_set:
+    - subject: statistics
+  - action: action_check_subject_name
+  - intent: student_id
+    entities:
+    - id: '20180001'
+  - slot_was_set:
+    - id: '20180001'
+  - slot_was_set:
+    - id: '20180001'
+  - action: student_id_form
+  - active_loop: student_id_form
+  - intent: goodbye  # predicted: affirm: تمام اوى
+  - action: utter_goodbye

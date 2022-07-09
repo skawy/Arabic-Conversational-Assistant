@@ -1,91 +1,247 @@
-#### This file contains tests to evaluate that your bot behaves as expected.
-#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
-
+version: "2.0"
 stories:
-- story: happy path 1
-  steps:
-  - user: |
-      hello there!
-    intent: greet
-  - action: utter_greet
-  - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
+  - story: happy path 1
+    steps:
+      - user: أهلا
+        intent: greet
+      - action: utter_greet
+      - user: عايز اعرف المواد المتاحة ليا
+        intent: ask_for_avialable_schedule
+      - action: utter_ask_for_id
+      - user: |
+          [20180031]{"entity": "id", "value": "20180031"}
+        intent: student_id
+      - slot_was_set:
+          - id: "20180031"
+      - action: student_id_form
+      - active_loop: student_id_form
+      - user: تمام زى الفل
+        intent: goodbye
+      - action: utter_goodbye
 
-- story: happy path 2
-  steps:
-  - user: |
-      hello there!
-    intent: greet
-  - action: utter_greet
-  - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
-  - user: |
-      bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
+  - story: Testing another with much talk
+    steps:
+      - user: أهلا
+        intent: greet
+      - action: utter_greet
+      - user: عايز اعرف المواد المتاحة ليا
+        intent: ask_for_avialable_schedule
+      - action: utter_ask_for_id
+      - user: |
+          ده ال id بتاعى اهو [20180002]{"entity": "id", "value": "20180002"}
+        intent: student_id
+      - slot_was_set:
+          - id: "20180002"
+      - action: student_id_form
+      - active_loop: student_id_form
+      - user: تمام زى الفل
+        intent: goodbye
+      - action: utter_goodbye
 
-- story: sad path 1
-  steps:
-  - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      yes
-    intent: affirm
-  - action: utter_happy
+  - story: Testing another id with not much talk
+    steps:
+      - user: أهلا
+        intent: greet
+      - action: utter_greet
+      - user: عايز اعرف المواد المتاحة ليا
+        intent: ask_for_avialable_schedule
+      - action: utter_ask_for_id
+      - user: |
+          [20180002]{"entity": "id", "value": "20180002"}
+        intent: student_id
+      - slot_was_set:
+          - id: "20180002"
+      - action: student_id_form
+      - active_loop: student_id_form
+      - user: تمام شكرا
+        intent: goodbye
+      - action: utter_goodbye
 
-- story: sad path 2
-  steps:
-  - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      not really
-    intent: deny
-  - action: utter_goodbye
+  - story: Testing statistics with further ado
+    steps:
+      - user: |
+          ايه يا بوت يا جامد انتا
+        intent: chitchat
+      - action: action_check_chitchat
+      - action: utter_chitchat
+      - user: |
+          يا حلوة يا بلحة يا مقمعة
+        intent: chitchat
+      - action: action_check_chitchat
+      - action: utter_chitchat
+      - user: |
+          أقدر اسجل مادة [statistics]{"entity": "subject", "value": "statistics"}
+        intent: ask_for_avialable_subject
+      - slot_was_set:
+          - subject: "statistics"
+      - action: action_check_subject_name
+      - user: |
+          [20180001]{"entity": "id", "value": "20180001"}
+        intent: student_id
+      - slot_was_set:
+          - id: "20180001"
+      - action: student_id_form
+      - active_loop: student_id_form
+      - user: |
+          تمام شكرا
+        intent: goodbye
+      - action: utter_goodbye
 
-- story: sad path 3
-  steps:
-  - user: |
-      hi
-    intent: greet
-  - action: utter_greet
-  - user: |
-      very terrible
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      no
-    intent: deny
-  - action: utter_goodbye
+  - story: Testing statistics
+    steps:
+      - user: |
+          أقدر اسجل مادة [statistics]{"entity": "subject", "value": "statistics"}
+        intent: ask_for_avialable_subject
+      - slot_was_set:
+          - subject: "statistics"
+      - action: action_check_subject_name
+      - user: |
+          [20180001]{"entity": "id", "value": "20180001"}
+        intent: student_id
+      - slot_was_set:
+          - id: "20180001"
+      - action: student_id_form
+      - active_loop: student_id_form
+      - user: |
+          تمام اوى
+        intent: goodbye
+      - action: utter_goodbye
 
-- story: say goodbye
-  steps:
-  - user: |
-      bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
+  - story: Testing math
+    steps:
+      - user: |
+          عاوز مادة [math]{"entity": "subject", "value": "math"}
+        intent: ask_for_avialable_subject
+      - slot_was_set:
+          - subject: "math"
+      - action: action_check_subject_name
+      - user: |
+          [20180001]{"entity": "id", "value": "20180001"}
+        intent: student_id
+      - slot_was_set:
+          - id: "20180001"
+      - action: student_id_form
+      - active_loop: student_id_form
+      - user: |
+          ممتاز شكرا
+        intent: goodbye
+      - action: utter_goodbye
 
-- story: bot challenge
-  steps:
-  - user: |
-      are you a bot?
-    intent: bot_challenge
-  - action: utter_iamabot
+  - story: Testing object oriented programming
+    steps:
+      - user: |
+          يا ريت لو اسجل [object oriented programming]{"entity": "subject", "value": "object oriented programming"}
+        intent: ask_for_avialable_subject
+      - slot_was_set:
+          - subject: "object oriented programming"
+      - action: action_check_subject_name
+      - user: |
+          [20180001]{"entity": "id", "value": "20180001"}
+        intent: student_id
+      - slot_was_set:
+          - id: "20180001"
+      - action: student_id_form
+      - active_loop: student_id_form
+      - user: |
+          تمام شكرا
+        intent: goodbye
+      - action: utter_goodbye
+
+  - story: Testing structured programming
+    steps:
+      - user: |
+          لو تسمح انا نفسى اسجل [structured programming]{"entity": "subject", "value": "structured programming"}
+        intent: ask_for_avialable_subject
+      - slot_was_set:
+          - subject: "structured programming"
+      - action: action_check_subject_name
+      - user: |
+          [20180001]{"entity": "id", "value": "20180001"}
+        intent: student_id
+      - slot_was_set:
+          - id: "20180001"
+      - action: student_id_form
+      - active_loop: student_id_form
+      - user: |
+          شكرا
+        intent: goodbye
+      - action: utter_goodbye
+
+  - story: Testing statistics and propabitity
+    steps:
+      - user: |
+          طب ينفع اسجل [statistiscs and propabitity]{"entity": "subject", "value": "statistiscs and propabitity"}
+        intent: ask_for_avialable_subject
+      - slot_was_set:
+          - subject: "statistiscs and propabitity"
+      - action: action_check_subject_name
+      - user: |
+          [20180001]{"entity": "id", "value": "20180001"}
+        intent: student_id
+      - slot_was_set:
+          - id: "20180001"
+      - action: student_id_form
+      - active_loop: student_id_form
+      - user: |
+          اشطا
+        intent: goodbye
+      - action: utter_goodbye
+
+  - story: Testing programming 1
+    steps:
+      - user: |
+          هوا انا أقدر اسجل مادة [programming 1]{"entity": "subject", "value": "programming 1"}
+        intent: ask_for_avialable_subject
+      - slot_was_set:
+          - subject: "programming 1"
+      - action: action_check_subject_name
+      - user: |
+          [20180001]{"entity": "id", "value": "20180001"}
+        intent: student_id
+      - slot_was_set:
+          - id: "20180001"
+      - action: student_id_form
+      - active_loop: student_id_form
+      - user: |
+          تمام يا معلم
+        intent: goodbye
+      - action: utter_goodbye
+
+  - story: Testing math 1
+    steps:
+      - user: |
+          أقدر اسجل مادة [math 1]{"entity": "subject", "value": "math 1"}
+        intent: ask_for_avialable_subject
+      - slot_was_set:
+          - subject: "math 1"
+      - action: action_check_subject_name
+      - user: |
+          [20180001]{"entity": "id", "value": "20180001"}
+        intent: student_id
+      - slot_was_set:
+          - id: "20180001"
+      - action: student_id_form
+      - active_loop: student_id_form
+      - user: |
+          تمام
+        intent: goodbye
+      - action: utter_goodbye
+
+  - story: Bot challenging
+    steps:
+      - user: |
+          هل أنت روبوت؟
+        intent: bot_challenge
+      - action: utter_iamabot
+
+  - story: college_expenses
+    steps:
+      - user: |
+          ممكن اعرف المصاريف؟
+        intent: ask_for_college_expenses
+      - action: utter_expenses
+      - action: utter_unsatisfied
+      - user: |
+          خلاص شكرا
+        intent: goodbye
+      - action: utter_goodbye
