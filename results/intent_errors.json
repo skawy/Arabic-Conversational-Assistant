@@ -1,10 +1,322 @@
 [
   {
-    "text": "تمام",
-    "intent": "affirm",
+    "text": "هاي ممكن مساعدة",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "chitchat",
+      "confidence": 0.6420342326164246
+    }
+  },
+  {
+    "text": "تسلم يبشه",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.30169790983200073
+    }
+  },
+  {
+    "text": "كنسل",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.46836236119270325
+    }
+  },
+  {
+    "text": "مش كدا",
+    "intent": "deny",
     "intent_prediction": {
       "name": "goodbye",
-      "confidence": 0.6391333341598511
+      "confidence": 0.4326310157775879
+    }
+  },
+  {
+    "text": "لا شكرا",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.9948882460594177
+    }
+  },
+  {
+    "text": "لا الف شكر",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.8321574926376343
+    }
+  },
+  {
+    "text": "ok the id is20220203",
+    "intent": "student_id",
+    "intent_prediction": {
+      "name": "ask_for_avialable_subject",
+      "confidence": 0.7918446660041809
+    }
+  },
+  {
+    "text": "لو سمحت كنت حابب اعرف ينفع اسجل مواد اية",
+    "intent": "ask_for_avialable_schedule",
+    "intent_prediction": {
+      "name": "chitchat",
+      "confidence": 0.9821573495864868
+    }
+  },
+  {
+    "text": "ممكن اعمل جدول؟",
+    "intent": "ask_for_avialable_schedule",
+    "intent_prediction": {
+      "name": "chitchat",
+      "confidence": 0.6877504587173462
+    }
+  },
+  {
+    "text": "اية افضل جدول لي؟\\",
+    "intent": "ask_for_avialable_schedule",
+    "intent_prediction": {
+      "name": "chitchat",
+      "confidence": 0.9713220000267029
+    }
+  },
+  {
+    "text": "اية افضل جدول لي؟",
+    "intent": "ask_for_avialable_schedule",
+    "intent_prediction": {
+      "name": "chitchat",
+      "confidence": 0.9713220000267029
+    }
+  },
+  {
+    "text": "اقدر اسجل مواد اية",
+    "intent": "ask_for_avialable_schedule",
+    "intent_prediction": {
+      "name": "ask_for_avialable_subject",
+      "confidence": 0.5031551718711853
+    }
+  },
+  {
+    "text": "اية المواد الي امفروض اسجلها",
+    "intent": "ask_for_avialable_schedule",
+    "intent_prediction": {
+      "name": "chitchat",
+      "confidence": 0.3604685068130493
+    }
+  },
+  {
+    "text": "جدولي اية؟",
+    "intent": "ask_for_avialable_schedule",
+    "intent_prediction": {
+      "name": "chitchat",
+      "confidence": 0.9974357485771179
+    }
+  },
+  {
+    "text": "سجلي ماث 3",
+    "intent": "ask_for_avialable_subject",
+    "intent_prediction": {
+      "name": "student_id",
+      "confidence": 0.9430931806564331
+    }
+  },
+  {
+    "text": "سجلي موادي لو سمحت",
+    "intent": "ask_for_avialable_subject",
+    "intent_prediction": {
+      "name": "ask_for_avialable_schedule",
+      "confidence": 0.5312077403068542
+    }
+  },
+  {
+    "text": "اه ممكن اعرف ينفع اسجل مادة ولا لأ",
+    "intent": "ask_for_avialable_subject",
+    "intent_prediction": {
+      "name": "chitchat",
+      "confidence": 0.598167896270752
+    }
+  },
+  {
+    "text": "ndsfljsadfdonf",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.4031642973423004
+    }
+  },
+  {
+    "text": "weoi   rwvk v",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.607671856880188
+    }
+  },
+  {
+    "text": "fdsfkasioefjdbvsdknbsdjbvsdjfbadsiofhasoifhoifds",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "ask_for_avialable_subject",
+      "confidence": 0.9603150486946106
+    }
+  },
+  {
+    "text": "jfsaljfnklsdfaldkjf",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.5593458414077759
+    }
+  },
+  {
+    "text": "dkfsdfknsdknion",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "ask_for_avialable_subject",
+      "confidence": 0.3863510191440582
+    }
+  },
+  {
+    "text": "loll",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.9235831499099731
+    }
+  },
+  {
+    "text": "xd",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.9127723574638367
+    }
+  },
+  {
+    "text": "XDD",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.8841402530670166
+    }
+  },
+  {
+    "text": "لول",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.7256801724433899
+    }
+  },
+  {
+    "text": "هههههههههههه",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.5314719676971436
+    }
+  },
+  {
+    "text": "الووووووووو",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.5649729371070862
+    }
+  },
+  {
+    "text": "شنىبشيسبلاه",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.30607858300209045
+    }
+  },
+  {
+    "text": "توووووووووووووووووت",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.7390705943107605
+    }
+  },
+  {
+    "text": "asjfnksljfnds",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.5689287185668945
+    }
+  },
+  {
+    "text": "nsd;fnsdjfadslf",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "ask_for_avialable_subject",
+      "confidence": 0.42475950717926025
+    }
+  },
+  {
+    "text": "jasnfjafsd",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.4715898334980011
+    }
+  },
+  {
+    "text": "sdfndkjfjnd",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.6245439052581787
+    }
+  },
+  {
+    "text": "ioejffkjvvdsj",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.8886937499046326
+    }
+  },
+  {
+    "text": "oafaonknsdvasvkmds",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "ask_for_avialable_subject",
+      "confidence": 0.9624584317207336
+    }
+  },
+  {
+    "text": "#$%^&*%^",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.5933644771575928
+    }
+  },
+  {
+    "text": "ممكن اعرف المصاريف؟",
+    "intent": "ask_for_college_expenses",
+    "intent_prediction": {
+      "name": "chitchat",
+      "confidence": 0.9957197904586792
+    }
+  },
+  {
+    "text": "ممكن اسال عالمصاريف",
+    "intent": "ask_for_college_expenses",
+    "intent_prediction": {
+      "name": "chitchat",
+      "confidence": 0.7854666113853455
+    }
+  },
+  {
+    "text": "اه ممكن اعرف المصاريف؟",
+    "intent": "ask_for_college_expenses",
+    "intent_prediction": {
+      "name": "chitchat",
+      "confidence": 0.9869672060012817
     }
   }
 ]

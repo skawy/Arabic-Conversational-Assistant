@@ -1,27 +1,4 @@
 {
-  "ask_for_major": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 12,
-    "confused_with": {}
-  },
-  "affirm": {
-    "precision": 1.0,
-    "recall": 0.8571428571428571,
-    "f1-score": 0.923076923076923,
-    "support": 7,
-    "confused_with": {
-      "goodbye": 1
-    }
-  },
-  "student_id": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 53,
-    "confused_with": {}
-  },
   "bot_challenge": {
     "precision": 1.0,
     "recall": 1.0,
@@ -29,59 +6,87 @@
     "support": 6,
     "confused_with": {}
   },
-  "ask_for_avialable_subject": {
+  "ask_for_major": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 10,
-    "confused_with": {}
-  },
-  "deny": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 5,
+    "support": 15,
     "confused_with": {}
   },
   "greet": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 10,
+    "support": 18,
+    "confused_with": {}
+  },
+  "affirm": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 7,
+    "confused_with": {}
+  },
+  "student_id": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 64,
     "confused_with": {}
   },
   "ask_for_avialable_schedule": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 5,
+    "support": 17,
+    "confused_with": {}
+  },
+  "deny": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 10,
+    "confused_with": {}
+  },
+  "ask_for_avialable_subject": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 34,
     "confused_with": {}
   },
   "goodbye": {
-    "precision": 0.9,
+    "precision": 1.0,
     "recall": 1.0,
-    "f1-score": 0.9473684210526316,
-    "support": 9,
+    "f1-score": 1.0,
+    "support": 18,
     "confused_with": {}
   },
   "chitchat": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 51,
+    "support": 77,
     "confused_with": {}
   },
-  "accuracy": 0.9940476190476191,
+  "ask_for_college_expenses": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3,
+    "confused_with": {}
+  },
+  "accuracy": 1.0,
   "macro avg": {
-    "precision": 0.99,
-    "recall": 0.9857142857142858,
-    "f1-score": 0.9870445344129555,
-    "support": 168
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 269
   },
   "weighted avg": {
-    "precision": 0.9946428571428572,
-    "recall": 0.9940476190476191,
-    "f1-score": 0.9939753229226914,
-    "support": 168
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 269
   }
 }
