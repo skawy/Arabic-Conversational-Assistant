@@ -1,0 +1,258 @@
+[
+  {
+    "text": "خلاص",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.38158413767814636
+    }
+  },
+  {
+    "text": "تمام",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.4822095036506653
+    }
+  },
+  {
+    "text": "سجلي ماث 3",
+    "intent": "ask_for_avialable_subject",
+    "intent_prediction": {
+      "name": "student_id",
+      "confidence": 0.9853857755661011
+    }
+  },
+  {
+    "text": "math 3",
+    "intent": "ask_for_avialable_subject",
+    "intent_prediction": {
+      "name": "student_id",
+      "confidence": 0.5230181217193604
+    }
+  },
+  {
+    "text": "محمد صلاح افضل ولا هالاند",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "ask_for_avialable_schedule",
+      "confidence": 0.4916718304157257
+    }
+  },
+  {
+    "text": "weoi   rwvk v",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.47998398542404175
+    }
+  },
+  {
+    "text": "#$%^&*%^",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.4227724075317383
+    }
+  },
+  {
+    "text": "باى",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.9257126450538635
+    }
+  },
+  {
+    "text": "مظبوط",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.9991474151611328
+    }
+  },
+  {
+    "text": "بالضبط",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "chitchat",
+      "confidence": 0.6720708608627319
+    }
+  },
+  {
+    "text": "غلط",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.6714344620704651
+    }
+  },
+  {
+    "text": "انا بحب الايام المشمسة في القاهرة",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.8532319664955139
+    }
+  },
+  {
+    "text": "اشطا",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.416758269071579
+    }
+  },
+  {
+    "text": "كنسل",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.6946759223937988
+    }
+  },
+  {
+    "text": "اكيد",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.40946003794670105
+    }
+  },
+  {
+    "text": "اه",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.40859293937683105
+    }
+  },
+  {
+    "text": "لا شكرا",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.9821954369544983
+    }
+  },
+  {
+    "text": "إلى من أتكلم؟",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.4195497930049896
+    }
+  },
+  {
+    "text": "الذي هو معي؟",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.45039254426956177
+    }
+  },
+  {
+    "text": "كم عمرك؟",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.47488731145858765
+    }
+  },
+  {
+    "text": "لول",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.7246750593185425
+    }
+  },
+  {
+    "text": "ماشي",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.6063836216926575
+    }
+  },
+  {
+    "text": "ايوا",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.4498409032821655
+    }
+  },
+  {
+    "text": "لو سمحت كنت حابب اعرف ينفع اسجل مواد اية",
+    "intent": "ask_for_avialable_schedule",
+    "intent_prediction": {
+      "name": "ask_for_avialable_subject",
+      "confidence": 0.9553647637367249
+    }
+  },
+  {
+    "text": "اقدر اسجل مواد اية",
+    "intent": "ask_for_avialable_schedule",
+    "intent_prediction": {
+      "name": "ask_for_avialable_subject",
+      "confidence": 0.5188114643096924
+    }
+  },
+  {
+    "text": "سجلي موادي لو سمحت",
+    "intent": "ask_for_avialable_subject",
+    "intent_prediction": {
+      "name": "ask_for_avialable_schedule",
+      "confidence": 0.5935882925987244
+    }
+  },
+  {
+    "text": "الزمالك",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.499960720539093
+    }
+  },
+  {
+    "text": "loll",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.44817644357681274
+    }
+  },
+  {
+    "text": "هههههههههههه",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.35155901312828064
+    }
+  },
+  {
+    "text": "ينةىخشثصضبختهيىرنتؤ",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.24996192753314972
+    }
+  },
+  {
+    "text": "مرحبا",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.568598210811615
+    }
+  },
+  {
+    "text": "صح",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.9859861135482788
+    }
+  }
+]

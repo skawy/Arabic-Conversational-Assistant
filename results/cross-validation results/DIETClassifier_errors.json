@@ -1,0 +1,399 @@
+[
+  {
+    "text": "id:20210017",
+    "entities": [
+      {
+        "start": 3,
+        "end": 11,
+        "value": "20210017",
+        "entity": "id"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "أقدر اسجل مادةmachine learning",
+    "entities": [
+      {
+        "start": 14,
+        "end": 30,
+        "value": "machine learning",
+        "entity": "subject"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "subject",
+        "start": 22,
+        "end": 30,
+        "confidence_entity": 0.9969574213027954,
+        "value": "learning",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ممكن اسجل statistiscs and propabitity",
+    "entities": [
+      {
+        "start": 10,
+        "end": 37,
+        "value": "statistiscs and propabitity",
+        "entity": "subject"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "subject",
+        "start": 26,
+        "end": 37,
+        "confidence_entity": 0.6976942420005798,
+        "value": "propabitity",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "سجلي ماث 3",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "id",
+        "start": 9,
+        "end": 10,
+        "confidence_entity": 0.9400043487548828,
+        "value": "3",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "math 3",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "math 3",
+        "entity": "subject"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "subject",
+        "start": 0,
+        "end": 4,
+        "confidence_entity": 0.964762270450592,
+        "value": "math",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "id",
+        "start": 5,
+        "end": 6,
+        "confidence_entity": 0.7299856543540955,
+        "value": "3",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ID:20180342",
+    "entities": [
+      {
+        "start": 3,
+        "end": 11,
+        "value": "20180342",
+        "entity": "id"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "ok the id is20220203",
+    "entities": [
+      {
+        "start": 12,
+        "end": 20,
+        "value": "20220203",
+        "entity": "id"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "ID:20180031",
+    "entities": [
+      {
+        "start": 3,
+        "end": 11,
+        "value": "20180031",
+        "entity": "id"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "ينفع اسجل مادة programming 1",
+    "entities": [
+      {
+        "start": 15,
+        "end": 28,
+        "value": "programming 1",
+        "entity": "subject"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "subject",
+        "start": 27,
+        "end": 28,
+        "confidence_entity": 0.6948493123054504,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "أقدر اسجل مادةstatistics",
+    "entities": [
+      {
+        "start": 14,
+        "end": 24,
+        "value": "statistics",
+        "entity": "subject"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "هو ينفع اسجل information retrival?",
+    "entities": [
+      {
+        "start": 13,
+        "end": 33,
+        "value": "information retrival",
+        "entity": "subject"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "subject",
+        "start": 13,
+        "end": 24,
+        "confidence_entity": 0.9977272152900696,
+        "value": "information",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ينفع اسجل image processing",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "subject",
+        "start": 10,
+        "end": 26,
+        "confidence_entity": 0.7044546604156494,
+        "value": "image processing",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "the ID:20160023",
+    "entities": [
+      {
+        "start": 7,
+        "end": 15,
+        "value": "20160023",
+        "entity": "id"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "أقدر اسجل مادةimage processing",
+    "entities": [
+      {
+        "start": 14,
+        "end": 30,
+        "value": "image processing",
+        "entity": "subject"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "ممكن اسجل data base 1",
+    "entities": [
+      {
+        "start": 10,
+        "end": 21,
+        "value": "data base 1",
+        "entity": "subject"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "subject",
+        "start": 10,
+        "end": 14,
+        "confidence_entity": 0.9988357424736023,
+        "value": "data",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "subject",
+        "start": 20,
+        "end": 21,
+        "confidence_entity": 0.8472170829772949,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "اه ممكن اعرف ينفع اسجل machine learning ولا لأ",
+    "entities": [
+      {
+        "start": 23,
+        "end": 39,
+        "value": "machine learning",
+        "entity": "subject"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "subject",
+        "start": 23,
+        "end": 30,
+        "confidence_entity": 0.9973160624504089,
+        "value": "machine",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ينفع اسجل مداة image processing",
+    "entities": [
+      {
+        "start": 15,
+        "end": 31,
+        "value": "image processing",
+        "entity": "subject"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "[20180039]اهو الايدي(id)",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "id",
+        "start": 0,
+        "end": 13,
+        "confidence_entity": 0.975662112236023,
+        "value": "[20180039]اهو",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "أقدر اسجل مادةstructured programming",
+    "entities": [
+      {
+        "start": 14,
+        "end": 36,
+        "value": "structured programming",
+        "entity": "subject"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "subject",
+        "start": 25,
+        "end": 36,
+        "confidence_entity": 0.9259609580039978,
+        "value": "programming",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "أقدر اسجل مادةmath",
+    "entities": [
+      {
+        "start": 14,
+        "end": 18,
+        "value": "math",
+        "entity": "subject"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "ينفع اسجل مادة object oriented programming",
+    "entities": [
+      {
+        "start": 15,
+        "end": 42,
+        "value": "object oriented programming",
+        "entity": "subject"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "subject",
+        "start": 31,
+        "end": 42,
+        "confidence_entity": 0.7179142832756042,
+        "value": "programming",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ممكن اسجل مادة logic design",
+    "entities": [
+      {
+        "start": 15,
+        "end": 27,
+        "value": "logic design",
+        "entity": "subject"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "subject",
+        "start": 15,
+        "end": 20,
+        "confidence_entity": 0.9965708255767822,
+        "value": "logic",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ينفع اسجل ماده logic designes",
+    "entities": [
+      {
+        "start": 15,
+        "end": 29,
+        "value": "logic designes",
+        "entity": "subject"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "subject",
+        "start": 15,
+        "end": 20,
+        "confidence_entity": 0.9965523481369019,
+        "value": "logic",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]
