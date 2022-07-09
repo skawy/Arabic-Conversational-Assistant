@@ -7,10 +7,10 @@ rules:
 #    - intent: ask_for_avialable_subject
 #    - action: action_get_collage_grade_and_asK_id
 
-#- rule: Say i am bot anytime the user challenges
-  #steps:
- # - intent: bot_challenge
-#  - action: utter_iamabot
+- rule: Say i am bot anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
 
 - rule: Activate student_id Form
   steps:
@@ -26,6 +26,7 @@ rules:
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
+  - action: action_get_schedule
   - action: utter_unsatisfied
   
 - rule: respond to chitchat

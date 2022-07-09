@@ -92,8 +92,8 @@ def get_failed_subjects(failed_subject, year, gpa):
             best_schedule: string of best schedule
     """
     student_schedule = schedule[year]
-
-    best_schedule = get_best_schedule(student_schedule, failed_subject, gpa)
+    best_schedule = "افضل جدول لك: "
+    best_schedule += get_best_schedule(student_schedule, failed_subject, gpa)
     return best_schedule
 
 
@@ -101,11 +101,9 @@ def get_failed_subjects(failed_subject, year, gpa):
 
 def get_schedule(year):
     student_schedule = schedule[year]
-    best_schedule = ''
+    best_schedule = "جدولك: "
     print(student_schedule)
-    for i in student_schedule:
-        best_schedule += str(i) + ' '
-    return best_schedule
+    return best_schedule + ', '.join(student_schedule)
 
 
 def get_all_previous_prerequisites(subject, student_grades, subjects):
@@ -160,7 +158,7 @@ def ask_for_one_subject(subject, student_grades, subjects):
 
     subject = get_all_previous_prerequisites(subject, student_grades, subjects)
 
-    if subject != '':
+    if subject != '' and subject != None:
         return f'لازم تاخد {subject[:-2]} الأول'
 
     return 'تقدر تسجلها'
