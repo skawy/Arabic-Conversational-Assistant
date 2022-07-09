@@ -1,8 +1,11 @@
 
 
 <h1 align="center">
-<img src="arca_logo.jpg" width="300">
-</h1><br>
+<img src="ARCA_Final_Logo.png" width="500">
+</h1>
+
+
+
 
 <h2 align="center"><u>ARCA</u></h2>
 
