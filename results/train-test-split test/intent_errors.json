@@ -1,0 +1,58 @@
+[
+  {
+    "text": "مرحبا",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.6112006902694702
+    }
+  },
+  {
+    "text": "ماشي",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "student_id",
+      "confidence": 0.3154396116733551
+    }
+  },
+  {
+    "text": "تمام",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.9555137157440186
+    }
+  },
+  {
+    "text": "مظبوط",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.6405667066574097
+    }
+  },
+  {
+    "text": "ok the id is20220203",
+    "intent": "student_id",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.39728033542633057
+    }
+  },
+  {
+    "text": "سجلي ماث 3",
+    "intent": "ask_for_avialable_subject",
+    "intent_prediction": {
+      "name": "student_id",
+      "confidence": 0.9975852966308594
+    }
+  },
+  {
+    "text": "سجلي موادي لو سمحت",
+    "intent": "ask_for_avialable_subject",
+    "intent_prediction": {
+      "name": "ask_for_avialable_schedule",
+      "confidence": 0.9994169473648071
+    }
+  }
+]
