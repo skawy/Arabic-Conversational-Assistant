@@ -1,0 +1,1 @@
+This test has been performed based on the model "nlu-20220709-233130.tar.gz"
