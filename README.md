@@ -1,7 +1,7 @@
 
 
 <h1 align="center">
-<img src="ARCA_Final_Logo.png" width="500">
+<img src="ARCA_Final_Logo.png" width="400" height = "400">
 </h1>
 
 
