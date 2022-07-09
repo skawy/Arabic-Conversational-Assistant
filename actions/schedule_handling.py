@@ -81,38 +81,36 @@ def get_best_schedule(student_schedule, failed_subject, gpa):
     return best_schedule
 
 
-def get_failed_subjects(student_grades, year, gpa):
+def get_failed_subjects(failed_subject, year, gpa):
     """
         Parameters:
-            student_grades: dictionary of student's results
+            failed_subject: list of f subjects
             year: string of student's year and his department
             gpa: string of GPA
 
         Return:
             best_schedule: string of best schedule
     """
-
-    try:
-        # get schedule of his year
-        student_schedule = schedule[year]
-        # get failed subjects
-        failed_subject = student_grades['f']
-        best_schedule = get_best_schedule(student_schedule, failed_subject, gpa)
-        return best_schedule
-    except KeyError:
-        # return 'سجل الجدول الطبيعى'
-        best_schedule = ''
-        for i in student_schedule:
-            if i is not None:
-                best_schedule += i + ', '
-                print("gduaaall:", best_schedule)
-        return best_schedule
+    student_schedule = schedule[year]
+    best_schedule = "افضل جدول لك: "
+    best_schedule += get_best_schedule(student_schedule, failed_subject, gpa)
+    return best_schedule
 
 
-def get_all_previous_prerequisites(subject, student_grades):
+
+
+def get_schedule(year):
+    student_schedule = schedule[year]
+    best_schedule = "جدولك: "
+    print(student_schedule)
+    return best_schedule + ', '.join(student_schedule)
+
+
+def get_all_previous_prerequisites(subject, student_grades, subjects):
     """
         Parameters:
             subject: string for subject name
+            subjects: subjects list
             student_grades: dictionary of student's results
 
         Return:
@@ -133,27 +131,32 @@ def get_all_previous_prerequisites(subject, student_grades):
         try:
             # check he take and pass these prerequisites
             failed = student_grades['f']
-
-            if i not in student_grades.values() or i in failed:
+            if i not in subjects or i in failed:
                 subject = i
-                subject += ', ' + get_all_previous_prerequisites(subject, student_grades)
+                subject += ', ' + get_all_previous_prerequisites(subject, student_grades, subjects)
                 return subject
 
         except KeyError:
-            continue
+            if i.lower() not in subjects:
+                subject = i
+                subject += ', ' + get_all_previous_prerequisites(subject, student_grades, subjects)
+                return subject
+            else:
+                return ''
 
 
-def ask_for_one_subject(subject, student_grades):
+def ask_for_one_subject(subject, student_grades, subjects):
     """
         Parameters:
             subject: string for subject name
+            subjects: subjects ;ist
             student_grades: dictionary of student's results
 
         Return:
             string tell student can register this subject or not
     """
 
-    subject = get_all_previous_prerequisites(subject, student_grades)
+    subject = get_all_previous_prerequisites(subject, student_grades, subjects)
 
     if subject != '' and subject != None:
         return f'لازم تاخد {subject[:-2]} الأول'

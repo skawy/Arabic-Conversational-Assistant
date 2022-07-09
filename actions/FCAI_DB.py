@@ -98,13 +98,13 @@ class FCAI_DB:
                     insert_values = f'INSERT INTO xGPAx (id, gpa, year, department) VALUES (?, ?, ?, ?)'
                     data_tuple = (temp[0], temp[1], temp[2], department[0])
                     self.cursor.execute(insert_values, data_tuple)
-                    data.to_sql(f'x{table_name}x', self.connection, if_exists='append', index=False)
+                    data.to_sql(f'x{table_name}x', self.connection, if_exists='replace', index=False)
                     self.connection.commit()
 
                 else:
                     df = pd.read_csv('D:\\FCAI_CU_Chatbot\\DB\\schedule.csv')
                     df.to_sql(f'schedule', self.connection, if_exists='replace', index=False)
-                    data.to_sql(f'x{table_name}x', self.connection, if_exists='append', index=False)
+                    data.to_sql(f'x{table_name}x', self.connection, if_exists='replace', index=False)
                     self.connection.commit()
 
         except sqlite3.Error as error:
@@ -133,14 +133,18 @@ class FCAI_DB:
             grades = set(data['grades'])
             results = {}
 
+            student_subject = []
             for i in grades:
                 subjects = []
+
                 for subject, grade in zip(data['subject'], data['grades']):
                     if grade == i:
+
+                        student_subject.append(subject.lower())
                         subjects.append(subject.lower())
                 results[i] = subjects
 
-            return results
+            return results, student_subject
 
         if table_name == 'GPA':
             data = {data[0]: data[1:] for data in data}
@@ -192,21 +196,3 @@ class FCAI_DB:
     def close_DB(self):
         self.connection.close()
         self.cursor.close()
-
-
-#
-# db = FCAI_DB()
-# db.create_DB()
-# g = db.get_schedule()
-# print(g)
-# results = db.get_tables('20180311')
-# bylaw = db.get_tables('bylaw')
-# gpa = db.get_tables('GPA')
-#
-# print(bylaw['Math-1'])
-# print(gpa)
-# print(results)
-
-"""
-hntl3lo elmwad elmfrod ysglha 3la 7sb elpriority w mlnash d3wa belconflict 
-"""
