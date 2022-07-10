@@ -34,4 +34,8 @@ rules:
   - intent: chitchat
   - action: action_check_chitchat
   - action: utter_chitchat
-  
+
+- rule: Training respond
+  steps:
+  - intent: ask_for_train
+  - action: action_training_respond

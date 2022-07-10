@@ -129,6 +129,7 @@ class FCAI_DB:
         """
         if table_name == '':
             data = pd.DataFrame(data, columns=['subject', 'grades', 'hours'])
+            cumulative_hours = sum(data['hours'])
             data = data.drop(['hours'], axis=1)
             grades = set(data['grades'])
             results = {}
@@ -144,7 +145,7 @@ class FCAI_DB:
                         subjects.append(subject.lower())
                 results[i] = subjects
 
-            return results, student_subject
+            return results, student_subject, cumulative_hours
 
         if table_name == 'GPA':
             data = {data[0]: data[1:] for data in data}

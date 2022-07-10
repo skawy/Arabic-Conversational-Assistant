@@ -145,20 +145,31 @@ def get_all_previous_prerequisites(subject, student_grades, subjects):
                 return ''
 
 
-def ask_for_one_subject(subject, student_grades, subjects):
+def ask_for_one_subject(subject, student_grades, subjects, cumulative_hours):
     """
         Parameters:
             subject: string for subject name
             subjects: subjects ;ist
             student_grades: dictionary of student's results
+            cumulative_hours: number of hours that student took
 
         Return:
             string tell student can register this subject or not
     """
+    selected1 = 'selected topics in artificial intelligence 1'
+    selected2 = 'selected topics in artificial intelligence 2'
+
+    if subject == selected1 and cumulative_hours >= 60:
+        print("youssef")
+        return f'تقدر تسجل {selected1}'
+    elif subject == selected2 and cumulative_hours >= 60:
+        return f'تقدر تسجل {selected2}'
+    elif (subject == selected2 or subject == selected1) and cumulative_hours < 60:
+        return 'لازم تجتاز 60 ساعة'
 
     subject = get_all_previous_prerequisites(subject, student_grades, subjects)
 
-    if subject != '' and subject != None:
+    if subject != '' and subject is not None:
         return f'لازم تاخد {subject[:-2]} الأول'
 
     return 'تقدر تسجلها'
