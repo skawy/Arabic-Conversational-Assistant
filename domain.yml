@@ -32,9 +32,7 @@ slots:
     influence_conversation: true
     max_value: 3.0
     min_value: 0.0
-  training:
-    type: text
-    influence_conversation: true
+
 responses:
   utter_greet:
   - text: عليكم السلام اهلا بحضرتك
