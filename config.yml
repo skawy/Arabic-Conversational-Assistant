@@ -3,8 +3,8 @@
 language: ar
 
 pipeline:
-  # - name: Cleaning_Ar_Text
-  # - name: Print_Clean
+  - name: Cleaning_Arabic_Text
+  # - name: Print_Clean_Text
   - name: WhitespaceTokenizer
   - name: RegexFeaturizer
   - name: LexicalSyntacticFeaturizer

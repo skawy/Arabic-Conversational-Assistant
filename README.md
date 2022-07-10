@@ -29,7 +29,6 @@ The chatbot should be able to the following basic functionalities
 
 - which major is most suitable to you based on your grades
 
-  
 
 ## :point_right: Installation
 
@@ -43,7 +42,35 @@ pip install -r requirements.txt | pip3 install -r requirements.txt
 This will install the bot and all of its requirements.
 Note that this bot should be used with python 3.6 or 3.7.
 
+## :open_file_folder: To Add Components
 
+We Have custom components to add to our pipeline for preprocessing incoming input, but we need first to add these components to file called registry.py in rasa package files
+
+so open **your_virtual_environment_path **/lib/python3.7/site-packages/rasa/nlu/registry.py
+
+add the following code: 
+
+```sh
+import sys
+
+folder_path = "your_full_path/FCAI_CU_Chatbot/components"
+sys.path.insert(1, folder_path)
+
+from input_preprocessing import Cleaning_Arabic_Text,Print_Clean_Text
+```
+
+add in the component_classes list in the same file "regisry.py" add the imported classes: 
+
+```sh
+component_classes = [
+    # Arabic Preprocessing
+    Cleaning_Arabic_Text,
+    Print_Clean_Text,
+    # utils
+    SpacyNLP,
+```
+
+Now all files is ready to be trained.
 
 ## 🤖 To run ARCA
 
@@ -62,11 +89,11 @@ rasa shell
 
 Note that this bot should be used with Rasa 2.8
 
-
-
 ## :blue_book: Overview of the files
 
-`data/core/` - contains stories 
+`data/stories/` - contains stories 
+
+`data/rules/` - contains rules 
 
 `data/nlu` - contains NLU training data
 
@@ -75,6 +102,8 @@ Note that this bot should be used with Rasa 2.8
 `domain.yml` - the domain file, including bot response templates
 
 `config.yml` - training configurations for the NLU pipeline and policy ensemble
+
+
 
 
 
