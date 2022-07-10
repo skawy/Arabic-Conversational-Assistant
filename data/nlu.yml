@@ -162,6 +162,9 @@ nlu:
 
 - intent: ask_for_avialable_subject
   examples: |
+    - ينفع اسجل مادة [selected topics in artificial intelligence 1](subject)
+    - ينفع اسجل مادة [selected topics in artificial intelligence 2](subject)
+    - ينفع اسجل مادة [selected topics in artificial intelligence 1](subject)
     - ينفع اسجل مادة [object oriented programming](subject)
     - طب ينفع اسجل [data structures](subject)
     - ممكن اسجل [math 1](subject)
@@ -298,3 +301,10 @@ nlu:
     - ممكن اعرف المصاريف؟
     - ممكن اسال عالمصاريف
     - اه ممكن اعرف المصاريف؟
+
+- intent: ask_for_train
+  examples: |
+    - اقدر اسجل التدريب بعد كام ساعة؟
+    - عايز اسئل على التدريب
+    - محتاج انجح فى كام ساعة عشان اسجل التدريب
+    - ايه فرص التدريب المتاحة

@@ -1,51 +1,50 @@
 ﻿subject,prerequisites,priority
-Math-1,none,10
-Discrete Mathematics,Math-1,10
-Math-2,Math-1,10
-Math-3,Math-2,10
-Electronics, none,5
-Probability and Statistics-1,Math-1,7
-Probability and Statistics-2,Probability and Statistics-1,7
-Fundamentals of Computer Science,none,10
-Structured Programming,Fundamentals of Computer Science,10
-Object Oriented Programming,Structured Programming,10
-Data Structures,Object Oriented Programming,10
-Introduction to Software Engineering,Object Oriented Programming,5
-Introduction to Operations Research and Decision Support,Structured Programming^Probability and Statistics-1,5
-Introduction to Database Systems,Structured Programming,5
-Web Technology,Object Oriented Programming,5
-Logic Design,Electronics,5
-Computer Networks Technology,Fundamentals of Science Computer,7
-Algorithms Analysis and Design,Data Structures,10
-Operating Systems,Data Structures,7
-Introduction to Logic,Discrete Mathematics^ Probability and Statistics-2,7
-Reasoning and Knowledge Representation,Introduction to Logic,7
-Autonomous Multiagent Systems,Introduction to Logic,7
-Theoretical Foundations of Machine Learning,Math-3^Probability and Statistics-2,10
-Supervised Learning,Theoretical Foundations of Machine Learning,10
-Theories of Mind,Introduction to Logic,5
-Processing of Formal and Natural Languages,Introduction to Logic,10
-Unsupervised Learning,Theoretical Foundations of Machine Learning,10
-Reinforcement Learning,Supervised Learning,10
-Intelligent Autonomous Robotics,Supervised Learning,7
-Computer Organization and Architectur,Logic Design^Data structures,5
-Signals and Systems,Math-3,7
-Cognitive Robotics,Supervised Learning^Intelligent Autonomous Robotics,5
-Generative Adversarial Networks,Supervised Learning,5
-Fundamentals of Biometric Identification,Supervised Learning,5
-Brain-Computer Interfacing,Supervised Learning,5
-Supervised Learning,Theoretical Foundations of Machine Learning,5
-"Business Intelligence: Strategies, Tools & Techniques",Theoretical Foundations of Machine Learning,5
-Artificial Intelligence for Cyber security,Network^Theoretical Foundations of Machine Learning,5
-Bioinformatics Systems,Algorithms Analysis and Design,5
-Soft Computing,"Probability and Statistics-1, Math-2",5
-Data Analytics,Probability and Statistics-2,5
-Project Management,Introduction to Operations Research and Decision Support,5
-Information Retrieval,Introduction to Database Systems^Probability and Statistics-2,5
-Usability Engineering,Web Technology,5
-Computer Graphics,Structured Programming,5
-Machine Vision,Image Processing^Computer Graphics,5
-Image Processing,Signals and Systems,5
-Virtual Reality,Image Processing^Computer Graphics,5
-Selected Topics in Artificial Intelligence-1,إجتياز الطالب 60 ساعة معتمدة,5
-Selected Topics in Artificial Intelligence-2,إجتياز الطالب 60 ساعة معتمدة,5
+math 1,none,10
+discrete mathematics,math 1,10
+math 2,math 1,10
+math 3,math 2,10
+electronics,none,5
+probability and statistics 1,math 1,7
+probability and statistics 2,probability and statistics 1,7
+fundamentals of computer science,none,10
+structured programming,fundamentals of computer science,10
+object oriented programming,structured programming,10
+data structures,object oriented programming,10
+introduction to software engineering,object oriented programming,5
+introduction to operations research and decision support,structured programming^probability and statistics 1,5
+introduction to database systems,structured programming,5
+web technology,object oriented programming,5
+logic design,electronics,5
+computer networks technology,Fundamentals of Science Computer,7
+algorithms analysis and design,data structures,10
+operating systems,data structures,7
+introduction to logic,discrete mathematics^ probability and statistics 2,7
+reasoning and knowledge representation,introduction to logic,7
+autonomous multiagent systems,introduction to logic,7
+theoretical foundations of machine learning,math 3^probability and statistics 2,10
+supervised learning,theoretical foundations of machine learning,10
+theories of mind,introduction to logic,5
+processing of formal and natural languages,introduction to logic,10
+unsupervised learning,theoretical foundations of machine learning,10
+reinforcement learning,supervised learning,10
+intelligent autonomous robotics,supervised learning,7
+computer organization and architecture,logic design^data structures,5
+signals and systems,math 3,7
+cognitive robotics,supervised learning^intelligent autonomous robotics,5
+generative adversarial networks,supervised learning,5
+fundamentals of biometric identification,supervised learning,5
+brain computer interfacing,supervised learning,5
+"business intelligence: strategies, tools & techniques",theoretical foundations of machine learning,5
+artificial intelligence for cyber security,network^theoretical foundations of machine learning,5
+bioinformatics systems,algorithms analysis and design,5
+soft computing,probability and statistics 1^math 2,5
+data analytics,probability and statistics 2,5
+project management,introduction to operations research and decision support,5
+information retrieval,introduction to database systems^probability and statistics 2,5
+usability engineering,web technology,5
+computer graphics,structured programming,5
+machine vision,image processing^computer graphics,5
+image processing,signals and systems,5
+virtual reality,image processing^computer graphics,5
+selected topics in artificial intelligence 1,إجتياز الطالب 60 ساعة معتمدة,5
+selected topics in artificial intelligence 2,إجتياز الطالب 60 ساعة معتمدة,5

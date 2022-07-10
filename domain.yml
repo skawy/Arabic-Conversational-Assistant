@@ -14,6 +14,7 @@ intents:
 - bot_challenge
 - ask_for_college_expenses
 - chitchat
+- ask_for_train
 entities:
 - chitchat_count
 - grade
@@ -31,6 +32,7 @@ slots:
     influence_conversation: true
     max_value: 3.0
     min_value: 0.0
+
 responses:
   utter_greet:
   - text: عليكم السلام اهلا بحضرتك
@@ -63,6 +65,7 @@ actions:
 - utter_offer_help
 - utter_unsatisfied
 - validate_student_id_form
+- action_training_respond
 forms:
   student_id_form:
     required_slots:
