@@ -48,7 +48,7 @@ if typing.TYPE_CHECKING:
     from rasa.nlu.model import Metadata
 
 
-class Cleaning_Ar_Text(Component):
+class Cleaning_Arabic_Text(Component):
     """A new component"""
 
     # Which components are required by this component.
@@ -135,7 +135,7 @@ class Cleaning_Ar_Text(Component):
             return cls(meta)
 
 
-class Print_Clean(Component):
+class Print_Clean_Text(Component):
     """A new component"""
 
     # Which components are required by this component.

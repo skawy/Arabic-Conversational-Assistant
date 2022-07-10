@@ -2,10 +2,10 @@ version: "2.0"
 nlu:
 - intent: greet
   examples: |
-    - أهلا
+    - اهلا
     - مرحبا
     - السلام عليكم
-    - أهلا انا
+    - اهلا انا
     - صباح الخير
     - صباح الفل
     - صباح الورد
@@ -16,10 +16,10 @@ nlu:
     - هاى
     - طاب مسائك
     - السلام عليك
-    - هاي
     - السلام عليكم ممكن مساعدة
     - هاي ممكن مساعدة
     - مساء النور
+
 - intent: goodbye
   examples: |
     - سلام
@@ -49,6 +49,8 @@ nlu:
     - اه
     - صح
     - بالضبط
+    - صح 
+
 - intent: deny
   examples: |
     - لا
@@ -61,11 +63,12 @@ nlu:
     - لا شكرا
     - لا الف شكر
     - لا تمام
+    - لا مش عاوز
 - intent: student_id
   examples: |
     - [20170341](id)
     - [20200350](id)
-    - تمام ماشي ID: [20160262](id)
+    - تمام ماشى ID: [20160262](id)
     - [20190444](id)
     - id: [20120012](id)
     - [20200010](id)
@@ -130,19 +133,21 @@ nlu:
     - [20180045](id)
 - intent: bot_challenge
   examples: |
-    - هل أنت روبوت؟
-    - هل أنت إنسان؟
-    - إلى من أتكلم؟
-    - الذي هو معي؟
-    - هل أتحدث إلى روبوت؟
-    - هل أتحدث إلى إنسان؟
+    - هل انت روبوت؟
+    - هل انت إنسان؟
+    - إلى من اتكلم؟
+    - الذى هو معي؟
+    - هل اتحدث إلى روبوت؟
+    - هل اتحدث إلى إنسان؟
+    - انت بنى ادم ولا روبوت ؟
+
 - intent: ask_for_avialable_schedule
   examples: |
     - عايز اعرف المواد المتاحة ليا
-    - عايز اعرف أفضل جدول متاح ليا
-    - أيه أفضل جدول ليا و انا شايل مواد
-    - أفضل جدول لطالب شايل مواد
-    - عايز أعرف ممكن أسجل مواد ايه
+    - عايز اعرف افضل جدول متاح ليا
+    - ايه افضل جدول ليا و انا شايل مواد
+    - افضل جدول لطالب شايل مواد
+    - عايز اعرف ممكن اسجل مواد ايه
     - عايز اعرف افضل جدول ليا
     - لو سمحت كنت حابب اعرف ينفع اسجل مواد اية
     - ممكن اعمل جدول؟
@@ -150,22 +155,22 @@ nlu:
     - جدول الكلية
     - جدول
     - عايز افضل جدول
-    - اية افضل جدول لي؟\
     - اية افضل جدول لي؟
     - اقدر اسجل مواد اية
     - اية المواد الي امفروض اسجلها
-    - جدولي اية؟
+    - جدولي ايه ؟
+
 - intent: ask_for_avialable_subject
   examples: |
     - ينفع اسجل مادة [object oriented programming](subject)
     - طب ينفع اسجل [data structures](subject)
     - ممكن اسجل [math 1](subject)
     - ينفع اسجل مادة [programming 1](subject)
-    - أقدر اسجل مادة[image processing](subject)
-    - أقدر اسجل مادة[statistics](subject)
-    - أقدر اسجل مادة[structured programming](subject)
-    - أقدر اسجل مادة[machine learning](subject)
-    - أقدر اسجل مادة[math](subject)
+    - اقدر اسجل مادة[image processing](subject)
+    - اقدر اسجل مادة[statistics](subject)
+    - اقدر اسجل مادة[structured programming](subject)
+    - اقدر اسجل مادة[machine learning](subject)
+    - اقدر اسجل مادة[math](subject)
     - ممكن اسجل [statistiscs and propabitity](subject)
     - طيب ممكن اسجل ماده [data structures](subject)
     - تمام  هل ينفع اسجل [introduction to machine learning](subject)
@@ -180,17 +185,17 @@ nlu:
     - سجلي موادي لو سمحت
     - [Math3](subject)
     - ممكن اسجل مادة؟
-    - اه ممكن اعرف ينفع اسجل مادة ولا لأ
+    - اه ممكن اعرف ينفع اسجل مادة ولا لا
     - [introduction to logic](subject)
     - طيب اسجل [math2](subject) ازاي
-    - اه ممكن اعرف ينفع اسجل [machine learning](subject) ولا لأ
+    - اه ممكن اعرف ينفع اسجل [machine learning](subject) ولا لا
     - ينفع اسجل ماده [data structures](subject)
-    - ينفع ةاسجل [data structures](subject)
+    - ينفع اسجل [data structures](subject)
     - عايز اسجل مادة [data structures](subject)
     - ينفع اسجل مادة [data structures](subject)
     - ينفع اسجل ماده [logic designes](subject)
-    - ينفع اسجل image processing
-    - ينفع اسجل مداة [image processing](subject)
+    - ينفع اسجل [image processing] (subject)
+    - ينفع اسجل ماده [image processing](subject)
 - intent: chitchat
   examples: |
     - اسمك اية؟
@@ -270,11 +275,12 @@ nlu:
     - ينةىخشثصضبختهيىرنتؤ
     - #$%^&*%^
     - #$لإ نىشيسنبىب
+
 - intent: ask_for_major
   examples: |
     - ايه احسن قسم ادخله؟
-    - ممكن اسأل على الاقسام
-    - ممكن اسأل عالاقسام
+    - ممكن اسال على الاقسام
+    - ممكن اسال عالاقسام
     - عايز اعرف الاقسام
     - ايه الاقسام المتاحة
     - التخصصات
@@ -283,7 +289,7 @@ nlu:
     - عايز اعرف ايه احسن تخصص
     - ايه احسن تخصص ليا؟
     - ايه التخصصات اللي في الكلية؟
-    - ممكن اسأل على التخصصات
+    - ممكن اسال على التخصصات
     - عايز اعرف عن الاقسام
     - ممكن اعرف الاقسام
     - ايه الخدمات اللي بتقدمها؟
