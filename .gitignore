@@ -3,4 +3,5 @@ models/*
 components/__pycache__
 actions/__pycache__
 .vs
+.vscode
 train_test_split
