@@ -1,3 +1,4 @@
+from cgitb import text
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker, FormValidationAction
 from rasa_sdk.executor import CollectingDispatcher
@@ -16,8 +17,9 @@ class schedule_maker(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         student_id = tracker.get_slot('id')
-        if student_id not in gpa_dict.keys():
-            dispatcher.utter_message('الid دا مش متسجل ابعته تانى لو سمحت')
+
+        if student_id not in gpa_dict.keys() :
+            dispatcher.utter_message(text = "معذرة هذا الid غير صحيح \n")
             return [SlotSet('id', None)]
 
         if student_id is not None:
@@ -85,13 +87,12 @@ class ValidateUserDetailsForm(FormValidationAction):
             domain: DomainDict,
     ) -> Dict[Text, Any]:
         """Validate `id` value"""
-        id_pattern = re.compile(r"^20[0-9]{2}[0-2][0-9]{3}$")
+        id_pattern = re.compile("^20[0-2]{1}\d{1}[0-2]{1}\d{3}$")
 
         if re.fullmatch(id_pattern, slot_value):
             return {"id": slot_value}
         else:
-            dispatcher.utter_message('معذرة هذا الid غير صحيح')
-            return {"id": None}
+            return {"id": "0"}
 
 
 class check_chitchat(Action):

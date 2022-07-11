@@ -43,7 +43,7 @@ responses:
   utter_ask_for_id:
   - text: الid لو سمحت
   utter_unsatisfied:
-  - text: عندك طلب اخر؟
+  - text: حابب حاجه تانى  ؟
   utter_chitchat:
   - text: ده سؤال خارج سياق المحادثة التزم بالسياق حتي لا يتم غلق المحادثة.
   utter_majors:

@@ -3,6 +3,9 @@ nlu:
 - intent: greet
   examples: |
     - اهلا
+    - ايه يغالى
+    - ايه يا نجم
+    - اهلا يا غالى
     - مرحبا
     - السلام عليكم
     - اهلا انا
@@ -22,6 +25,7 @@ nlu:
 
 - intent: goodbye
   examples: |
+    - شرفتنا
     - سلام
     - باى
     - شكرا لحضرتك
@@ -191,6 +195,7 @@ nlu:
     - اه ممكن اعرف ينفع اسجل مادة ولا لا
     - [introduction to logic](subject)
     - طيب اسجل [math2](subject) ازاي
+    - [os](subject)
     - اه ممكن اعرف ينفع اسجل [machine learning](subject) ولا لا
     - ينفع اسجل ماده [data structures](subject)
     - ينفع اسجل [data structures](subject)
@@ -199,6 +204,24 @@ nlu:
     - ينفع اسجل ماده [logic designes](subject)
     - ينفع اسجل [image processing] (subject)
     - ينفع اسجل ماده [image processing](subject)
+    - ممكن اسجل مادة [gans](subject)
+    - تمام  هل ينفع اسجل [ml](subject)
+    - تمام  هل ينفع اسجل [ir](subject)
+    - عايز اسجل مادة [os](subject)
+    - ينفع اسجل مادة [os](subject)
+    - ينفع اسجل ماده [nlp](subject)
+    - ينفع اسجل [se2] (subject)
+    - ينفع اسجل ماده [signals](subject)
+    - طب ينفع اسجل [bci](subject)
+    - ممكن اسجل [bci](subject)
+    - ينفع اسجل مادة [bci](subject)
+    - اقدر اسجل مادة[rl](subject)
+    - طيب اسجل [rl](subject) ازاي
+    - لو عاوز اسجل [algo](subject) اعمل ايه
+    - ممكن اسجل [ir](subject)
+    - ممكن اسجل [arc](subject)
+    - ينفع اسجل مادة [arc](subject)
+
 - intent: chitchat
   examples: |
     - اسمك اية؟
