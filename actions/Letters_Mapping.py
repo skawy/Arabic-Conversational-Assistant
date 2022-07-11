@@ -61,10 +61,46 @@ def map_subject_name(subject, bylaw):
         Return:
             string with the correct name of subject as it was saved in database
     """
-    if check_language(subject):
-        subjects_encoder = map_subjects(bylaw)
-        subject = map_letters(subject)
-        similarity = cosine_similarity([subject], subjects_encoder)
-        return bylaw[np.argmax(similarity)]
 
-    return 'بعد أذنك دخل أسم المادة بالأنجليزى'
+    aliases = {
+    "ml" : "theoretical foundations of machine learning",
+    "ir" : "information retrieval",
+    "ds" : "data structures",
+    "algo": "algorithms analysis and design",
+    "se 1": "introduction to software engineering",
+    "se 2": "introduction to software engineering 2",
+    "se1": "introduction to software engineering",
+    "se2": "introduction to software engineering 2",
+    "os" : "operating systems",
+    "nlp": 'processing of formal and natural languages',
+    "rl" : "reinforcement learning",
+    "gans": "generative adversarial networks",
+    "gan": "generative adversarial networks",
+    "bci": "brain computer interfacing",
+    "arc": "computer organization and architecture",
+    "signals": "signals and systems"
+    }
+
+
+    if not check_language(subject):
+        return 'بعد أذنك دخل أسم المادة بالأنجليزى'
+    
+    # if the user typed the alias of the subject
+    if subject.lower() in aliases.keys():
+        return aliases[subject.lower()]
+
+        
+    subjects_encoder = map_subjects(bylaw)
+    subject = map_letters(subject)
+    similarity = cosine_similarity([subject], subjects_encoder)
+
+    print(bylaw[np.argmax(similarity)])
+    print(np.max(similarity))
+    print(similarity)
+
+    # If cosine < Threshold "0.3" Then there is no subjects similar to input subject
+    if np.max(similarity) < 0.7 :
+        biggest_indices = similarity[0].argsort()[-3:][::-1]
+        return " ولا \n".join( [bylaw[index] for index in biggest_indices ]) 
+        
+    return bylaw[np.argmax(similarity)]

@@ -135,6 +135,8 @@ def get_all_previous_prerequisites(subject, student_grades, subjects):
                 subject = i
                 subject += ', ' + get_all_previous_prerequisites(subject, student_grades, subjects)
                 return subject
+            return ""
+
 
         except KeyError:
             if i.lower() not in subjects:
@@ -143,6 +145,7 @@ def get_all_previous_prerequisites(subject, student_grades, subjects):
                 return subject
             else:
                 return ''
+            
 
 
 def ask_for_one_subject(subject, student_grades, subjects, cumulative_hours):
@@ -160,16 +163,21 @@ def ask_for_one_subject(subject, student_grades, subjects, cumulative_hours):
     selected2 = 'selected topics in artificial intelligence 2'
 
     if subject == selected1 and cumulative_hours >= 60:
-        print("youssef")
         return f'تقدر تسجل {selected1}'
     elif subject == selected2 and cumulative_hours >= 60:
         return f'تقدر تسجل {selected2}'
     elif (subject == selected2 or subject == selected1) and cumulative_hours < 60:
         return 'لازم تجتاز 60 ساعة'
 
+    if len(subject) == 1 :
+        return 'مفيش ماده بالاختصار ده'
+
     subject = get_all_previous_prerequisites(subject, student_grades, subjects)
 
-    if subject != '' and subject is not None:
+    if "ولا" in subject :
+        return f'  \n {subject}  '
+
+    if subject != '' and subject is not None :
         return f'لازم تاخد {subject[:-2]} الأول'
 
     return 'تقدر تسجلها'
