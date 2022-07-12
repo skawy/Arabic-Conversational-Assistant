@@ -22,7 +22,6 @@ nlu:
     - السلام عليكم ممكن مساعدة
     - هاي ممكن مساعدة
     - مساء النور
-
 - intent: goodbye
   examples: |
     - شرفتنا
@@ -44,7 +43,6 @@ nlu:
     - خلاص
     - كنسل
     - باي باي
-    
 - intent: affirm
   examples: |
     - ايوا
@@ -54,8 +52,6 @@ nlu:
     - اه
     - صح
     - بالضبط
-    - صح 
-
 - intent: deny
   examples: |
     - لا
@@ -135,7 +131,6 @@ nlu:
     - ID:[20180031](id)
     - [20180034](id)
     - [20180045](id)
-    - [20180045](id)
 - intent: bot_challenge
   examples: |
     - هل انت روبوت؟
@@ -145,7 +140,6 @@ nlu:
     - هل اتحدث إلى روبوت؟
     - هل اتحدث إلى إنسان؟
     - انت بنى ادم ولا روبوت ؟
-
 - intent: ask_for_avialable_schedule
   examples: |
     - عايز اعرف المواد المتاحة ليا
@@ -164,12 +158,10 @@ nlu:
     - اقدر اسجل مواد اية
     - اية المواد الي امفروض اسجلها
     - جدولي ايه ؟
-
 - intent: ask_for_avialable_subject
   examples: |
     - ينفع اسجل مادة [selected topics in artificial intelligence 1](subject)
     - ينفع اسجل مادة [selected topics in artificial intelligence 2](subject)
-    - ينفع اسجل مادة [selected topics in artificial intelligence 1](subject)
     - ينفع اسجل مادة [object oriented programming](subject)
     - طب ينفع اسجل [data structures](subject)
     - ممكن اسجل [math 1](subject)
@@ -222,7 +214,6 @@ nlu:
     - ممكن اسجل [ir](subject)
     - ممكن اسجل [arc](subject)
     - ينفع اسجل مادة [arc](subject)
-
 - intent: chitchat
   examples: |
     - اسمك اية؟
@@ -302,7 +293,11 @@ nlu:
     - ينةىخشثصضبختهيىرنتؤ
     - #$%^&*%^
     - #$لإ نىشيسنبىب
-
+    - شسطنكيشسكطكيشمنسنمكشسي
+    - badry elgrokla
+    - lkaslkdkjafldsk
+    - a;flskd;alfsda;flas;fkl
+    - a;lfksd;alfl;fkfld;safds
 - intent: ask_for_major
   examples: |
     - ايه احسن قسم ادخله؟
@@ -325,7 +320,6 @@ nlu:
     - ممكن اعرف المصاريف؟
     - ممكن اسال عالمصاريف
     - اه ممكن اعرف المصاريف؟
-
 - intent: ask_for_train
   examples: |
     - اقدر اسجل التدريب بعد كام ساعة؟

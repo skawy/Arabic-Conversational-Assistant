@@ -5,7 +5,8 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.types import DomainDict
 import re
 from actions.schedule_handling import ask_for_one_subject, get_failed_subjects, gpa_dict, db, get_schedule
-from rasa_sdk.events import (SlotSet, ConversationPaused)
+from rasa_sdk.events import (SlotSet, FollowupAction ,  ConversationPaused , ConversationResumed)
+import time
 
 
 class schedule_maker(Action):
@@ -112,8 +113,29 @@ class check_chitchat(Action):
         print("Out of context count: ", chitchat_count)
 
         if chitchat_count >= 3.0:
-            dispatcher.utter_message('لقد خرجت عن سياق المحادثة اكثر من مرة لن يتم الرد علي رسائلك الأن.')
-            return [ConversationPaused()]
+            return [ FollowupAction(name="action_delay_conversation") ]
+
+        dispatcher.utter_message(f' دى المره رقم {chitchat_count} الى تخرج فيها عن السياق التزم بالمحادثه بعد اذنك حتى لايتم غلق المحادثه')
+
+        return [SlotSet("chitchat_count", chitchat_count)]
+
+class delay_conversation(Action):
+    def name(self) -> Text:
+        return "action_delay_conversation"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        """ it is the function which execute action_pause_conversation """
+        
+        chitchat_count = 0 
+
+        print("before timeout")
+
+        time.sleep(10)
+
+        print("after timeout")
 
         return [SlotSet("chitchat_count", chitchat_count)]
 
