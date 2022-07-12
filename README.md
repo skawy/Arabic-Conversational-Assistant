@@ -9,7 +9,7 @@
 
 <h2 align="center"><u>ARCA</u></h2>
 
-<h2 align="center"><u>Intelligent Arabic Customer Service Assistant</u></h2>
+<h2 align="center"><u>Arabic Conversational Assistant  </u></h2>
 
 
 
