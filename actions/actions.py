@@ -113,9 +113,13 @@ class check_chitchat(Action):
         print("Out of context count: ", chitchat_count)
 
         if chitchat_count >= 3.0:
-            return [ FollowupAction(name="action_delay_conversation") ]
+            chitchat_count = 0.0
+            return [ SlotSet("chitchat_count", chitchat_count) , FollowupAction(name="action_delay_conversation") ]
 
         dispatcher.utter_message(f' دى المره رقم {chitchat_count} الى تخرج فيها عن السياق التزم بالمحادثه بعد اذنك حتى لايتم غلق المحادثه')
+
+        if chitchat_count == 2.0:
+            dispatcher.utter_message('لو خرجت بره السياق تانى المحادثه هتتقفل لمده خمس ساعات')
 
         return [SlotSet("chitchat_count", chitchat_count)]
 
@@ -129,13 +133,13 @@ class delay_conversation(Action):
 
         """ it is the function which execute action_pause_conversation """
         
-        chitchat_count = 0 
+        chitchat_count = 0.0
+        
+        print("Before stopping the conversation")
 
-        print("before timeout")
+        time.sleep(5)
 
-        time.sleep(10)
-
-        print("after timeout")
+        print("After stopping the conversation")
 
         return [SlotSet("chitchat_count", chitchat_count)]
 

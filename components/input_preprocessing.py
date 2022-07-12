@@ -2,7 +2,7 @@ import re
 
 
 # # Clean/Normalize Arabic Text
-def clean_str(text):
+def clean_arabic_str(text):
     search = ["أ", "إ", "آ", "ة", "_", "-", "/", ".", "،", " و ", " يا ", '"', "ـ", "'", "ى", "\\", '\n', '\t',
               '&quot;', '?', '؟', '!']
     replace = ["ا", "ا", "ا", "ه", " ", " ", "", "", "", " و", " يا", "", "", "", "ي", "", ' ', ' ', ' ', ' ? ', ' ؟ ',
@@ -110,7 +110,7 @@ class Cleaning_Arabic_Text(Component):
         :meth:`components.Component.process`
         of components previous to this one."""
         if 'text' in message.data:
-            message.set('text', clean_str(message.data['text']))
+            message.set('text', clean_arabic_str(message.data['text']))
         pass
 
     def persist(self, file_name: Text, model_dir: Text) -> Optional[Dict[Text, Any]]:

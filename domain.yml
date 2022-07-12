@@ -41,8 +41,6 @@ responses:
   - text: انا روبوت
   utter_ask_for_id:
   - text: الid لو سمحت
-  utter_reach_max_chitchat_count:
-  - text: لقد خرجت عن سياق المحادثة اكثر من مرة لن يتم الرد علي رسائلك الأن.
   utter_unsatisfied:
   - text: حابب حاجه تانى  ؟
   utter_majors:
