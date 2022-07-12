@@ -150,12 +150,6 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
-- story: asking_for_major
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: ask_for_major
-
 - story: asking_for_schedule
   steps:
   - intent: ask_for_avialable_schedule
@@ -416,6 +410,20 @@ stories:
 
 - story: asking for major 1
   steps:
+  - intent: ask_for_major
+  - action: utter_majors
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: asking for major 2
+  steps:
+  - intent: ask_for_major
+  - action: utter_majors
+  
+- story: asking for major 3
+  steps:
+  - intent: greet
+  - action: utter_greet
   - intent: ask_for_major
   - action: utter_majors
   - intent: goodbye

@@ -1,0 +1,10 @@
+[
+  {
+    "text": "تمام",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.49927741289138794
+    }
+  }
+]

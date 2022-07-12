@@ -7,7 +7,7 @@ stories:
       - action: utter_greet
       - user: عايز اعرف المواد المتاحة ليا
         intent: ask_for_avialable_schedule
-      - action: utter_ask_for_id
+      - action: action_get_schedule
       - user: |
           [20180031]{"entity": "id", "value": "20180031"}
         intent: student_id
@@ -26,7 +26,7 @@ stories:
       - action: utter_greet
       - user: عايز اعرف المواد المتاحة ليا
         intent: ask_for_avialable_schedule
-      - action: utter_ask_for_id
+      - action: action_get_schedule
       - user: |
           ده ال id بتاعى اهو [20180002]{"entity": "id", "value": "20180002"}
         intent: student_id
@@ -45,7 +45,7 @@ stories:
       - action: utter_greet
       - user: عايز اعرف المواد المتاحة ليا
         intent: ask_for_avialable_schedule
-      - action: utter_ask_for_id
+      - action: action_get_schedule
       - user: |
           [20180002]{"entity": "id", "value": "20180002"}
         intent: student_id
@@ -243,5 +243,236 @@ stories:
       - action: utter_unsatisfied
       - user: |
           خلاص شكرا
+        intent: goodbye
+      - action: utter_goodbye
+
+  - story: regular_ask_for_subject
+    steps:
+      - user: |
+          طيب ينفع اخد ماده {"entity": "subject", "value": "Math3"}
+        intent: ask_for_avialable_subject
+      - slot_was_set:
+          - subject: Math3
+      - action: action_check_subject_name
+      - user: |
+          20180003 {"entity": "id", "value": "20180003"}
+        intent: student_id
+      - slot_was_set:
+          - id: "20180003"
+      - action: student_id_form
+      - action: action_get_schedule
+      - action: utter_unsatisfied
+      - user: |
+          سلام
+        intent: goodbye
+      - action: utter_goodbye
+
+  - story: leaving_1
+    steps:
+      - user: |
+          باى باى
+        intent: goodbye
+      - action: utter_goodbye
+
+  - story: leaving_2
+    steps:
+      - user: |
+          20180003 {"entity": "subject", "value": "data structures"}
+        intent: ask_for_avialable_subject
+      - slot_was_set:
+          - subject: data structures
+      - action: action_check_subject_name
+      - user: |
+          سلام
+        intent: goodbye
+      - action: utter_goodbye
+
+  - story: spaces_and_long_conversation
+    steps:
+      - user: |
+          اهلا
+        intent: greet
+      - action: utter_greet
+      - user: |
+          ايه الاقسام المتاحة
+        intent: ask_for_major
+      - action: utter_majors
+      - action: utter_unsatisfied
+      - user: |
+          طيب ينفع اخد ماده {"entity": "subject", "value": "introduction to logic"}
+        intent: ask_for_avialable_subject
+      - slot_was_set:
+          - id: "introduction to logic"
+      - action: action_check_subject_name
+      - user: |
+          طيب ينفع اخد ماده {"entity": "subject", "value": "introduction to logic"}
+        intent: ask_for_avialable_subject
+      - slot_was_set:
+          - subject: introduction to logic
+      - action: action_check_subject_name
+      - user: |
+          20180001 {"entity": "id", "value": "20180001"}
+        intent: student_id
+      - slot_was_set:
+          - id: "20180001"
+      - action: student_id_form
+      - active_loop: student_id_form
+      - slot_was_set:
+          - id: "20180001"
+      - action: action_get_schedule
+      - action: utter_unsatisfied
+      - user: |
+          مظبوط
+        intent: affirm
+      - action: utter_offer_help
+      - user: |
+          طيب ينفع اخد ماده {"entity": "subject", "value": "math2"}
+        intent: ask_for_avialable_subject
+      - slot_was_set:
+          - subject: math2
+      - action: action_check_subject_name
+      - action: utter_unsatisfied
+      - user: |
+          لا
+        intent: deny
+      - action: utter_goodbye
+
+  - story: asking_for_major
+    steps:
+      - user: |
+          اهلا وسهلا
+        intent: greet
+      - action: utter_greet
+      - user: |
+          ايه الاقسام المتاحة
+        intent: ask_for_major
+      - action: utter_majors
+
+  - story: asking_for_schedule
+    steps:
+      - user: |
+          دلوقتى عايز اعرف المواد المتاحة ليا
+        intent: ask_for_avialable_schedule
+      - action: action_get_schedule
+      - user: |
+          20180002 {"entity": "id", "value": "20180002"}
+        intent: student_id
+      - slot_was_set:
+          - id: "20180002"
+      - action: student_id_form
+      - active_loop: student_id_form
+      - slot_was_set:
+          - id: "20180002"
+      - action: action_get_schedule
+      - action: utter_unsatisfied
+      - user: |
+          لا
+        intent: deny
+      - action: utter_goodbye
+
+  - story: ask for subject then schedule
+    steps:
+      - user: |
+          math3 {"entity": "subject", "value": "math3"}
+        intent: ask_for_avialable_subject
+      - slot_was_set:
+          - subject: math3
+      - action: action_check_subject_name
+      - user: |
+          20180045 {"entity": "id", "value": "20180045"}
+        intent: student_id
+      - slot_was_set:
+          - id: "20180045"
+      - action: student_id_form
+      - active_loop: student_id_form
+      - slot_was_set:
+          - id: "20180045"
+      - slot_was_set:
+          - id: "20180045"
+      - action: action_get_schedule
+      - action: utter_unsatisfied
+      - user: |
+          طب ممكن اعرف ايه احسن جدول ليا
+        intent: ask_for_avialable_schedule
+      - action: action_get_schedule
+      - action: utter_unsatisfied
+      - user: |
+          لا
+        intent: deny
+      - action: utter_goodbye
+
+  - story: give id only
+    steps:
+      - user: |
+          20180045
+        intent: student_id
+      - slot_was_set:
+          - id: "20180045"
+      - action: student_id_form
+      - active_loop: student_id_form
+      - slot_was_set:
+          - id: "20180045"
+      - slot_was_set:
+          - id: "20180045"
+      - action: action_get_schedule
+      - action: utter_unsatisfied
+
+  - story: schedule then subject
+    steps:
+      - user: |
+          مرحبا
+        intent: greet
+      - action: utter_greet
+      - user: |
+          ايه المواد المتاحة ليا
+        intent: ask_for_avialable_schedule
+      - action: action_get_schedule
+      - user: |
+          20180031 {"entity": "id", "value": "20180031"}
+        intent: student_id
+      - slot_was_set:
+          - id: "20180031"
+      - action: student_id_form
+      - active_loop: student_id_form
+      - slot_was_set:
+          - id: "20180031"
+      - slot_was_set:
+          - id: "20180031"
+      - action: action_get_schedule
+      - action: utter_unsatisfied
+      - user: |
+          math3 {"entity": "subject", "value": "logic designs"}
+        intent: ask_for_avialable_subject
+      - slot_was_set:
+          - subject: logic designs
+      - action: action_check_subject_name
+
+  - story: ask for schedule twice
+    steps:
+      - user: |
+          اهلا
+        intent: greet
+      - action: utter_greet
+      - user: |
+          20180045 {"entity": "id", "value": "20180045"}
+        intent: student_id
+      - slot_was_set:
+          - id: "20180045"
+      - action: student_id_form
+      - active_loop: student_id_form
+      - slot_was_set:
+          - id: "20180045"
+      - slot_was_set:
+          - id: "20180045"
+      - action: action_get_schedule
+      - action: utter_unsatisfied
+      - user: |
+          math3 {"entity": "subject", "value": "image processing"}
+        intent: ask_for_avialable_subject
+      - slot_was_set:
+          - subject: image processing
+      - action: action_check_subject_name
+      - user: |
+          باى
         intent: goodbye
       - action: utter_goodbye

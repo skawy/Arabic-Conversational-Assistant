@@ -1,0 +1,156 @@
+version: "2.0"
+stories:
+- story: regular_ask_for_subject (.\tests\test_stories.yml)
+  steps:
+  - intent: ask_for_avialable_subject
+  - slot_was_set:
+    - subject: Math3
+  - action: action_check_subject_name
+  - intent: student_id
+  - slot_was_set:
+    - id: '20180003'
+  - action: student_id_form
+  - action: action_get_schedule
+  - action: utter_unsatisfied
+  - intent: goodbye
+  - action: utter_goodbye
+- story: leaving_2 (.\tests\test_stories.yml)
+  steps:
+  - intent: ask_for_avialable_subject
+  - slot_was_set:
+    - subject: data structures
+  - action: action_check_subject_name
+  - intent: goodbye
+  - action: utter_goodbye
+- story: spaces_and_long_conversation (.\tests\test_stories.yml)
+  steps:
+  - intent: greet  # predicted: affirm: اهلا
+  - action: utter_greet
+  - intent: ask_for_major
+  - action: utter_majors
+  - action: utter_unsatisfied
+  - intent: ask_for_avialable_subject
+  - slot_was_set:
+    - id: introduction to logic
+  - action: action_check_subject_name
+  - intent: ask_for_avialable_subject
+  - slot_was_set:
+    - subject: introduction to logic
+  - action: action_check_subject_name
+  - intent: student_id
+  - slot_was_set:
+    - id: '20180001'
+  - action: student_id_form
+  - active_loop: student_id_form
+  - slot_was_set:
+    - id: '20180001'
+  - action: action_get_schedule  # predicted: action_listen
+  - action: utter_unsatisfied  # predicted: action_listen
+  - intent: affirm
+  - action: utter_offer_help  # predicted: action_unlikely_intent
+  - intent: ask_for_avialable_subject
+  - slot_was_set:
+    - subject: math2
+  - action: action_check_subject_name
+  - action: utter_unsatisfied  # predicted: action_listen
+  - intent: deny
+  - action: utter_goodbye  # predicted: action_unlikely_intent
+- story: asking_for_major (.\tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_for_major
+  - action: utter_majors
+  - action: action_listen  # predicted:  
+- story: asking_for_schedule (.\tests\test_stories.yml)
+  steps:
+  - intent: ask_for_avialable_schedule
+  - action: action_get_schedule
+  - intent: student_id
+  - slot_was_set:
+    - id: '20180002'
+  - action: student_id_form
+  - active_loop: student_id_form
+  - slot_was_set:
+    - id: '20180002'
+  - action: action_get_schedule  # predicted: action_listen
+  - action: utter_unsatisfied  # predicted: action_listen
+  - intent: deny
+  - action: utter_goodbye  # predicted: action_unlikely_intent
+- story: ask for subject then schedule (.\tests\test_stories.yml)
+  steps:
+  - intent: ask_for_avialable_subject
+  - slot_was_set:
+    - subject: math3
+  - action: action_check_subject_name
+  - intent: student_id
+  - slot_was_set:
+    - id: '20180045'
+  - action: student_id_form
+  - active_loop: student_id_form
+  - slot_was_set:
+    - id: '20180045'
+  - slot_was_set:
+    - id: '20180045'
+  - action: action_get_schedule  # predicted: action_listen
+  - action: utter_unsatisfied  # predicted: action_listen
+  - intent: ask_for_avialable_schedule
+  - action: action_get_schedule  # predicted: action_unlikely_intent
+  - action: utter_unsatisfied  # predicted: action_listen
+  - intent: deny
+  - action: utter_goodbye  # predicted: action_unlikely_intent
+- story: give id only (.\tests\test_stories.yml)
+  steps:
+  - intent: student_id
+  - slot_was_set:
+    - id: '20180045'
+  - action: student_id_form
+  - active_loop: student_id_form
+  - slot_was_set:
+    - id: '20180045'
+  - slot_was_set:
+    - id: '20180045'
+  - action: action_get_schedule  # predicted: action_listen
+  - action: utter_unsatisfied  # predicted: action_listen
+- story: schedule then subject (.\tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_for_avialable_schedule
+  - action: action_get_schedule
+  - intent: student_id
+  - slot_was_set:
+    - id: '20180031'
+  - action: student_id_form
+  - active_loop: student_id_form
+  - slot_was_set:
+    - id: '20180031'
+  - slot_was_set:
+    - id: '20180031'
+  - action: action_get_schedule  # predicted: action_listen
+  - action: utter_unsatisfied  # predicted: action_listen
+  - intent: ask_for_avialable_subject
+  - slot_was_set:
+    - subject: logic designs
+  - action: action_check_subject_name
+- story: ask for schedule twice (.\tests\test_stories.yml)
+  steps:
+  - intent: greet  # predicted: affirm: اهلا
+  - action: utter_greet
+  - intent: student_id
+  - slot_was_set:
+    - id: '20180045'
+  - action: student_id_form
+  - active_loop: student_id_form
+  - slot_was_set:
+    - id: '20180045'
+  - slot_was_set:
+    - id: '20180045'
+  - action: action_get_schedule  # predicted: action_listen
+  - action: utter_unsatisfied
+  - intent: ask_for_avialable_subject
+  - slot_was_set:
+    - subject: image processing
+  - action: action_check_subject_name
+  - intent: goodbye
+  - action: utter_goodbye
