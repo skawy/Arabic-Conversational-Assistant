@@ -98,7 +98,7 @@ def map_subject_name(subject, bylaw):
     print(np.max(similarity))
     print(similarity)
 
-    # If cosine < Threshold "0.3" Then there is no subjects similar to input subject
+    # If cosine < Threshold "0.7" Then there is no subjects similar to input subject
     if np.max(similarity) < 0.7 :
         biggest_indices = similarity[0].argsort()[-3:][::-1]
         return " ولا \n".join( [bylaw[index] for index in biggest_indices ]) 

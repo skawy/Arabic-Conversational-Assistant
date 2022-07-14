@@ -181,8 +181,8 @@ stories:
 
 - story: college_expenses
   steps:
-  - intent: ask_for_college_expenses
-  - action: utter_expenses
+  - intent: ask_about_unrelated_services
+  - action: utter_unrelated_services
   - action: utter_unsatisfied
   - intent: goodbye
   - action: utter_goodbye
@@ -213,8 +213,8 @@ stories:
 
 - story: leaving_3
   steps:
-  - intent: ask_for_college_expenses
-  - action: utter_expenses
+  - intent: ask_about_unrelated_services
+  - action: utter_unrelated_services
   - action: utter_unsatisfied
   - intent: goodbye
   - action: utter_goodbye
@@ -252,8 +252,8 @@ stories:
   - slot_was_set:
     - subject: machine learning
   - action: action_check_subject_name
-  - intent: ask_for_college_expenses
-  - action: utter_expenses
+  - intent: ask_about_unrelated_services
+  - action: utter_unrelated_services
   - action: utter_unsatisfied
   - intent: goodbye
   - action: utter_goodbye
@@ -554,5 +554,29 @@ stories:
     - subject: null
   - intent: ask_for_avialable_schedule
   - action: action_get_schedule
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: asking about expenses
+  steps:
+  - intent: ask_about_unrelated_services
+  - action: utter_unrelated_services
+  - action: utter_unsatisfied
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: asking about expenses, exams time and majors
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_about_unrelated_services
+  - action: utter_unrelated_services
+  - action: utter_unsatisfied
+  - intent: ask_about_unrelated_services
+  - action: utter_unrelated_services
+  - action: utter_unsatisfied
+  - intent: ask_for_major
+  - action: utter_majors
+  - action: utter_unsatisfied
   - intent: goodbye
   - action: utter_goodbye

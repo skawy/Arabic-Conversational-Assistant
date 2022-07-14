@@ -2,10 +2,16 @@ version: "2.0"
 
 rules:
 
-#- rule: get id
-#  steps:
-#    - intent: ask_for_avialable_subject
-#    - action: action_get_collage_grade_and_asK_id
+- rule: Say `hello` when the user starts a conversation with intent `greet`
+  conversation_start: true
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: telegram starting conversation
+  steps:
+  - intent: start
+  - action: utter_greet
 
 - rule: Say i am bot anytime the user challenges
   steps:
@@ -29,6 +35,17 @@ rules:
   - action: action_get_schedule
   - action: utter_unsatisfied
   
+- rule: respond to chitchat
+  steps:
+  - intent: chitchat
+  - action: action_check_chitchat
+
+# - rule: Training respond
+#   steps:
+#   - intent: ask_for_train
+#   - action: action_training_respond
+
+
 
 # - rule: response when reach max chitchat count
 #   condition:
@@ -39,12 +56,3 @@ rules:
 #   - action: utter_reach_max_chitchat_count
 #   - action: action_check_chitchat
 
-- rule: respond to chitchat
-  steps:
-  - intent: chitchat
-  - action: action_check_chitchat
-
-- rule: Training respond
-  steps:
-  - intent: ask_for_train
-  - action: action_training_respond
