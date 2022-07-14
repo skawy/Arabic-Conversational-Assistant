@@ -93,7 +93,8 @@ class ValidateUserDetailsForm(FormValidationAction):
         if re.fullmatch(id_pattern, slot_value):
             return {"id": slot_value}
         else:
-            return {"id": "0"}
+            dispatcher.utter_message(text="الid غلط")
+            return {"id": None}
 
 
 class check_chitchat(Action):
@@ -120,13 +121,13 @@ class check_chitchat(Action):
             print(f'sender is {tracker.sender_id} ')
 
             with open("./paused_ids.txt", 'a') as file1:
-                file1.write(f'tracker.sender_id\n')
+                file1.write(f'{tracker.sender_id}\n')
 
             chitchat_count = 0.0
 
             return [ SlotSet("chitchat_count", chitchat_count) , ConversationPaused() ]
 
-        dispatcher.utter_message(f' دى المره رقم {chitchat_count} الى تخرج فيها عن السياق التزم بالمحادثه بعد اذنك حتى لايتم غلق المحادثه')
+        dispatcher.utter_message(f' دى المره رقم {int(chitchat_count)} الى تخرج فيها عن السياق التزم بالمحادثه بعد اذنك حتى لايتم غلق المحادثه')
 
         if chitchat_count == 2.0:
             dispatcher.utter_message('لو خرجت بره السياق تانى المحادثه هتتقفل لمده خمس ساعات')
