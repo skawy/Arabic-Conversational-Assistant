@@ -4,7 +4,7 @@ from actions.Letters_Mapping import map_subject_name
 # Access database
 db = FCAI_DB()
 """ if FCAI Subjects.dp is deleted uncomment below line """
-# db.create_DB()
+db.create_DB()
 bylaw = db.get_tables('bylaw')
 gpa_dict = db.get_tables('GPA')
 schedule = db.get_schedule()

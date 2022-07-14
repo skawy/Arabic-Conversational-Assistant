@@ -22,10 +22,10 @@ class schedule_maker(Action):
             if student_id not in gpa_dict.keys():
                 dispatcher.utter_message(text = "معذرة هذا الid غير صحيح \n")
                 return [SlotSet('id', None)]
-            
+
             else:
                 student_information = gpa_dict[student_id]
-                gpa = student_information[1]
+                gpa = student_information[0]
                 year = student_information[-1] + student_information[-2]
                 student_grades, subjects_list, cumulative_hours = db.get_tables(student_id)
 
@@ -89,11 +89,12 @@ class ValidateUserDetailsForm(FormValidationAction):
     ) -> Dict[Text, Any]:
         """Validate `id` value"""
         id_pattern = re.compile("^20[0-2]{1}\d{1}[0-2]{1}\d{3}$")
+        print(slot_value)
 
         if re.fullmatch(id_pattern, slot_value):
             return {"id": slot_value}
         else:
-            dispatcher.utter_message(text="الid غلط")
+            dispatcher.utter_message(text="ال اى دى غلط")
             return {"id": None}
 
 
@@ -106,16 +107,16 @@ class check_chitchat(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         """ it is the function which execute action_check_chitchat """
-        
+
 
         chitchat_count = tracker.get_slot('chitchat_count')
-        
+
         if chitchat_count is None:
             chitchat_count = 0.0
 
         chitchat_count += 1.0
         # print("Out of context count: ", chitchat_count)
-        
+
         if chitchat_count >= 3.0:
 
             print(f'sender is {tracker.sender_id} ')
@@ -157,6 +158,6 @@ class check_chitchat(Action):
 #         if student_id is not None:
 #             dispatcher.utter_message(self.calculate_hours_for_training(student_id))
 #             return [SlotSet('training', 'Done')]
-        
+
 #         dispatcher.utter_message("لازم تدخل الid بتاعك")
 #         return []
