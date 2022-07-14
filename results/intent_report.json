@@ -1,37 +1,16 @@
 {
-  "greet": {
+  "student_id": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 17,
+    "support": 64,
     "confused_with": {}
   },
-  "chitchat": {
+  "deny": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 78,
-    "confused_with": {}
-  },
-  "bot_challenge": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 6,
-    "confused_with": {}
-  },
-  "ask_for_avialable_subject": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 34,
-    "confused_with": {}
-  },
-  "ask_for_avialable_schedule": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 17,
+    "support": 10,
     "confused_with": {}
   },
   "ask_for_college_expenses": {
@@ -39,6 +18,27 @@
     "recall": 1.0,
     "f1-score": 1.0,
     "support": 3,
+    "confused_with": {}
+  },
+  "greet": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 17,
+    "confused_with": {}
+  },
+  "affirm": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 7,
+    "confused_with": {}
+  },
+  "ask_for_avialable_schedule": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 17,
     "confused_with": {}
   },
   "ask_for_major": {
@@ -55,25 +55,25 @@
     "support": 20,
     "confused_with": {}
   },
-  "student_id": {
+  "bot_challenge": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 64,
+    "support": 6,
     "confused_with": {}
   },
-  "deny": {
+  "chitchat": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 10,
+    "support": 78,
     "confused_with": {}
   },
-  "affirm": {
+  "ask_for_avialable_subject": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 7,
+    "support": 34,
     "confused_with": {}
   },
   "accuracy": 1.0,

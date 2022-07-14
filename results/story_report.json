@@ -1,23 +1,119 @@
 {
-  "greet": {
-    "precision": 1.0,
-    "recall": 0.7142857142857143,
-    "f1-score": 0.8333333333333333,
-    "support": 7
-  },
-  "[math](subject)": {
+  "[math 1](subject)": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
     "support": 1
   },
-  "action_check_subject_name": {
+  "deny": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3
+  },
+  "[object oriented programming](subject)": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "ask_for_avialable_schedule": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 7
+  },
+  "action_listen": {
+    "precision": 0.8690476190476191,
+    "recall": 0.9864864864864865,
+    "f1-score": 0.9240506329113924,
+    "support": 74
+  },
+  "ask_for_major": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2
+  },
+  "utter_expenses": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "[20180031](id)": {
+    "precision": 0.5,
+    "recall": 1.0,
+    "f1-score": 0.6666666666666666,
+    "support": 1
+  },
+  "utter_chitchat": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2
+  },
+  "utter_iamabot": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "student_id": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 18
+  },
+  "ask_for_college_expenses": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_majors": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2
+  },
+  "[statistiscs and propabitity](subject)": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "[20180002](id)": {
+    "precision": 0.6666666666666666,
+    "recall": 1.0,
+    "f1-score": 0.8,
+    "support": 2
+  },
+  "affirm": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_offer_help": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "goodbye": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
     "support": 16
   },
-  "utter_offer_help": {
+  "chitchat": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2
+  },
+  "[programming 1](subject)": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
@@ -31,153 +127,9 @@
   },
   "action_get_schedule": {
     "precision": 1.0,
-    "recall": 0.5384615384615384,
-    "f1-score": 0.7000000000000001,
-    "support": 13
-  },
-  "utter_iamabot": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "None": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 38
-  },
-  "goodbye": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 16
-  },
-  "utter_unsatisfied": {
-    "precision": 0.8,
-    "recall": 0.36363636363636365,
-    "f1-score": 0.5000000000000001,
-    "support": 11
-  },
-  "[statistics](subject)": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 2
-  },
-  "[object oriented programming](subject)": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "affirm": {
-    "precision": 0.3333333333333333,
-    "recall": 1.0,
-    "f1-score": 0.5,
-    "support": 1
-  },
-  "utter_expenses": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "[statistiscs and propabitity](subject)": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "[20180001](id)": {
-    "precision": 0.8888888888888888,
-    "recall": 1.0,
-    "f1-score": 0.9411764705882353,
-    "support": 8
-  },
-  "chitchat": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 2
-  },
-  "bot_challenge": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "[20180002](id)": {
-    "precision": 0.6666666666666666,
-    "recall": 1.0,
-    "f1-score": 0.8,
-    "support": 2
-  },
-  "ask_for_major": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 2
-  },
-  "utter_greet": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 7
-  },
-  "[20180031](id)": {
-    "precision": 0.5,
-    "recall": 1.0,
-    "f1-score": 0.6666666666666666,
-    "support": 1
-  },
-  "[programming 1](subject)": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "[math 1](subject)": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "utter_majors": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 2
-  },
-  "utter_chitchat": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 2
-  },
-  "ask_for_college_expenses": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "student_id_form": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 18
-  },
-  "utter_goodbye": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 19
-  },
-  "action_check_chitchat": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 2
+    "recall": 0.5833333333333334,
+    "f1-score": 0.7368421052631579,
+    "support": 12
   },
   "[structured programming](subject)": {
     "precision": 1.0,
@@ -185,47 +137,95 @@
     "f1-score": 1.0,
     "support": 1
   },
-  "ask_for_avialable_schedule": {
+  "utter_goodbye": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 6
+    "support": 19
   },
-  "student_id": {
+  "utter_unsatisfied": {
+    "precision": 0.6666666666666666,
+    "recall": 0.25,
+    "f1-score": 0.36363636363636365,
+    "support": 8
+  },
+  "[20180001](id)": {
+    "precision": 0.8888888888888888,
+    "recall": 1.0,
+    "f1-score": 0.9411764705882353,
+    "support": 8
+  },
+  "utter_greet": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 7
+  },
+  "[statistics](subject)": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2
+  },
+  "greet": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 7
+  },
+  "action_check_chitchat": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2
+  },
+  "student_id_form": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
     "support": 18
   },
-  "action_listen": {
-    "precision": 0.8470588235294118,
-    "recall": 0.9863013698630136,
-    "f1-score": 0.9113924050632911,
-    "support": 73
-  },
-  "deny": {
+  "action_check_subject_name": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 3
+    "support": 16
+  },
+  "None": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 35
+  },
+  "bot_challenge": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "[math](subject)": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
   },
   "micro avg": {
-    "precision": 0.9272030651340997,
-    "recall": 0.8175675675675675,
-    "f1-score": 0.8689407540394973,
-    "support": 296
+    "precision": 0.9420849420849421,
+    "recall": 0.8384879725085911,
+    "f1-score": 0.8872727272727273,
+    "support": 291
   },
   "macro avg": {
-    "precision": 0.91531279178338,
-    "recall": 0.9315052853213323,
-    "f1-score": 0.9100733964471865,
-    "support": 296
+    "precision": 0.9311791383219955,
+    "recall": 0.9377091377091377,
+    "f1-score": 0.9266392068304518,
+    "support": 291
   },
   "weighted avg": {
-    "precision": 0.8172738915385974,
-    "recall": 0.8175675675675675,
-    "f1-score": 0.808314382886237,
-    "support": 296
+    "precision": 0.8301969126711394,
+    "recall": 0.8384879725085911,
+    "f1-score": 0.8279279087253072,
+    "support": 291
   },
   "conversation_accuracy": {
     "accuracy": 0.6086956521739131,

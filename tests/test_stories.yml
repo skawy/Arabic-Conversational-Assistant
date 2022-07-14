@@ -249,10 +249,10 @@ stories:
   - story: regular_ask_for_subject
     steps:
       - user: |
-          طيب ينفع اخد ماده {"entity": "subject", "value": "Math3"}
+          طيب ينفع اخد ماده {"entity": "subject", "value": "math2"}
         intent: ask_for_avialable_subject
       - slot_was_set:
-          - subject: Math3
+          - subject: "math2"
       - action: action_check_subject_name
       - user: |
           20180003 {"entity": "id", "value": "20180003"}
@@ -260,8 +260,7 @@ stories:
       - slot_was_set:
           - id: "20180003"
       - action: student_id_form
-      - action: action_get_schedule
-      - action: utter_unsatisfied
+      - active_loop: student_id_form
       - user: |
           سلام
         intent: goodbye
@@ -280,7 +279,7 @@ stories:
           20180003 {"entity": "subject", "value": "data structures"}
         intent: ask_for_avialable_subject
       - slot_was_set:
-          - subject: data structures
+          - subject: "data structures"
       - action: action_check_subject_name
       - user: |
           سلام
@@ -290,7 +289,7 @@ stories:
   - story: spaces_and_long_conversation
     steps:
       - user: |
-          اهلا
+          مرحبا
         intent: greet
       - action: utter_greet
       - user: |
@@ -319,8 +318,6 @@ stories:
       - active_loop: student_id_form
       - slot_was_set:
           - id: "20180001"
-      - action: action_get_schedule
-      - action: utter_unsatisfied
       - user: |
           مظبوط
         intent: affirm
@@ -450,9 +447,13 @@ stories:
   - story: ask for schedule twice
     steps:
       - user: |
-          اهلا
+          مرحبا
         intent: greet
       - action: utter_greet
+      - user: |
+          ايه المواد المتاحة ليا
+        intent: ask_for_avialable_schedule
+      - action: action_get_schedule
       - user: |
           20180045 {"entity": "id", "value": "20180045"}
         intent: student_id
@@ -462,15 +463,12 @@ stories:
       - active_loop: student_id_form
       - slot_was_set:
           - id: "20180045"
-      - slot_was_set:
-          - id: "20180045"
       - action: action_get_schedule
-      - action: utter_unsatisfied
       - user: |
-          math3 {"entity": "subject", "value": "image processing"}
+          image processing انا عاوز اسجل {"entity": "subject", "value": "image processing"}
         intent: ask_for_avialable_subject
       - slot_was_set:
-          - subject: image processing
+          - subject: "image processing"
       - action: action_check_subject_name
       - user: |
           باى
