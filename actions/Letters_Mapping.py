@@ -94,9 +94,9 @@ def map_subject_name(subject, bylaw):
     subject = map_letters(subject)
     similarity = cosine_similarity([subject], subjects_encoder)
 
-    print(bylaw[np.argmax(similarity)])
-    print(np.max(similarity))
-    print(similarity)
+    # print(bylaw[np.argmax(similarity)])
+    # print(np.max(similarity))
+    # print(similarity)
 
     # If cosine < Threshold "0.7" Then there is no subjects similar to input subject
     if np.max(similarity) < 0.7 :
