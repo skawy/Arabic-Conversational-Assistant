@@ -233,15 +233,3 @@ stories:
           هل أنت روبوت؟
         intent: bot_challenge
       - action: utter_iamabot
-
-  - story: college_expenses
-    steps:
-      - user: |
-          ممكن اعرف المصاريف؟
-        intent: ask_for_college_expenses
-      - action: utter_expenses
-      - action: utter_unsatisfied
-      - user: |
-          خلاص شكرا
-        intent: goodbye
-      - action: utter_goodbye

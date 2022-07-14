@@ -1,5 +1,6 @@
 version: "2.0"
 nlu:
+- intent: start
 - intent: greet
   examples: |
     - اهلا
@@ -22,7 +23,6 @@ nlu:
     - السلام عليكم ممكن مساعدة
     - هاي ممكن مساعدة
     - مساء النور
-
 - intent: goodbye
   examples: |
     - شرفتنا
@@ -44,7 +44,6 @@ nlu:
     - خلاص
     - كنسل
     - باي باي
-    
 - intent: affirm
   examples: |
     - ايوا
@@ -54,8 +53,6 @@ nlu:
     - اه
     - صح
     - بالضبط
-    - صح 
-
 - intent: deny
   examples: |
     - لا
@@ -135,7 +132,6 @@ nlu:
     - ID:[20180031](id)
     - [20180034](id)
     - [20180045](id)
-    - [20180045](id)
 - intent: bot_challenge
   examples: |
     - هل انت روبوت؟
@@ -145,7 +141,6 @@ nlu:
     - هل اتحدث إلى روبوت؟
     - هل اتحدث إلى إنسان؟
     - انت بنى ادم ولا روبوت ؟
-
 - intent: ask_for_avialable_schedule
   examples: |
     - عايز اعرف المواد المتاحة ليا
@@ -164,12 +159,10 @@ nlu:
     - اقدر اسجل مواد اية
     - اية المواد الي امفروض اسجلها
     - جدولي ايه ؟
-
 - intent: ask_for_avialable_subject
   examples: |
     - ينفع اسجل مادة [selected topics in artificial intelligence 1](subject)
     - ينفع اسجل مادة [selected topics in artificial intelligence 2](subject)
-    - ينفع اسجل مادة [selected topics in artificial intelligence 1](subject)
     - ينفع اسجل مادة [object oriented programming](subject)
     - طب ينفع اسجل [data structures](subject)
     - ممكن اسجل [math 1](subject)
@@ -222,9 +215,9 @@ nlu:
     - ممكن اسجل [ir](subject)
     - ممكن اسجل [arc](subject)
     - ينفع اسجل مادة [arc](subject)
-
 - intent: chitchat
   examples: |
+    - عاوز بيتزا مرجريتا
     - اسمك اية؟
     - ممكن اعرف اسمك؟
     - اسم حضرتك اية؟
@@ -302,7 +295,15 @@ nlu:
     - ينةىخشثصضبختهيىرنتؤ
     - #$%^&*%^
     - #$لإ نىشيسنبىب
+    - شسطنكيشسكطكيشمنسنمكشسي
+    - badry elgrokla
+    - lkaslkdkjafldsk
+    - a;flskd;alfsda;flas;fkl
+    - a;lfksd;alfl;fkfld;safds
+    - abcabcabcabcabcabc
+    - qwertyuiop
 
+    
 - intent: ask_for_major
   examples: |
     - ايه احسن قسم ادخله؟
@@ -320,11 +321,7 @@ nlu:
     - عايز اعرف عن الاقسام
     - ممكن اعرف الاقسام
     - ايه الخدمات اللي بتقدمها؟
-- intent: ask_for_college_expenses
-  examples: |
-    - ممكن اعرف المصاريف؟
-    - ممكن اسال عالمصاريف
-    - اه ممكن اعرف المصاريف؟
+
 
 - intent: ask_for_train
   examples: |
@@ -332,3 +329,23 @@ nlu:
     - عايز اسئل على التدريب
     - محتاج انجح فى كام ساعة عشان اسجل التدريب
     - ايه فرص التدريب المتاحة
+
+- intent: ask_about_unrelated_services
+  examples: |
+    - ممكن اعرف المصاريف؟
+    - ممكن اسال عالمصاريف
+    - اه ممكن اعرف المصاريف؟
+    - المصاريف كام السنة دي؟
+    - الدرجات هتظهر امتي
+    - موعد ظهور الدرجات
+    - درجات المواد هتظهر امتي
+    - الامتحانات امتي ؟
+    - موعد امتحانات ال midterm
+    - ميعاد الميدتيرم
+    - امتحانات الفيانال امتي
+    - ال final امتي؟
+    - كم مصاريف الجامة؟
+    - لو سمحت كنت عايز اعرف موعد امتحانات الميدتيرم
+    - اه ممكن اعرف المصاريف كام
+    - هو الكليه بتطلع رحلات ؟
+    - هو المصاريف بتتدفع فورى ولا لا ؟
