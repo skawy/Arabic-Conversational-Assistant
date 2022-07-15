@@ -1,23 +1,25 @@
 version: "2.0"
 stories:
-  - story: happy path 1
-    steps:
-      - user: أهلا
-        intent: greet
-      - action: utter_greet
-      - user: عايز اعرف المواد المتاحة ليا
-        intent: ask_for_avialable_schedule
-      - action: utter_ask_for_id
-      - user: |
-          [20180031]{"entity": "id", "value": "20180031"}
-        intent: student_id
-      - slot_was_set:
-          - id: "20180031"
-      - action: student_id_form
-      - active_loop: student_id_form
-      - user: تمام زى الفل
-        intent: goodbye
-      - action: utter_goodbye
+  # - story: happy path 1
+  #   steps:
+  #     - user: أهلا
+  #       intent: greet
+  #     - action: utter_greet
+  #     - user: عايز اعرف المواد المتاحة ليا
+  #       intent: ask_for_avialable_schedule
+  #     - action: action_get_schedule
+  #     - user: |
+  #         [20180031]{"entity": "id", "value": "20180031"}
+  #       intent: student_id
+  #     - slot_was_set:
+  #         - id: "20180031"
+  #     - action: student_id_form
+  #     - active_loop: student_id_form
+  #     - action: action_get_schedule
+  #     - action: utter_unsatisfied
+  #     - user: تمام زى الفل
+  #       intent: goodbye
+  #     - action: utter_goodbye
 
   - story: Testing another with much talk
     steps:
@@ -26,14 +28,23 @@ stories:
       - action: utter_greet
       - user: عايز اعرف المواد المتاحة ليا
         intent: ask_for_avialable_schedule
-      - action: utter_ask_for_id
+      - action: action_get_schedule
       - user: |
-          ده ال id بتاعى اهو [20180002]{"entity": "id", "value": "20180002"}
+          [20180036]{"entity": "id", "value": "20180036"} ده الid بتاعى
         intent: student_id
       - slot_was_set:
-          - id: "20180002"
+        - id: "20180036"
       - action: student_id_form
       - active_loop: student_id_form
+      - slot_was_set:
+        - id: '20180036'
+      - slot_was_set:
+        - id: '20180036'
+      - slot_was_set:
+        - requested_slot: null
+      - active_loop: null
+      - action: action_get_schedule
+      - action: utter_unsatisfied
       - user: تمام زى الفل
         intent: goodbye
       - action: utter_goodbye
@@ -45,14 +56,23 @@ stories:
       - action: utter_greet
       - user: عايز اعرف المواد المتاحة ليا
         intent: ask_for_avialable_schedule
-      - action: utter_ask_for_id
+      - action: action_get_schedule
       - user: |
-          [20180002]{"entity": "id", "value": "20180002"}
+          [20180034]{"entity": "id", "value": "20180034"}
         intent: student_id
       - slot_was_set:
-          - id: "20180002"
+          - id: "20180034"
       - action: student_id_form
       - active_loop: student_id_form
+      - slot_was_set:
+        - id: '20180034'
+      - slot_was_set:
+        - id: '20180034'
+      - slot_was_set:
+        - requested_slot: null
+      - active_loop: null
+      - action: action_get_schedule
+      - action: utter_unsatisfied
       - user: تمام شكرا
         intent: goodbye
       - action: utter_goodbye
@@ -63,25 +83,32 @@ stories:
           ايه يا بوت يا جامد انتا
         intent: chitchat
       - action: action_check_chitchat
-      - action: utter_chitchat
       - user: |
           يا حلوة يا بلحة يا مقمعة
         intent: chitchat
       - action: action_check_chitchat
-      - action: utter_chitchat
       - user: |
           أقدر اسجل مادة [statistics]{"entity": "subject", "value": "statistics"}
         intent: ask_for_avialable_subject
       - slot_was_set:
-          - subject: "statistics"
+        - subject: "statistics"
       - action: action_check_subject_name
       - user: |
-          [20180001]{"entity": "id", "value": "20180001"}
+          [20180045]{"entity": "id", "value": "20180045"}
         intent: student_id
       - slot_was_set:
-          - id: "20180001"
+        - id: "20180045"
       - action: student_id_form
       - active_loop: student_id_form
+      - slot_was_set:
+        - id: '20180045'
+      - slot_was_set:
+        - id: '20180045'
+      - slot_was_set:
+        - requested_slot: null
+      - active_loop: null
+      - action: action_get_schedule
+      - action: utter_unsatisfied
       - user: |
           تمام شكرا
         intent: goodbye
@@ -93,15 +120,24 @@ stories:
           أقدر اسجل مادة [statistics]{"entity": "subject", "value": "statistics"}
         intent: ask_for_avialable_subject
       - slot_was_set:
-          - subject: "statistics"
+        - subject: "statistics"
       - action: action_check_subject_name
       - user: |
-          [20180001]{"entity": "id", "value": "20180001"}
+          [20180045]{"entity": "id", "value": "20180045"}
         intent: student_id
       - slot_was_set:
-          - id: "20180001"
+        - id: "20180045"
       - action: student_id_form
       - active_loop: student_id_form
+      - slot_was_set:
+        - id: '20180045'
+      - slot_was_set:
+        - id: '20180045'
+      - slot_was_set:
+        - requested_slot: null
+      - active_loop: null
+      - action: action_get_schedule
+      - action: utter_unsatisfied
       - user: |
           تمام اوى
         intent: goodbye
@@ -113,15 +149,24 @@ stories:
           عاوز مادة [math]{"entity": "subject", "value": "math"}
         intent: ask_for_avialable_subject
       - slot_was_set:
-          - subject: "math"
+        - subject: "math"
       - action: action_check_subject_name
       - user: |
-          [20180001]{"entity": "id", "value": "20180001"}
+          [20180031]{"entity": "id", "value": "20180031"}
         intent: student_id
       - slot_was_set:
-          - id: "20180001"
+        - id: "20180031"
       - action: student_id_form
       - active_loop: student_id_form
+      - slot_was_set:
+        - id: '20180031'
+      - slot_was_set:
+        - id: '20180031'
+      - slot_was_set:
+        - requested_slot: null
+      - active_loop: null
+      - action: action_get_schedule
+      - action: utter_unsatisfied
       - user: |
           ممتاز شكرا
         intent: goodbye
@@ -133,15 +178,24 @@ stories:
           يا ريت لو اسجل [object oriented programming]{"entity": "subject", "value": "object oriented programming"}
         intent: ask_for_avialable_subject
       - slot_was_set:
-          - subject: "object oriented programming"
+        - subject: "object oriented programming"
       - action: action_check_subject_name
       - user: |
-          [20180001]{"entity": "id", "value": "20180001"}
+          [20180031]{"entity": "id", "value": "20180031"}
         intent: student_id
       - slot_was_set:
-          - id: "20180001"
+        - id: "20180031"
       - action: student_id_form
       - active_loop: student_id_form
+      - slot_was_set:
+        - id: '20180031'
+      - slot_was_set:
+        - id: '20180031'
+      - slot_was_set:
+        - requested_slot: null
+      - active_loop: null
+      - action: action_get_schedule
+      - action: utter_unsatisfied
       - user: |
           تمام شكرا
         intent: goodbye
@@ -153,15 +207,24 @@ stories:
           لو تسمح انا نفسى اسجل [structured programming]{"entity": "subject", "value": "structured programming"}
         intent: ask_for_avialable_subject
       - slot_was_set:
-          - subject: "structured programming"
+        - subject: "structured programming"
       - action: action_check_subject_name
       - user: |
-          [20180001]{"entity": "id", "value": "20180001"}
+          [20180045]{"entity": "id", "value": "20180045"}
         intent: student_id
       - slot_was_set:
-          - id: "20180001"
+        - id: "20180045"
       - action: student_id_form
       - active_loop: student_id_form
+      - slot_was_set:
+        - id: '20180045'
+      - slot_was_set:
+        - id: '20180045'
+      - slot_was_set:
+        - requested_slot: null
+      - active_loop: null
+      - action: action_get_schedule
+      - action: utter_unsatisfied
       - user: |
           شكرا
         intent: goodbye
@@ -173,15 +236,24 @@ stories:
           طب ينفع اسجل [statistiscs and propabitity]{"entity": "subject", "value": "statistiscs and propabitity"}
         intent: ask_for_avialable_subject
       - slot_was_set:
-          - subject: "statistiscs and propabitity"
+        - subject: "statistiscs and propabitity"
       - action: action_check_subject_name
       - user: |
-          [20180001]{"entity": "id", "value": "20180001"}
+          [20180045]{"entity": "id", "value": "20180045"}
         intent: student_id
       - slot_was_set:
-          - id: "20180001"
+        - id: "20180045"
       - action: student_id_form
       - active_loop: student_id_form
+      - slot_was_set:
+        - id: '20180045'
+      - slot_was_set:
+        - id: '20180045'
+      - slot_was_set:
+        - requested_slot: null
+      - active_loop: null
+      - action: action_get_schedule
+      - action: utter_unsatisfied
       - user: |
           اشطا
         intent: goodbye
@@ -193,15 +265,24 @@ stories:
           هوا انا أقدر اسجل مادة [programming 1]{"entity": "subject", "value": "programming 1"}
         intent: ask_for_avialable_subject
       - slot_was_set:
-          - subject: "programming 1"
+        - subject: "programming 1"
       - action: action_check_subject_name
       - user: |
-          [20180001]{"entity": "id", "value": "20180001"}
+          [20180036]{"entity": "id", "value": "20180036"}
         intent: student_id
       - slot_was_set:
-          - id: "20180001"
+        - id: "20180036"
       - action: student_id_form
       - active_loop: student_id_form
+      - slot_was_set:
+        - id: '20180036'
+      - slot_was_set:
+        - id: '20180036'
+      - slot_was_set:
+        - requested_slot: null
+      - active_loop: null
+      - action: action_get_schedule
+      - action: utter_unsatisfied
       - user: |
           تمام يا معلم
         intent: goodbye
@@ -213,15 +294,24 @@ stories:
           أقدر اسجل مادة [math 1]{"entity": "subject", "value": "math 1"}
         intent: ask_for_avialable_subject
       - slot_was_set:
-          - subject: "math 1"
+        - subject: "math 1"
       - action: action_check_subject_name
       - user: |
-          [20180001]{"entity": "id", "value": "20180001"}
+          [20180034]{"entity": "id", "value": "20180034"}
         intent: student_id
       - slot_was_set:
-          - id: "20180001"
+        - id: "20180034"
       - action: student_id_form
       - active_loop: student_id_form
+      - slot_was_set:
+        - id: '20180034'
+      - slot_was_set:
+        - id: '20180034'
+      - slot_was_set:
+        - requested_slot: null
+      - active_loop: null
+      - action: action_get_schedule
+      - action: utter_unsatisfied
       - user: |
           تمام
         intent: goodbye
@@ -233,3 +323,277 @@ stories:
           هل أنت روبوت؟
         intent: bot_challenge
       - action: utter_iamabot
+
+  - story: regular_ask_for_subject
+    steps:
+      - user: |
+           أقدر اسجل مادة [math 1]{"entity": "subject", "value": "math 1"}
+        intent: ask_for_avialable_subject
+      - slot_was_set:
+        - subject: "math"
+      - action: action_check_subject_name
+      - user: |
+          [20180031]{"entity": "id", "value": "20180031"}
+        intent: student_id
+        entities:
+        - id: '20180031'
+      - slot_was_set:
+        - id: "20180031"
+      - action: student_id_form
+      - active_loop: student_id_form
+      - slot_was_set:
+        - id: '20180031'
+      - slot_was_set:
+        - id: '20180031'
+      - slot_was_set:
+        - requested_slot: null
+      - active_loop: null
+      - action: action_get_schedule
+      - action: utter_unsatisfied
+      - user: |
+          سلام
+        intent: goodbye
+      - action: utter_goodbye
+
+  - story: leaving_1
+    steps:
+      - user: |
+          باى باى
+        intent: goodbye
+      - action: utter_goodbye
+
+
+  - story: leaving_2
+    steps:
+      - user: |
+          [20180045]{"entity": "id", "value": "20180045"}
+        intent: student_id
+      - slot_was_set:
+        - id: "20180045"
+      - action: student_id_form
+      - active_loop: student_id_form
+      - slot_was_set:
+        - id: '20180045'
+      - slot_was_set:
+        - id: '20180045'
+      - slot_was_set:
+        - requested_slot: null
+      - active_loop: null
+      - action: action_get_schedule
+      - action: utter_unsatisfied
+      - user: |
+          شكرا سلام
+        intent: goodbye
+      - action: utter_goodbye
+
+
+  - story: spaces_and_long_conversation
+    steps:
+      - user: |
+          مرحبا
+        intent: greet
+      - action: utter_greet
+      - user: |
+          ايه الاقسام المتاحة
+        intent: ask_for_major
+      - action: utter_majors
+      # - action: utter_unsatisfied
+      - user: |
+           أقدر اسجل مادة [introduction to logic]{"entity": "subject", "value": "introduction to logic"}
+        intent: ask_for_avialable_subject
+      - slot_was_set:
+        - subject: "introduction to logic"
+      - action: action_check_subject_name
+      - user: |
+          [20180031]{"entity": "id", "value": "20180031"}
+        intent: student_id
+      - slot_was_set:
+        - id: "20180031"
+      - action: student_id_form
+      - active_loop: student_id_form
+      - slot_was_set:
+        - id: '20180031'
+      - slot_was_set:
+        - id: '20180031'
+      - slot_was_set:
+        - requested_slot: null
+      - active_loop: null
+      - action: action_get_schedule
+      - action: utter_unsatisfied
+      - user: |
+          اه
+        intent: affirm
+      - action: utter_offer_help
+      - user: |
+          أقدر اسجل مادة [math 1]{"entity": "subject", "value": "math 1"}
+        intent: ask_for_avialable_subject
+      - slot_was_set:
+        - subject: math 1
+      - action: action_check_subject_name
+      - action: utter_unsatisfied
+      - user: |
+          لا
+        intent: goodbye
+      - action: utter_goodbye
+
+  # - story: asking_for_major
+  #   steps:
+  #     - user: |
+  #         اهلا وسهلا
+  #       intent: greet
+  #     - action: utter_greet
+  #     - user: |
+  #         ايه الاقسام المتاحة
+  #       intent: ask_for_major
+  #     - action: utter_majors
+  #     - action: utter_unsatisfied
+
+  - story: asking_for_schedule
+    steps:
+      - user: |
+          دلوقتى عايز اعرف المواد المتاحة ليا
+        intent: ask_for_avialable_schedule
+      - action: action_get_schedule
+      - user: |
+          [20180031]{"entity": "id", "value": "20180031"}
+        intent: student_id
+      - slot_was_set:
+        - id: "20180031"
+      - action: student_id_form
+      - active_loop: student_id_form
+      - slot_was_set:
+        - id: '20180031'
+      - slot_was_set:
+        - id: '20180031'
+      - slot_was_set:
+        - requested_slot: null
+      - active_loop: null
+      - action: action_get_schedule
+      - action: utter_unsatisfied
+      - user: |
+          لا
+        intent: goodbye
+      - action: utter_goodbye
+
+  - story: ask for subject then schedule
+    steps:
+      - user: |
+          [math3]{"entity": "subject", "value": "math3"}
+        intent: ask_for_avialable_subject
+      - slot_was_set:
+        - subject: 'math3'
+      - action: action_check_subject_name
+      - user: |
+          [20180045]{"entity": "id", "value": "20180045"}
+        intent: student_id
+      - slot_was_set:
+        - id: "20180045"
+      - action: student_id_form
+      - active_loop: student_id_form
+      - slot_was_set:
+        - id: '20180045'
+      - slot_was_set:
+        - id: '20180045'
+      - slot_was_set:
+        - requested_slot: null
+      - active_loop: null
+      - action: action_get_schedule
+      - action: utter_unsatisfied
+      - user: |
+          طب ممكن اعرف ايه احسن جدول ليا
+        intent: ask_for_avialable_schedule
+      - action: action_get_schedule
+      # - action: utter_unsatisfied
+      - user: |
+          لا
+        intent: goodbye
+      - action: utter_goodbye
+
+  - story: give id only
+    steps:
+      - user: |
+          [20180045]{"entity": "id", "value": "20180045"}
+        intent: student_id
+      - slot_was_set:
+        - id: "20180045"
+      - action: student_id_form
+      - active_loop: student_id_form
+      - slot_was_set:
+        - id: '20180045'
+      - slot_was_set:
+        - id: '20180045'
+      - slot_was_set:
+        - requested_slot: null
+      - active_loop: null
+      - action: action_get_schedule
+      - action: utter_unsatisfied
+
+  - story: schedule then subject
+    steps:
+      - user: |
+          مرحبا
+        intent: greet
+      - action: utter_greet
+      - user: |
+          ايه المواد المتاحة ليا
+        intent: ask_for_avialable_schedule
+      - action: action_get_schedule
+      - user: |
+          [20180031]{"entity": "id", "value": "20180031"}
+        intent: student_id
+      - slot_was_set:
+        - id: "20180031"
+      - action: student_id_form
+      - active_loop: student_id_form
+      - slot_was_set:
+        - id: '20180031'
+      - slot_was_set:
+        - id: '20180031'
+      - slot_was_set:
+        - requested_slot: null
+      - active_loop: null
+      - action: action_get_schedule
+      - action: utter_unsatisfied
+      - user: |
+          [logic designs]{"entity": "subject", "value": "logic designs"}
+        intent: ask_for_avialable_subject
+      - slot_was_set:
+        - subject: logic designs
+      - action: action_check_subject_name
+
+  - story: ask for schedule twice
+    steps:
+      - user: |
+          مرحبا
+        intent: greet
+      - action: utter_greet
+      - user: |
+          ايه المواد المتاحة ليا
+        intent: ask_for_avialable_schedule
+      - action: action_get_schedule
+      - user: |
+          [20180045]{"entity": "id", "value": "20180045"}
+        intent: student_id
+      - slot_was_set:
+        - id: "20180045"
+      - action: student_id_form
+      - active_loop: student_id_form
+      - slot_was_set:
+        - id: "20180045"
+      - slot_was_set:
+        - id: '20180045'
+      - slot_was_set:
+        - requested_slot: null
+      - active_loop: null
+      - action: action_get_schedule
+      - action: utter_unsatisfied
+      - user: |
+          أقدر اسجل مادة [math 1]{"entity": "subject", "value": "math 1"}
+        intent: ask_for_avialable_subject
+      - slot_was_set:
+        - subject: "math 1"
+      - action: action_check_subject_name
+      - user: |
+          باى
+        intent: goodbye
+      - action: utter_goodbye

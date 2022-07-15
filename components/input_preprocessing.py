@@ -1,9 +1,33 @@
 import re
 
 
-# # Clean/Normalize Arabic Text
+def spaces_before_english_words(text):
+    english_pattern = re.compile("[a-zA-Z0-9]*")
+
+    for i in english_pattern.findall(text):
+        if len(i) > 1:
+            text = text.replace(i, f' {i}')
+
+    return text
+
+
+# remove invalid but close id`s` to not get extracted as id
+def validate_id(text):
+    valid_pattern = re.compile("^20[0-2]{1}\d{1}[0-2]{1}\d{3}$")
+
+    invalid_patterns = re.compile("20\d*")
+
+    for close_pattern in invalid_patterns.findall(text):
+        if valid_pattern.fullmatch(close_pattern):
+            return text
+        else:
+            text = text.replace(close_pattern, "1099099")
+
+    return text
+
+
+# Clean/Normalize Arabic Text
 def clean_arabic_str(text):
-    
     search = ["أ", "إ", "آ", "ة", "_", "-", "/", ".", "،", " و ", " يا ", '"', "ـ", "'", "ى", "\\", '\n', '\t',
               '&quot;', '?', '؟', '!']
     replace = ["ا", "ا", "ا", "ه", " ", " ", "", "", "", " و", " يا", "", "", "", "ي", "", ' ', ' ', ' ', ' ? ', ' ؟ ',
@@ -27,6 +51,18 @@ def clean_arabic_str(text):
 
     # trim
     text = text.strip()
+    numbers_patter = re.compile(r'\d+')
+    id = numbers_patter.search(text)
+
+    if id is not None:
+        id = id.group()
+        if len(id) > 1:
+            text = id
+            validated_clean_text = validate_id(text)
+            return validated_clean_text
+
+    # validated_clean_text = text.replace(id, validated_id)
+    # validated_with_spaces = spaces_before_english_words(validated_clean_text)
 
     return text
 
@@ -111,6 +147,7 @@ class Cleaning_Arabic_Text(Component):
         :meth:`components.Component.process`
         of components previous to this one."""
         if 'text' in message.data:
+            # print(clean_arabic_str(message.data['text']))
             message.set('text', clean_arabic_str(message.data['text']))
         pass
 

@@ -1,0 +1,41 @@
+{
+  "subject": {
+    "precision": 1.0,
+    "recall": 0.9080459770114943,
+    "f1-score": 0.9518072289156626,
+    "support": 87,
+    "confused_with": {}
+  },
+  "grade": {
+    "precision": 1.0,
+    "recall": 0.7777777777777778,
+    "f1-score": 0.8750000000000001,
+    "support": 9,
+    "confused_with": {}
+  },
+  "id": {
+    "precision": 0.921875,
+    "recall": 1.0,
+    "f1-score": 0.959349593495935,
+    "support": 59,
+    "confused_with": {}
+  },
+  "micro avg": {
+    "precision": 0.9666666666666667,
+    "recall": 0.9354838709677419,
+    "f1-score": 0.9508196721311476,
+    "support": 155
+  },
+  "macro avg": {
+    "precision": 0.9739583333333334,
+    "recall": 0.8952745849297573,
+    "f1-score": 0.9287189408038659,
+    "support": 155
+  },
+  "weighted avg": {
+    "precision": 0.9702620967741935,
+    "recall": 0.9354838709677419,
+    "f1-score": 0.950218418915631,
+    "support": 155
+  }
+}

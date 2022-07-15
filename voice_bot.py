@@ -7,6 +7,11 @@ import speech_recognition as sr
 # from gtts import gTTS
 import os
 import re
+valid_pattern = re.compile("^20[0-2]{1}\d{1}[0-2]{1}\d{3}$")
+if valid_pattern.match("20220203"):
+    print(True)
+else:
+    print(False)
 
 
 def post_and_get(message):
