@@ -1,0 +1,82 @@
+[
+  {
+    "text": "ماشي",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.9998342394828796
+    }
+  },
+  {
+    "text": "هه",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.36541837453842163
+    }
+  },
+  {
+    "text": "الو",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.28964707255363464
+    }
+  },
+  {
+    "text": "توت",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.624890923500061
+    }
+  },
+  {
+    "text": "ا",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.47578343749046326
+    }
+  },
+  {
+    "text": "شش",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.9986105561256409
+    }
+  },
+  {
+    "text": "سس",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.5753024816513062
+    }
+  },
+  {
+    "text": "هسس",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.3590247333049774
+    }
+  },
+  {
+    "text": "ss",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "ask_for_avialable_subject",
+      "confidence": 0.6997917890548706
+    }
+  },
+  {
+    "text": "hss",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "ask_for_avialable_subject",
+      "confidence": 0.8839660286903381
+    }
+  }
+]

@@ -13,6 +13,11 @@ rules:
   - intent: start
   - action: utter_greet
 
+- rule: goodbye converstaion close
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
 - rule: Say i am bot anytime the user challenges
   steps:
   - intent: bot_challenge
@@ -40,10 +45,18 @@ rules:
   - intent: chitchat
   - action: action_check_chitchat
 
-# - rule: Training respond
-#   steps:
-#   - intent: ask_for_train
-#   - action: action_training_respond
+- rule: respond to asking for courses
+  condition:
+  - slot_was_set:
+    - grade: رابعة
+  steps:
+  - intent: asking_for_courses
+  - action: utter_asking_for_course
+
+- rule: Training respond
+  steps:
+  - intent: ask_for_train
+  - action: utter_for_training
 
 
 

@@ -4,7 +4,7 @@ from actions.Letters_Mapping import map_subject_name
 # Access database
 db = FCAI_DB()
 """ if FCAI Subjects.dp is deleted uncomment below line """
-# db.create_DB()
+db.create_DB()
 bylaw = db.get_tables('bylaw')
 gpa_dict = db.get_tables('GPA')
 schedule = db.get_schedule()
@@ -91,7 +91,8 @@ def get_failed_subjects(failed_subject, year, gpa):
         Return:
             best_schedule: string of best schedule
     """
-    student_schedule = schedule[year]
+    student_schedule = schedule[year].copy()
+    # print(student_schedule)
     best_schedule = "افضل جدول لك: "
     best_schedule += get_best_schedule(student_schedule, failed_subject, gpa)
     return best_schedule
@@ -102,7 +103,6 @@ def get_failed_subjects(failed_subject, year, gpa):
 def get_schedule(year):
     student_schedule = schedule[year]
     best_schedule = "جدولك: "
-    print(student_schedule)
     return best_schedule + ', '.join(student_schedule)
 
 
@@ -181,3 +181,15 @@ def ask_for_one_subject(subject, student_grades, subjects, cumulative_hours):
         return f'لازم تاخد {subject[:-2]} الأول'
 
     return 'تقدر تسجلها'
+
+
+# student_id = '20180031'
+# student_information = gpa_dict[student_id]
+# gpa = student_information[0]
+# year = student_information[-1] + student_information[-2]
+# student_grades, subjects_list, cumulative_hours = db.get_tables(student_id)
+# failed_subject = student_grades['f']
+# best_schedule = get_failed_subjects(failed_subject, year, gpa)
+# print(best_schedule)
+# best_schedule = get_failed_subjects(failed_subject, year, gpa)
+# print(best_schedule)

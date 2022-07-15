@@ -16,11 +16,14 @@ intents:
 - affirm
 - bot_challenge
 - ask_for_train
+- asking_for_courses
+
 entities:
 - chitchat_count
 - grade
 - id
 - subject
+
 slots:
   id:
     type: text
@@ -33,6 +36,10 @@ slots:
     influence_conversation: true
     max_value: 3.0
     min_value: 0.0
+  grade:
+    type: text
+    influence_conversation: true
+
 responses:
   utter_greet:
   - text: عليكم السلام اهلا بحضرتك
@@ -45,19 +52,26 @@ responses:
   utter_unsatisfied:
   - text: حابب حاجه تانى  ؟
   utter_unrelated_services:
-  - text: توجه إلي شئون الطلاب لمساعدتك في هذا الامر
+  - text: احنا هنا ارسترشاد اكاديمى نساعد حضرتك فى الجدول و المواد التقدر تسجلها عشان تعرف اجابة سؤالك اسئل شؤون الطلاب أو تشوف موقع الكلية
   utter_majors:
   - text: التخصص بيبقى على حسب المواد اللي بتحبها و حسب الGPA يعني مثلا لو حابب البرمجة ممكن تدخل CS بس لو حابب الماث و البرمجة ممكن تدخل AI لو بتحب الاحصاء و الماث و التعامل بالداتا ممكن تدخل قسم IS  ولو بتحب الداتا ستراكشرز و الاوبتيمايزيشنز ممكن تدخل قسم DS و اخر حاجة لو بتبحب السيكيوريتي و النيتووركس و الشغل الهاردوير اكثر ممكن تدخل قسم IT  و كده كده في الاخر ممكن بعد ما تدخل اي تخصص تتعلم تخصص ثاني و ده هيفيدك كده كده قدام
   utter_offer_help:
   - text: اقدر اساعد حضرتك ازاي؟
   utter_expenses:
   - text: مصاريف الكلية 145 جنيه في الفصل الدراسي
+  utter_wrong_id:
+  - text: غلط اكتبه صح لو سمحت
+  utter_for_training:
+    - text: محتاج تكون اجتزت 45 ساعة و لو انت اجتزتهم تقدر تشوف اللينك دا https://github.com/ACM-Alexandria-SC/Internships
+  utter_asking_for_course:
+    - text: تقدر تشوف الbylaw من موقع الكلية فيها تفاصيل كل المواد
 actions:
 - action_check_chitchat
 - action_check_subject_name
 - action_get_schedule
 # - action_training_respond
 - utter_ask_for_id
+#- action_asking_for_courses
 - utter_chitchat
 - utter_expenses
 - utter_goodbye
@@ -67,6 +81,7 @@ actions:
 - utter_reach_max_chitchat_count
 - utter_unsatisfied
 - validate_student_id_form
+
 forms:
   student_id_form:
     required_slots:

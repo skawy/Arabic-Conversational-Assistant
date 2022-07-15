@@ -2,33 +2,6 @@ version: "2.0"
 
 stories:
 
-- story: first path
-  steps:
-    - intent: greet
-    - action: utter_greet
-    - intent: ask_for_avialable_schedule
-    - action: action_get_schedule
-    - intent: student_id
-      entities:
-        - id: '20180031'
-    - action: student_id_form
-    - active_loop: student_id_form
-    - intent: goodbye
-    - action: utter_goodbye
-
-- story: second path
-  steps:
-    - intent: ask_for_avialable_schedule
-    - action: action_get_schedule
-    - intent: student_id
-      entities:
-        - id: '20180031'
-    - action: student_id_form
-    - active_loop: student_id_form
-    - intent: goodbye
-    - action: utter_goodbye
-
-
 - story: third path
   steps:
     - intent: ask_for_avialable_subject
@@ -70,14 +43,12 @@ stories:
   - active_loop: null
   - action: action_get_schedule
   - action: utter_unsatisfied
-  - intent: deny
+  - intent: goodbye
   - action: utter_goodbye
 
 
 - story: regular_ask_for_subject
   steps:
-  - intent: ask_for_avialable_subject
-  - action: action_check_subject_name
   - intent: ask_for_avialable_subject
     entities:
     - subject: Math3
@@ -113,9 +84,6 @@ stories:
   - action: utter_greet
   - intent: ask_for_major
   - action: utter_majors
-  - action: utter_unsatisfied
-  - intent: ask_for_avialable_subject
-  - action: action_check_subject_name
   - intent: ask_for_avialable_subject
     entities:
     - subject: introduction to logic
@@ -131,10 +99,6 @@ stories:
   - active_loop: student_id_form
   - slot_was_set:
     - id: '20180001'
-  - slot_was_set:
-    - id: '20180001'
-  - slot_was_set:
-    - requested_slot: null
   - active_loop: null
   - action: action_get_schedule
   - action: utter_unsatisfied
@@ -147,7 +111,7 @@ stories:
     - subject: math2
   - action: action_check_subject_name
   - action: utter_unsatisfied
-  - intent: deny
+  - intent: goodbye
   - action: utter_goodbye
 
 - story: asking_for_major
@@ -155,6 +119,8 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: ask_for_major
+  - action: utter_majors
+  - action: utter_unsatisfied
 
 - story: asking_for_schedule
   steps:
@@ -169,14 +135,10 @@ stories:
   - active_loop: student_id_form
   - slot_was_set:
     - id: '20180002'
-  - slot_was_set:
-    - id: '20180002'
-  - slot_was_set:
-    - requested_slot: null
   - active_loop: null
   - action: action_get_schedule
   - action: utter_unsatisfied
-  - intent: deny
+  - intent: goodbye
   - action: utter_goodbye
 
 - story: college_expenses
@@ -200,16 +162,11 @@ stories:
   - active_loop: student_id_form
   - slot_was_set:
     - id: '20180031'
-  - slot_was_set:
-    - id: '20180031'
-  - slot_was_set:
-    - requested_slot: null
   - active_loop: null
   - action: action_get_schedule
   - action: utter_unsatisfied
   - intent: goodbye
   - action: utter_goodbye
-  - intent: goodbye
 
 - story: leaving_3
   steps:
@@ -239,10 +196,6 @@ stories:
   - active_loop: student_id_form
   - slot_was_set:
     - id: '20180034'
-  - slot_was_set:
-    - id: '20180034'
-  - slot_was_set:
-    - requested_slot: null
   - active_loop: null
   - action: action_get_schedule
   - action: utter_unsatisfied
@@ -272,10 +225,6 @@ stories:
   - active_loop: student_id_form
   - slot_was_set:
     - id: '20180045'
-  - slot_was_set:
-    - id: '20180045'
-  - slot_was_set:
-    - requested_slot: null
   - active_loop: null
   - action: action_get_schedule
   - action: utter_unsatisfied
@@ -303,10 +252,6 @@ stories:
   - active_loop: student_id_form
   - slot_was_set:
     - id: '20180045'
-  - slot_was_set:
-    - id: '20180045'
-  - slot_was_set:
-    - requested_slot: null
   - active_loop: null
   - action: action_get_schedule
   - action: utter_unsatisfied
@@ -359,10 +304,6 @@ stories:
   - active_loop: student_id_form
   - slot_was_set:
     - id: '20180031'
-  - slot_was_set:
-    - id: '20180031'
-  - slot_was_set:
-    - requested_slot: null
   - active_loop: null
   - action: action_get_schedule
   - action: utter_unsatisfied
@@ -396,10 +337,6 @@ stories:
   - active_loop: student_id_form
   - slot_was_set:
     - id: '20180039'
-  - slot_was_set:
-    - id: '20180039'
-  - slot_was_set:
-    - requested_slot: null
   - active_loop: null
   - action: action_get_schedule
   - action: utter_unsatisfied
@@ -434,10 +371,6 @@ stories:
   - active_loop: student_id_form
   - slot_was_set:
     - id: '20180311'
-  - slot_was_set:
-    - id: '20180311'
-  - slot_was_set:
-    - requested_slot: null
   - active_loop: null
   - action: action_get_schedule
   - action: utter_unsatisfied
@@ -459,10 +392,6 @@ stories:
   - active_loop: student_id_form
   - slot_was_set:
     - id: '20180045'
-  - slot_was_set:
-    - id: '20180045'
-  - slot_was_set:
-    - requested_slot: null
   - active_loop: null
   - action: action_get_schedule
   - slot_was_set:
@@ -470,8 +399,7 @@ stories:
   - action: utter_unsatisfied
   - intent: ask_for_avialable_schedule
   - action: action_get_schedule
-  - action: utter_unsatisfied
-  - intent: deny
+  - intent: goodbye
   - action: utter_goodbye
 
 - story: give id only
@@ -485,10 +413,6 @@ stories:
   - active_loop: student_id_form
   - slot_was_set:
     - id: '20180045'
-  - slot_was_set:
-    - id: '20180045'
-  - slot_was_set:
-    - requested_slot: null
   - active_loop: null
   - action: action_get_schedule
   - action: utter_unsatisfied
@@ -508,10 +432,6 @@ stories:
   - active_loop: student_id_form
   - slot_was_set:
     - id: '20180031'
-  - slot_was_set:
-    - id: '20180031'
-  - slot_was_set:
-    - requested_slot: null
   - active_loop: null
   - action: action_get_schedule
   - action: utter_unsatisfied
@@ -537,10 +457,6 @@ stories:
   - active_loop: student_id_form
   - slot_was_set:
     - id: '20180045'
-  - slot_was_set:
-    - id: '20180045'
-  - slot_was_set:
-    - requested_slot: null
   - active_loop: null
   - action: action_get_schedule
   - action: utter_unsatisfied
