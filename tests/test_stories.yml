@@ -397,7 +397,7 @@ stories:
           ايه الاقسام المتاحة
         intent: ask_for_major
       - action: utter_majors
-      # - action: utter_unsatisfied
+      - action: utter_unsatisfied
       - user: |
            أقدر اسجل مادة [introduction to logic]{"entity": "subject", "value": "introduction to logic"}
         intent: ask_for_avialable_subject

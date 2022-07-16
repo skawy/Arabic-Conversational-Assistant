@@ -3,7 +3,7 @@ import sqlite3
 
 import pandas as pd
 
-folder_path = 'D:\\FCAI_CU_Chatbot\\DB'
+folder_path = 'F:\\Graduation project\\college_chatbot\\FCAI_CU_Chatbot\\DB'
 
 
 class FCAI_DB:
@@ -102,7 +102,7 @@ class FCAI_DB:
                     self.connection.commit()
 
                 else:
-                    df = pd.read_csv('D:\\FCAI_CU_Chatbot\\DB\\schedule.csv')
+                    df = pd.read_csv('F:\\Graduation project\\college_chatbot\\FCAI_CU_Chatbot\\DB\\schedule.csv')
                     df.to_sql(f'schedule', self.connection, if_exists='replace', index=False)
                     data.to_sql(f'x{table_name}x', self.connection, if_exists='replace', index=False)
                     self.connection.commit()
@@ -180,8 +180,10 @@ class FCAI_DB:
     def get_schedule(self):
         data = self.cursor.execute(f'SELECT * FROM schedule').fetchall()
         results = self.get_data(data)
-        df = pd.DataFrame(results, columns=['g1', 'g2', 'cs3', 'cs4', 'ai3', 'ai4', 'it3', 'it4', 'is3', 'is4', 'ds3',
-                                            'ds4'])
+        columns = ['g1', 'g2', 'cs3', 'cs4', 'ai3', 'ai4', 'it3', 'it4', 'is3', 'is4', 'ds3',
+                   'ds4']
+        df = pd.DataFrame(results, columns= columns)
+        df = df.fillna(value='')
         self.connection.commit()
         return df.to_dict(orient='list')
 

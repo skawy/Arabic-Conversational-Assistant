@@ -16,7 +16,6 @@ def validate_id(text):
     valid_pattern = re.compile("^20[0-2]{1}\d{1}[0-2]{1}\d{3}$")
 
     invalid_patterns = re.compile("20\d*")
-
     for close_pattern in invalid_patterns.findall(text):
         if valid_pattern.fullmatch(close_pattern):
             return text
@@ -36,11 +35,6 @@ def clean_arabic_str(text):
     # remove tashkeel
     p_tashkeel = re.compile(r'[\u0617-\u061A\u064B-\u0652]')
     text = re.sub(p_tashkeel, "", text)
-
-    # remove longation
-    p_longation = re.compile(r'(.)\1+')
-    subst = r"\1\1"
-    text = re.sub(p_longation, subst, text)
 
     text = text.replace('وو', 'و')
     text = text.replace('يي', 'ي')
@@ -62,9 +56,8 @@ def clean_arabic_str(text):
             return validated_clean_text
 
     # validated_clean_text = text.replace(id, validated_id)
-    # validated_with_spaces = spaces_before_english_words(validated_clean_text)
-
-    return text
+    validated_with_spaces = spaces_before_english_words(text)
+    return validated_with_spaces
 
 
 # python 3.X

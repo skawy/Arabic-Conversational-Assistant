@@ -41,7 +41,6 @@ def get_subjects_priority(student_schedule, gpa):
             student_schedule.remove(min_priority[0][0])
             student_schedule.remove(min_priority[1][0])
             student_schedule.remove(min_priority[2][0])
-
         return ', '.join(student_schedule)
     except (KeyError, ValueError):
         print(KeyError, ValueError)
@@ -77,7 +76,7 @@ def get_best_schedule(student_schedule, failed_subject, gpa):
                 if bylaw[i][0] in failed_subject:
                     student_schedule[index] = bylaw[i][0]
 
-    best_schedule = get_subjects_priority(student_schedule, int(gpa))
+    best_schedule = get_subjects_priority(student_schedule, float(gpa))
     return best_schedule
 
 
@@ -92,7 +91,6 @@ def get_failed_subjects(failed_subject, year, gpa):
             best_schedule: string of best schedule
     """
     student_schedule = schedule[year].copy()
-    # print(student_schedule)
     best_schedule = "افضل جدول لك: "
     best_schedule += get_best_schedule(student_schedule, failed_subject, gpa)
     return best_schedule
@@ -183,12 +181,12 @@ def ask_for_one_subject(subject, student_grades, subjects, cumulative_hours):
     return 'تقدر تسجلها'
 
 
-# student_id = '20180031'
+# student_id = '20180045'
 # student_information = gpa_dict[student_id]
 # gpa = student_information[0]
 # year = student_information[-1] + student_information[-2]
 # student_grades, subjects_list, cumulative_hours = db.get_tables(student_id)
-# failed_subject = student_grades['f']
+# # failed_subject = student_grades['f']
 # best_schedule = get_failed_subjects(failed_subject, year, gpa)
 # print(best_schedule)
 # best_schedule = get_failed_subjects(failed_subject, year, gpa)
